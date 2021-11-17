@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script type = "text/javascript" src="index.js"></script>
+</head>
+<body style="background-color:#ffbd59;">
+    <nav class="navbar navbar-expand-sm fixed-top" style="background-color: #f88411;">
+        <ul class="navbar-nav" style="padding: 1%;">
+            <img class="img_square" src="asset/img/LOGO.jpg" alt="logo" style="width:5%; height: 5%; padding: 0.5%;">
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="index.html" class="nav-link white_text">首頁</a>
+            </li>
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="#1" class="nav-link white_text">線上營隊</a>
+            </li>
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="#1" class="nav-link white_text">個人諮詢</a>
+            </li>
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="FAQ.html" class="nav-link white_text">FAQ</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav navbar-right" style="padding: 1%;">
+            <li class="nav-item">
+                <a href="login.html" class="nav-link white_text">login</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <img style="width: 100%; height: 100%;"src="asset/img/home/slogan.png">
+        <!-- <div>C.I.A-COMPANY IN AIR 一站式升學輔導平台</div>
+        <div>致力於提供創新與個人畫的方案，陪伴與協助高中生找尋並進入理想校系。</div> -->
+    </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="background-color: #284b75;">
+        <div class="white_text big_text" style="">在這裡您能獲得什麼？</div>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="30000">
+                <img src="asset/img/home/carousel_camp.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="asset/img/DM.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="asset/img/LOGO.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div>
+        <div>您認為自己目前處在何種階段？</div>
+        <div>​讓C.I.A來為您解惑</div>    
+    </div>
+    <div class = "table">
+        <div class = "which-step">
+            <div class = "step">尋找目標科系</div>
+            <div class = "step">為達目標校系標準</div>
+            <div class = "step">錄取目標校系</div>
+        </div>
+    </div>
+    <div style="margin-top: 300px;"></div>
+
+</body>
+</html>
+
+<style>
+
+body, html{
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+}
+nav{
+    background-color: #284b75;
+    text-align: center;
+    font-size: 30px;
+}
+div{
+    text-align: center;
+    font-size: 20px;
+}
+
+/* 跑馬燈 */
+.newsticker{
+    margin: 0% 2%;
+    width: 96%;
+    background-color: #284b75;
+}
+
+.which-step{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.step {
+    background-color: white;
+    height: 600%;
+    margin: 1%;
+    transition: 0.3s ease-in-out;
+}
+.step:hover {
+    background-color: lightblue;
+}
+
+.carousel-item {
+    text-align: center;
+    margin-left: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 98%;
+    height: 98%;
+}
+
+img{
+   width: 600px;
+   height: 800px; 
+}
+
+.white_text {
+    color: #FFFFFF;
+}
+
+.big_text {
+    font-size:250%;
+}
+
+.navbar{
+    height: 10%; 
+}
+
+.nav-link:hover {
+    color: #ffbd59;
+    /*#005AB5*/
+}
+
+.img_square {
+	width: 100px;
+	border-radius: 50%;
+}
+
+</style>   
