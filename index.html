@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script type = "text/javascript" src="index.js"></script>
+</head>
+<body style="background-color:#ffbd59;">
+    <nav class="navbar navbar-expand-sm fixed-top" style="background-color: #f88411;">
+        <ul class="navbar-nav" style="padding: 1%;">
+            <img class="img_square" src="asset/img/LOGO.jpg" alt="logo" style="width:5%; height: 5%; padding: 0.5%;">
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="index.html" class="nav-link white_text">首頁</a>
+            </li>
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="#1" class="nav-link white_text">線上營隊</a>
+            </li>
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="#1" class="nav-link white_text">個人諮詢</a>
+            </li>
+            <li class="nav-item" style="padding: 0.3%;">
+                <a href="FAQ.html" class="nav-link white_text">FAQ</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav navbar-right" style="padding: 1%;">
+            <li class="nav-item">
+                <a href="login.html" class="nav-link white_text">login</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <img style="width: 100%; height: 100%; margin-top: -8%"src="asset/img/home/slogan.png">
+        <!-- <div>C.I.A-COMPANY IN AIR 一站式升學輔導平台</div>
+        <div>致力於提供創新與個人畫的方案，陪伴與協助高中生找尋並進入理想校系。</div> -->
+    </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="background-color: #284b75; z-index: 1;">
+        <div>
+            <hr class="hr-edge-weak" style="margin-top: 0;">
+            <p class="white_text big_text" style="padding-top: 2%;">在這裡您能獲得什麼？</p>
+        </div>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="asset/img/home/carousel_camp.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="asset/img/DM.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="asset/img/LOGO.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div style="background-color: #FFFFFF;">
+        <div style="background-image: url('asset/img/home/step.jpeg'); opacity: 0.8; margin-top: -15%; max-height: 805px; overflow: hidden; z-index: 0;">
+            <div style="padding-top: 15%;">
+                <div class = "big_text title" style="padding-top: 2%; color: #ff5100;">您認為自己目前處在何種階段？</div>
+                <div class = "title" style="padding: 1%; font-size: 200%; color: #ff5100;">​讓C.I.A來為您解惑</div>    
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <div class = "table" style="padding-bottom: 30%;">
+        <div class = "which-step">
+            <div class = "step">
+                <div class="step_text" style="color: #f88411;  font-weight: 900;">尋找目標科系</div>
+                <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">1. 線上營隊</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">2. 個人諮詢</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">通過客製化的學長姐諮詢服務，解決科系探索中遇到的各種問題</div>
+                <img class="img_step" src="asset/img/home/search.jpg">
+            </div>
+            <div class = "step">
+                <div>為達目標校系標準</div>
+            </div>
+            <div class = "step">錄取目標校系</div>
+        </div>
+    </div>
+    <!-- <div style="margin-top: 600%;">123</div> -->
+
+</body>
+</html>
+
+<style>
+@font-face {
+    font-family: 'e';
+    src: url('asset/fonts/IndieFlower-Regular.woff')format('woff'),
+        url('asset/fonts/IndieFlower-Regular.ttf')format('truetype'),
+        url('asset/fonts/IndieFlower-Regular.eot')format('embedded-opentype');
+}
+@font-face {
+    font-family: 'c';
+    src: url('asset/fonts/cwTeXYen-zhonly.woff')format('woff'),
+        url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
+        url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+}
+nav{
+    background-color: #284b75;
+    text-align: center;
+    font-size: 30px;
+}
+div{
+    font-family: 'c';
+    text-align: center;
+    font-size: 20px;
+}
+div .title{
+    font-weight: bolder;
+}
+
+.left_text{
+    text-align: left;
+    font-size: 20px;
+    margin: 10px 20px;
+}
+
+/* 跑馬燈 */
+.newsticker{
+    margin: 0% 2%;
+    width: 96%;
+    background-color: #284b75;
+}
+
+.which-step{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.step {
+    background-color: white;
+    border-radius: 10px;
+    height: 100%;
+    margin: 5%;
+    transition: 0.3s ease-in-out;
+}
+.step:hover {
+    background-color: lightblue;
+}
+
+.carousel-item {
+    text-align: center;
+    margin-left: 16%;
+    margin-bottom: 1%;
+    width: 68%;
+    height: 68%;
+}
+
+img{
+   width: 100%;
+   height: 100%; 
+}
+
+.white_text {
+    color: #FFFFFF;
+}
+
+.step_text {
+    font-size: 150%;
+}
+
+.big_text {
+    font-size:250%;
+}
+
+.navbar{
+    height: 10%; 
+}
+
+.nav-link:hover {
+    color: #ffbd59;
+    /*#005AB5*/
+}
+
+.img_square {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.img_step {
+    width: 100%;
+    height: 50%;
+}
+
+.hr-edge-weak {
+    border: 0;
+    border-bottom: 100px ;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+}
+
+
+</style>   
