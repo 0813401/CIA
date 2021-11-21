@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background-color:#ffbd59;">
     <nav class="navbar navbar-expand-sm fixed-top" style="background-color: #f88411;">
         <ul class="navbar-nav" style="padding: 1%;">
             <img class="img_square" src="asset/img/LOGO.jpg" alt="logo" style="width:5%; height: 5%; padding: 0.5%;">
             <li class="nav-item" style="padding: 0.3%;">
-                <a href="index.html" class="nav-link white_text">首頁</a>
+                <div><a href="index.html" class="nav-link white_text">首頁</a></div>
             </li>
             <li class="nav-item" style="padding: 0.3%;">
                 <a href="#1" class="nav-link white_text">線上營隊</a>
@@ -30,11 +31,63 @@
             </li>
         </ul>
     </nav>
-    <div class="rounded_border">apple</div>
+    <div class="title">常見問答</div>
+    <div class="rounded_border">
+        <div class="margin">
+            <div>Q : WHAT IF I AM NOT SATISFIED WITH 【C.I.A-COMPANY IN AIR】 一站式升學輔導平台?</div>
+            <br>
+            <div>A : This is your FAQ Answer. Make sure your writing is clear and concise. It’s a good idea to review what you’ve written and ask yourself the following - if this was my first time visiting the site, would I fully understand this answer? Then revise or expand as necessary. Consider adding a photo or video as a visual tool or for extra impact.</div>
+        </div>
+    </div>
+    <div class="rounded_border">
+        <div class="margin">
+            <div>Q : ARE THERE ANY BENEFITS FOR FIRST-TIME CUSTOMERS?</div>
+            <br>
+            <div>A : This is your FAQ Answer. Make sure your writing is clear and concise. It’s a good idea to review what you’ve written and ask yourself the following - if this was my first time visiting the site, would I fully understand this answer? Then revise or expand as necessary. Consider adding a photo or video as a visual tool or for extra impact.</div>
+        </div>
+    </div>
+    <div class="rounded_border">
+        <div class="margin">
+            <div>Q : DO YOU HAVE A CUSTOMER REFERRAL PROGRAM?</div>
+            <br>
+            <div>A : This is your FAQ Answer. Make sure your writing is clear and concise. It’s a good idea to review what you’ve written and ask yourself the following - if this was my first time visiting the site, would I fully understand this answer? Then revise or expand as necessary. Consider adding a photo or video as a visual tool or for extra impact.</div>
+        </div>
+    </div>
+    <div class="rounded_border">
+        <div class="margin">
+            <div>Q : WHAT IF I AM NOT SATISFIED WITH 【C.I.A-COMPANY IN AIR】 一站式升學輔導平台?</div>
+            <br>
+            <div>A : This is your FAQ Answer. Make sure your writing is clear and concise. It’s a good idea to review what you’ve written and ask yourself the following - if this was my first time visiting the site, would I fully understand this answer? Then revise or expand as necessary. Consider adding a photo or video as a visual tool or for extra impact.</div>
+        </div>
+    </div>
+    <div style="background-color: #284b75; height: 40%; width: 100%">
+        <div class="center_text" style="padding-top:2%; padding-bottom: 1%; color: #ffbd59;">聯絡我們</div>
+        <div class="center_text">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-envelope"></a>
+        </div>
+        <div class="center_text" style="font-size: 130%; color: #ffbd59;">500 Terry Francois Street San Francisco, CA 94158</div>
+        <div class="center_text" style="padding-top:2%; font-size: 100%; color: #ffbd59;">©2021 by 【C.I.A-Company In Air】 一站式升學輔導平台</div>
+    </div>
+    
+    
 </body>
 </html>
 
 <style>
+@font-face {
+    font-family: 'e';
+    src: url('asset/fonts/IndieFlower-Regular.woff')format('woff'),
+        url('asset/fonts/IndieFlower-Regular.ttf')format('truetype'),
+        url('asset/fonts/IndieFlower-Regular.eot')format('embedded-opentype');
+}
+@font-face {
+    font-family: 'c';
+    src: url('asset/fonts/cwTeXYen-zhonly.woff')format('woff'),
+        url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
+        url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
+}
 body, html{
     width: 100%;
     height: 100%;
@@ -45,9 +98,18 @@ nav{
     text-align: center;
     font-size: 30px;
 }
+
+.title{
+    font-family: 'c';
+    font-size: 300%;
+    text-align: center;
+    font-weight: bolder;
+    color: #284b75;
+}
+
 .rounded_border{
-    height: 300px;
-    margin: 1% 25%;
+    height: 50%;
+    margin: 3% 20%;
     padding: 1%;
     border-radius: 10px;
     font-size: 24px;
@@ -56,6 +118,12 @@ nav{
 
 .white_text {
     color: #FFFFFF;
+}
+
+.center_text {
+    text-align: center;
+    font-size: 200%;
+    font-family: 'c';
 }
 
 .navbar{
@@ -70,5 +138,42 @@ nav{
 .img_square {
 	width: 100px;
 	border-radius: 50%;
+}
+.margin{
+    margin: 2%;
+}
+
+.hr-edge-weak {
+    border: 0;
+    border-bottom: 100px ;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #284b75, transparent);
+}
+
+.fa {
+    font-size: 100%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #284b75;
+    color: white;
+}
+
+.fa-instagram {
+    background: #284b75;
+    color: white;
+}
+
+.fa-envelope {
+    background: #284b75;
+    color: white;
 }
 </style>

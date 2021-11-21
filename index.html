@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
@@ -36,14 +37,14 @@
         </ul>
     </nav>
     <div>
-        <img style="width: 100%; height: 100%;"src="asset/img/home/slogan.png">
+        <img style="width: 100%; height: 100%; margin-top: -2%"src="asset/img/home/slogan.png">
         <!-- <div>C.I.A-COMPANY IN AIR 一站式升學輔導平台</div>
         <div>致力於提供創新與個人畫的方案，陪伴與協助高中生找尋並進入理想校系。</div> -->
     </div>
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="background-color: #284b75;">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="background-color: #284b75; z-index: 1;">
         <div>
             <hr class="hr-edge-weak" style="margin-top: 0;">
-            <p class="white_text big_text" style="padding-top: 3%; padding-bottom: 3%;">在這裡您能獲得什麼？</p>
+            <div class="white_text big_text" style="padding: 2%;">近期活動</div>
         </div>
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -51,7 +52,7 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="30000">
+            <div class="carousel-item active" data-bs-interval="2000">
                 <img src="asset/img/home/carousel_camp.png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
@@ -70,26 +71,89 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div>
-        <div class="big_text" style="padding-top: 2%; color: #ff5100;">您認為自己目前處在何種階段？</div>
-        <div style="padding: 1%; font-size: 200%; color: #ff5100;">​讓C.I.A來為您解惑</div>    
-    </div>
-    <div class = "table" style="padding-bottom: 50%;">
-        <div class = "which-step">
-            <div class = "step">
-                <p class="step_text">尋找目標科系</p>
-                <img class="img_step" src="asset/img/home/search.jpg">
+    <div style="background-color:#ffbd59; z-index: 1; height: 100%;">
+        <div style="float: left; margin: 18%; font-size: 200%;">形象影片</div>
+        <div style="float: right; margin-right: 25%; width: 20%; height: 80%">
+            <div class="provide white_text">
+                <div class="title left_text" style="font-size: 130%; padding-top: 10%;">線上營隊</div>
+                <div class="left_text" style="font-size: 100%;">以創新的線上模式，降低科系探索成本，使其變得更容易且有效</div>
+                <div class="left_text" style="padding-top: 3%;"><button class="provide_button">了解更多</button></div>
             </div>
-            <div class = "step">為達目標校系標準</div>
-            <div class = "step">錄取目標校系</div>
+            <div class="provide white_text">
+                <div class="title left_text" style="font-size: 130%; padding-top: 10%;">個人諮詢</div>
+                <div class="left_text" style="font-size: 100%;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</div>
+                <div class="left_text" style="padding-top: 3%;"><button class="provide_button">了解更多</button></div>
+            </div>
         </div>
     </div>
-    <!-- <div style="margin-top: 600%;">123</div> -->
+    <div style="background-color: #FFFFFF; z-index: 0; height: 70%; overflow: hidden;">
+        <div style="background-image: url('asset/img/home/step.jpeg'); opacity: 1.5; margin-top: -18%; max-height: 800px; overflow: hidden; z-index: 0;">
+            <div style="padding-top: 15%;">
+                <div class = "big_text title" style="padding-top: 15%; color: #f88411;">您認為自己目前處在何種階段？</div>
+                <div class = "title" style="padding: 1%; font-size: 200%; color: #f88411;">​讓C.I.A來為您解惑</div>    
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <div class = "table" style="padding-bottom: 3%;">
+        <div class = "which-step">
+            <div class = "step">
+                <div class="step_text" style="color: #f88411;  font-weight: 900; padding-top: 8%;">尋找目標科系</div>
+                <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">1. 線上營隊</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
+                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">2. 個人諮詢</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">通過客製化的學長姐諮詢服務，解決科系探索中遇到的各種問題</div>
+                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
+                <!-- <img class="img_step" src="asset/img/home/search.jpg"> -->
+            </div>
+            <div class = "step">
+                <div class="step_text" style="color: #f88411;  font-weight: 900; padding-top: 8%;">為達目標科系標準</div>
+                <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">1. 線上營隊</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">通過體驗實作活動，對科系有更深入的了解，踏出實踐理想的第一步</div>
+                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">2. 個人諮詢</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">通過學長姐的諮詢輔導服務，協助準備競賽，包括小論文、檢定、各類競賽指導等</div>
+                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
+            </div>
+            <div class = "step">
+                <div class="step_text" style="color: #f88411;  font-weight: 900; padding-top: 8%;">錄取目標科系</div>
+                <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">1. 個人諮詢</div>
+                <div class="left_text" style="color: #284b75; font-weight: 900;">通過客製化的「學科輔導」和「備審指導」服務，解決升學及備審中遇到的各種問題</div>
+                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #284b75; height: 40%; width: 100%;">
+        <div style="padding-top:2%; padding-bottom: 1%; color: #ffbd59; font-size: 150%;">聯絡我們</div>
+        <div class="center_text" style="font-size: 180%;">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-envelope"></a>
+        </div>
+        <div style="font-size: 120%; color: #ffbd59;">500 Terry Francois Street San Francisco, CA 94158</div>
+        <div style="padding-top:2%; font-size: 80%; color: #ffbd59;">©2021 by 【C.I.A-Company In Air】 一站式升學輔導平台</div>
+    </div>
 
 </body>
 </html>
 
 <style>
+@font-face {
+    font-family: 'e';
+    src: url('asset/fonts/IndieFlower-Regular.woff')format('woff'),
+        url('asset/fonts/IndieFlower-Regular.ttf')format('truetype'),
+        url('asset/fonts/IndieFlower-Regular.eot')format('embedded-opentype');
+}
+@font-face {
+    font-family: 'c';
+    src: url('asset/fonts/cwTeXYen-zhonly.woff')format('woff'),
+        url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
+        url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
+}
 
 body, html{
     width: 100%;
@@ -102,8 +166,18 @@ nav{
     font-size: 30px;
 }
 div{
+    font-family: 'c';
     text-align: center;
     font-size: 20px;
+}
+div .title{
+    font-weight: bolder;
+}
+
+.left_text{
+    text-align: left;
+    font-size: 20px;
+    margin: 0% 10%;
 }
 
 /* 跑馬燈 */
@@ -116,11 +190,13 @@ div{
 .which-step{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 2% 4%;
 }
 .step {
     background-color: white;
-    height: 200%;
-    margin: 1%;
+    border-radius: 20px;
+    height: 100%;
+    margin: 5%;
     transition: 0.3s ease-in-out;
 }
 .step:hover {
@@ -129,16 +205,15 @@ div{
 
 .carousel-item {
     text-align: center;
-    margin-left: 1%;
-    margin-top: 1%;
+    margin-left: 16%;
     margin-bottom: 1%;
-    width: 98%;
-    height: 98%;
+    width: 68%;
+    height: 68%;
 }
 
 img{
-   width: 600px;
-   height: 800px; 
+   width: 100%;
+   height: 100%; 
 }
 
 .white_text {
@@ -163,13 +238,15 @@ img{
 }
 
 .img_square {
-	width: 100px;
+	width: 100%;
 	border-radius: 50%;
 }
 
 .img_step {
     width: 100%;
-    height: 50%;
+    height: 40%;
+    margin-top: 3%;
+    margin-bottom: 1%;
 }
 
 .hr-edge-weak {
@@ -179,5 +256,68 @@ img{
     background: linear-gradient(to right, transparent, #FFFFFF, transparent);
 }
 
+.step_button {
+    border:0;
+    background-color:#284b75;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.step_button:hover {
+    color:#284b75;
+    background-color:#fff;
+    border:2px #284b75 solid;
+}
+
+.provide_button {
+    border:0;
+    background-color:#f88411;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.provide_button:hover {
+    color:#f88411;
+    background-color:#fff;
+    border:2px #f88411 solid;
+}
+
+.fa {
+    font-size: 100%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #284b75;
+    color: white;
+}
+
+.fa-instagram {
+    background: #284b75;
+    color: white;
+}
+
+.fa-envelope {
+    background: #284b75;
+    color: white;
+}
+
+.provide{
+    padding: 10% 0%;
+    margin: 10% 2%;
+    height: 55%;
+    width: 200%;
+    font-size: 24px;
+    background-color: #284b75;
+}
 
 </style>   
