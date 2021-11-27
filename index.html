@@ -14,22 +14,23 @@
     <script type = "text/javascript" src="index.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <nav class="navbar" style="background-color: #284b75; height: 15%; padding-top: 2%;">
+    <nav class="navbar" style="background-color: #284b75; height: 15%; padding-top: 2%; z-index: 3;">
         <a class="navbar-brand">
             <img class="img_square" src="asset/img/LOGO.jpg" alt="logo" style="width:5%; height: 50%;">
         </a>
     </nav>
-    <div id="navbar" style="z-index: 2;">
-        <nav class="navbar navbar-expand-sm flex-nav" style="background-color: #284b75;"> <!--class="fixed-top" -->
+    
+    <div>
+        <nav id="navbar" class="navbar navbar-expand-sm flex-nav" style="background-color: #284b75; z-index: 2;"> <!--class="fixed-top" -->
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link white_text">首頁Company in air</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#1" class="nav-link white_text">線上營隊Camp in air</a>
+                    <a href="camp.html" class="nav-link white_text">線上營隊Camp in air</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#1" class="nav-link white_text">個人諮詢Consulting in air</a>
+                    <a href="consult.html" class="nav-link white_text">個人諮詢Consulting in air</a>
                 </li>
                 <li class="nav-item">
                     <a href="FAQ.html" class="nav-link white_text">FAQ</a>
@@ -42,7 +43,6 @@
             </ul>
         </nav>
     </div>
-    
     <div>
         <img style="width: 100%; height: 100%; margin-top: -2%"src="asset/img/home/slogan.png">
         <!-- <div>C.I.A-COMPANY IN AIR 一站式升學輔導平台</div>
@@ -79,17 +79,21 @@
         </button>
     </div>
     <div style="background-color:#ffbd59; z-index: 1; height: 100%;">
-        <div style="float: left; margin: 18%; font-size: 200%;">形象影片</div>
+        <div class="video" style="float: left;">
+            <video width="700" height="400" controls>
+                <source src="asset/img/home/video.mp4" type="video/mp4">
+            </video>
+        </div>
         <div style="float: right; margin-right: 25%; width: 20%; height: 80%">
-            <div class="provide white_text">
-                <div class="title left_text" style="font-size: 130%; padding-top: 10%;">線上營隊</div>
-                <div class="left_text" style="font-size: 100%;">以創新的線上模式，降低科系探索成本，使其變得更容易且有效</div>
-                <div class="left_text" style="padding-top: 3%;"><button class="provide_button">了解更多</button></div>
+            <div class="provide BGImage" style="background-image: url('asset/img/home/camp.png'); max-height: 800px; overflow: hidden; ">
+                <div class="title provide_text" style="font-size: 130%; padding-top: 10%;"><strong style= "background:#fff;">線上營隊</strong></div>
+                <div class="title provide_text" style="font-size: 100%;"><strong style= "background:#fff;">以創新的線上模式，降低科系探索成本，使其變得更容易且有效</strong></div>
+                <div class="title provide_text" style="padding-top: 3%;"><button class="provide_button">了解更多</button></div>
             </div>
-            <div class="provide white_text">
-                <div class="title left_text" style="font-size: 130%; padding-top: 10%;">個人諮詢</div>
-                <div class="left_text" style="font-size: 100%;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</div>
-                <div class="left_text" style="padding-top: 3%;"><button class="provide_button">了解更多</button></div>
+            <div class="provide BGImage" style="background-image: url('asset/img/home/consult.png'); max-height: 800px; overflow: hidden;">
+                <div class="title provide_text" style="font-size: 130%; padding-top: 10%;"><strong style= "background:#fff;">個人諮詢</strong></div>
+                <div class="title provide_text" style="font-size: 100%;"><strong style= "background:#fff;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</strong></div>
+                <div class="title provide_text" style="padding-top: 3%;"><button class="provide_button">了解更多</button></div>
             </div>
         </div>
     </div>
@@ -102,35 +106,43 @@
             </div>
         </div>
     </div>
-    <div class = "table" style="padding-bottom: 3%;">
+    <div style="padding-bottom: 3%;">
         <div class = "which-step">
             <div class = "step">
-                <div class="step_text" style="color: #f88411;  font-weight: 900; padding-top: 8%;">尋找目標科系</div>
-                <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">1. 線上營隊</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
-                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">2. 個人諮詢</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">通過客製化的學長姐諮詢服務，解決科系探索中遇到的各種問題</div>
-                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
-                <!-- <img class="img_step" src="asset/img/home/search.jpg"> -->
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 150%; font-weight: 900;">尋找目標科系</div>
+                    <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">1. 線上營隊</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">2. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">通過客製化的學長姐諮詢服務，解決科系探索中遇到的各種問題</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                </div>
+                <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
             </div>
             <div class = "step">
-                <div class="step_text" style="color: #f88411;  font-weight: 900; padding-top: 8%;">為達目標科系標準</div>
-                <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">1. 線上營隊</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">通過體驗實作活動，對科系有更深入的了解，踏出實踐理想的第一步</div>
-                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">2. 個人諮詢</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">通過學長姐的諮詢輔導服務，協助準備競賽，包括小論文、檢定、各類競賽指導等</div>
-                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 150%; font-weight: 900;">為達目標科系標準</div>
+                    <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">1. 線上營隊</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">通過體驗實作活動，對科系有更深入的了解，踏出實踐理想的第一步</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">2. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">通過學長姐的諮詢輔導服務，協助準備競賽，包括小論文、檢定、各類競賽指導等</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                </div>
+                <div><img class="img_step" src="asset/img/home/hope.png"></div>
             </div>
             <div class = "step">
-                <div class="step_text" style="color: #f88411;  font-weight: 900; padding-top: 8%;">錄取目標科系</div>
-                <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">1. 個人諮詢</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900;">通過客製化的「學科輔導」和「備審指導」服務，解決升學及備審中遇到的各種問題</div>
-                <div class="left_text" style="padding-top: 1%;"><button class="step_button">了解更多</button></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 150%; font-weight: 900;">錄取目標科系</div>
+                    <div class="left_text" style="color: #ab875e; font-weight: 900;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">1. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900;">通過客製化的「學科輔導」和「備審指導」服務，解決升學及備審中遇到的各種問題</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                </div>
+                <div class="img_step_div"><img class="img_step" src="asset/img/home/achieve.png"></div>
             </div>
         </div>
     </div>
@@ -169,8 +181,10 @@ body, html{
 nav{
     background-color: #284b75;
     text-align: center;
-    font-size: 150%;
+    font-size: 130%;
+    height: 10%;
 }
+
 div{
     font-family: 'c';
     text-align: center;
@@ -182,8 +196,8 @@ div .title{
 
 .left_text{
     text-align: left;
-    font-size: 20px;
-    margin: 0% 10%;
+    font-size: 120%;
+    margin: 2% 10%;
 }
 
 /* 跑馬燈 */
@@ -196,17 +210,36 @@ div .title{
 .which-step{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 2% 4%;
+    padding: 2% 5%;
+    margin-top: 2%;
 }
 .step {
     background-color: white;
     border-radius: 20px;
     height: 100%;
-    margin: 5%;
+    margin: 0% 4%;
     transition: 0.3s ease-in-out;
+    position:relative;
 }
 .step:hover {
     background-color: lightblue;
+}
+
+.step_text {
+    padding: 10% 3%;
+}
+
+.img_step_div {
+    position:absolute;
+    bottom:0px;
+}
+
+.img_step {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 450px;
+    width: 420px;
+    object-fit: cover;
 }
 
 .carousel-item {
@@ -222,20 +255,22 @@ img{
    height: 100%; 
 }
 
+.BGImage{
+    background-repeat: no-repeat;
+    /* 透明度 0.6 的黑色半透明遮罩 */
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* 設置背景混和模式為相乘模式 */
+    background-blend-mode: lighten;
+    background-position: bottom center;
+    background-size: cover;
+}
+
 .white_text {
     color: #FFFFFF;
 }
 
-.step_text {
-    font-size: 150%;
-}
-
 .big_text {
     font-size:250%;
-}
-
-.navbar{
-    height: 10%; 
 }
 
 .nav-link:hover {
@@ -243,16 +278,10 @@ img{
     /*#005AB5*/
 }
 
+
 .img_square {
 	width: 100%;
 	border-radius: 50%;
-}
-
-.img_step {
-    width: 100%;
-    height: 40%;
-    margin-top: 3%;
-    margin-bottom: 1%;
 }
 
 .hr-edge-weak {
@@ -276,6 +305,17 @@ img{
     border:2px #284b75 solid;
 }
 
+.provide{
+    padding: 10% 0%;
+    margin: 10% 2%;
+    height: 55%;
+    width: 200%;
+    font-size: 24px;
+    background-color: #284b75;
+    /* text-shadow: black 0.2em 0.2em 0.4em; */
+    color: #284b75;
+}
+
 .provide_button {
     border:0;
     background-color:#f88411;
@@ -285,9 +325,15 @@ img{
 }
 
 .provide_button:hover {
-    color:#f88411;
+    color:#284b75;
     background-color:#fff;
-    border:2px #f88411 solid;
+    border:2px #284b75 solid;
+}
+
+.provide_text{
+    text-align: left;
+    font-size: 20px;
+    margin: 0% 10%;
 }
 
 .fa {
@@ -317,15 +363,6 @@ img{
     color: white;
 }
 
-.provide{
-    padding: 10% 0%;
-    margin: 10% 2%;
-    height: 55%;
-    width: 200%;
-    font-size: 24px;
-    background-color: #284b75;
-}
-
 .flex-nav {
     display: flex;
     justify-content: center;
@@ -338,6 +375,12 @@ img{
   width: 100%;
 }
 
+.video {
+    padding-top:7%;
+    padding-bottom:8%;
+    padding-left:5%;
+    padding-right:3%;
+}
 
 </style>   
 
