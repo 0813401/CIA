@@ -50,10 +50,10 @@ const the_card_container = document.getElementById('card_container');
 var count_for_card_text = 1;
 var count_for_card_cover_and_back = 0;
 var array_card_text = [['C','O','M','P','A','N','Y','I','N','A','I','R'],
-                       ['C',' ', 'A',' ', 'M',' ', 'p','I','N','A','I','R'], 
+                       ['C',' ', 'A',' ', 'M',' ', 'P','I','N','A','I','R'], 
                        ['C','O','N','S','U','L','T','I','N','A','I','R']];
 create_card_div();
-var card_rotate_interval = window.setInterval(card_rotate, 30000);
+var card_rotate_interval = window.setInterval(card_rotate, 2000);
 
 function create_card_div(){
   for(let i = 0; i<array_card_text[0].length; i++){
@@ -161,3 +161,7 @@ function card_rotate(){
     count_for_card_cover_and_back -= 2;
   }
 }
+
+
+// console.log(the_card_container.style.width, the_card_container.style.height);
+console.log(the_card_container.style);
