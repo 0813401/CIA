@@ -10,40 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <nav class="navbar" style="background-color: #284b75; height: 15%; padding-top: 1%; z-index: 3;">
-        <a class="navbar-brand" style="display: block; margin: auto;">
-            <img class="img_square" src="asset/img/logo.png" alt="logo" style="width:10%;">
-        </a>
-    </nav>
-    
-    <div>
-        <nav id="navbar" class="navbar navbar-expand-sm flex-nav" style="background-color: #284b75; z-index: 2;">
-            <ul class="navbar-nav" style="margin:auto; padding-left: 5%;">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link white_text">首頁 Company In Air &nbsp&nbsp</a>
-                </li>
-                <li class="nav-item">
-                    <a href="camp.html" class="nav-link white_text">線上營隊 Camp In Air &nbsp&nbsp</a>
-                </li>
-                <li class="nav-item">
-                    <a href="consult.html" class="nav-link white_text">個人諮詢 Consulting In Air &nbsp&nbsp</a>
-                </li>
-                <li class="nav-item">
-                    <a href="FAQ.html" class="nav-link white_text">常見問題 FAQ</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav" style="margin-right: 1%;">
-                <li class="nav-item" style="padding-top: 10%;">
-                    <i class="fa fa-user-circle-o" style='font-size:1.5vw;color:#fff'></i>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html" class="nav-link white_text">Log In</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <script src="nav.js"></script>
     <div id='card_container'></div>
     <div class = 'carousel_slide_container' style="background-color: #ffbd59; z-index: 1;">
         <hr class="hr-edge-weak" style="margin-top: 0;">
@@ -113,30 +83,54 @@
     <div style="padding: 3%; height: 250%;">
         <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp您認為自己目前處在何種階段？&nbsp&nbsp</span></div> 
         <div class="step" style="height: 25%;">
-            <div class="step_text">尋找目標科系</div>
+            <div class="step_text">
+                <div class="step_before_text">尋找目標科系</div>
+                <div class="title step_after_text">
+                    <div class="step_after_title_text" style="color: #f88411;">尋找目標科系</div>
+                    <div class="left_text" style="color: #ab875e; margin-top: 0%;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
+                    <div class="left_text" style="color: #284b75; ">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="color: #284b75;">2. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75; ">通過客製化的學長姐諮詢服務，解決科系探索中遇到的各種問題</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                </div>
+            </div>
             <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
         </div>
         <div style="height: 5%" ><img src="asset/img/home/arrow.png" style="object-fit:contain" ></div>
         <div class="step" style="height: 25%;">
-            <div class="step_text">為達目標科系標準</div>
+            <div class="step_text">
+                <div class="step_before_text">為達目標科系標準</div>
+                <div class="title step_after_text">
+                    <div class="step_after_title_text" style="color: #f88411;">為達目標校系標準</div>
+                    <div class="left_text" style="color: #ab875e; margin-top: 0%;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
+                    <div class="left_text" style="color: #284b75; ">通過體驗實作活動，對科系有更深入的了解，踏出實踐理想的第一步</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="color: #284b75;">2. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75; ">通過學長姐的諮詢輔導服務，協助準備競賽，包括小論文、檢定、各類競賽指導等</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                </div>
+            </div>
             <div class="img_step_div"><img class="img_step" src="asset/img/home/hope.png"></div>
         </div>
         <div style="height: 5%" ><img src="asset/img/home/arrow.png" style="object-fit:contain" ></div>
         <div class="step" style="height: 25%;">
-            <div class="step_text">錄取目標科系</div>
+            <div class="step_text">
+                <div class="step_before_text">尋找目標科系</div>
+                <div class="title step_after_text">
+                    <div class="step_after_title_text" style="color: #f88411;">錄取目標科系</div>
+                    <div class="left_text" style="color: #ab875e; margin-top: 0%;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75;">1. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75;">通過客製化的「學科輔導」和「備審指導」服務，解決升學及備審中遇到的各種問題</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                </div>
+            </div>
             <div class="img_step_div"><img class="img_step" src="asset/img/home/achieve.png"></div>
         </div>
     </div>
-    <div style="background-color: #284b75; height: 35%; width: 100%;">
-        <div style="padding-top:2%; color: #ffbd59; font-size: 130%;">聯絡我們</div>
-        <div class="center_text" style="font-size: 150%;">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-envelope"></a>
-        </div>
-        <div style="font-size: 100%; color: #ffbd59;">500 Terry Francois Street San Francisco, CA 94158</div>
-        <div style="padding-top:2%; font-size: 80%; color: #ffbd59;">©2021 by 【C.I.A-Company In Air】 一站式升學輔導平台</div>
-    </div>
+    <script type = "text/javascript" src="footer.js"></script>
     <script type = "text/javascript" src="index.js"></script>
 </body>
 </html>
@@ -146,6 +140,36 @@
 * {
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
 }
+
+.step_text {
+    position: relative;
+}
+
+.step_after_title_text{
+    padding-top: 3%;
+    font-size: 2vw;
+}
+
+.step_before_text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #dadddd;
+    background-color: #284b75;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.step_after_text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 1vw;
+    background-color: #FFF;
+} 
 
 @font-face {
     font-family: 'e';

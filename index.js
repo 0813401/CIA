@@ -163,5 +163,9 @@ function card_rotate(){
 }
 
 
-// console.log(the_card_container.style.width, the_card_container.style.height);
-console.log(the_card_container.style);
+$(".step_text").hover(function(){
+  $(this).find(".step_before_text").stop().fadeOut(1000);
+  $(this).stop().css("background-color", "#FFF");
+}, function(){
+  $(this).find(".step_before_text").stop().fadeIn(1000);
+});
