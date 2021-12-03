@@ -64,14 +64,19 @@
     </div>
     <div style="background-color: #fff; height: 100%;">
         <div class="title big_text" style="padding-top: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp活動回顧&nbsp&nbsp</span></div>
-        <div class = "all_memo">
-            <div class="memo">我覺得很好玩</div>
-            <div class="memo" style="margin-top: 50%;">我覺得很好玩</div>
-            <div class="memo" style="margin-top: 30%;">我覺得很好玩</div>
-            <div class="memo" style="margin-top: -10%;">我覺得很好玩</div>
-            <div class="memo" style="margin-top: 40%;">我覺得很好玩</div>
+        <div class="board">
+            <div class = "all_memo">
+                <div class="memo">我覺得很好玩</div>
+                <div class="memo" style="margin-top: 50%; height: 40%;">雖然是短短的一天，但真的非常充實也非常值得，隊輔主持人都很耐斯，辛苦各位了😻</div>
+                <div class="memo" style="margin-top: 30%; height: 80%;">線上模擬大地遊戲跑關卡，是一種特別的體驗，教授和學長的分享都有提到我們所關心的東西，python課程不會太難，只是初學語法真的很不熟，在練題時可能會遭受打擊，但有隊輔熱心教學，超讚</div>
+                <div class="memo" style="margin-top: -10%;">我覺得很好玩</div>
+                <div class="memo" style="margin-top: 40%; height: 30%;">謝謝你們辦這麼棒的營隊，非常喜歡💗💗期待能有下次哈哈</div>
+            </div>
         </div>
+        
     </div>
+
+
     <div id="featured_photos" style="height: 100%;">
         <div class="title big_text" style="padding-top: 3%; padding-bottom: 10%; color: #284b75;"><span class="underline">&nbsp&nbsp精選照片&nbsp&nbsp</span></div>
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -348,15 +353,15 @@ img{
 }
 
 .memo {
-    background-image: url('asset/img/camp/memo.jpg');
-    background-repeat: no-repeat;
-    padding: 20% 0%;
+    background-color: #fff;
+    padding: 10% 5%;
     margin: 10% 15%;
-    font-size: 24px;
+    font-size: 1.2vw;
     color: #f88411;
     width: 90%;
-    height: 170%;
-    background-size: contain;
+    height: 60%;
+    display:inline-block;
+    box-shadow:3px 3px 9px gray;
 }
 
 .all_memo{
@@ -364,12 +369,20 @@ img{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin-left: 0%;
     margin-right: 3%;
-    padding-top: 2%;
+    padding-top: 8%;
 }
 
 .video {
     padding-top: 1%;
     padding-bottom: 3%;
+}
+
+.board {
+    height: 70%;
+    width: 80%;
+    background-color: #ffbd59;
+    margin: 3% auto;
+    border: 3px solid #f88411
 }
 </style>
 
