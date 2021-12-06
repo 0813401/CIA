@@ -60,22 +60,38 @@
             </button>
           </div>
     </div>
-    <div style="background-color:#fff; z-index: 1; padding-bottom: 2%;">
+    <div class="container_whole_which_provide" style="background-color:#fff; padding-bottom: 2%;">
         <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp在這裡您能獲得甚麼?&nbsp&nbsp</span></div>
         <div>
-            <video width="800" height="500" controls>
+            <video width="1065" height="600" controls>
                 <source src="asset/img/home/video.mp4" type="video/mp4">
             </video>
         </div>
         <div class="which-provide">
-            <div class="provide BGImage" style="background-image: url('asset/img/home/camp.png'); max-height: 800px;overflow: hidden; ">
-                <div class="provide_text">
-                    <div class="left_text" style="font-size: 130%;">線上營隊</div>
+            <div class='container_which_provide'>
+                <div class='which_provide_before'>
+                    <div onclick="location.href='camp.html'" class="provide BGImage" style="background-image: url('asset/img/home/camp.png'); max-height: 800px;overflow: hidden; ">
+                        <div class="provide_text">
+                            <div class="left_text" style="font-size: 130%;">線上營隊</div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="location.href='camp.html'" class='which_provide_after'>
+                    <div style="font-size: 3vw; font-weight: 900; text-align: left;"><span class="underline">線上營隊</span></div>
+                    <div style="font-size: 1.8vw; text-align: left; font-weight: 900;">以創新的線上模式，降低科系探索成本，使其變得更容易且有效</div>
                 </div>
             </div>
-            <div class="provide BGImage" style="background-image: url('asset/img/home/consult.png'); max-height: 800px; overflow: hidden;">
-                <div class="provide_text">
-                    <div class="left_text" style="font-size: 130%;">個人諮詢</div>
+            <div class='container_which_provide'>
+                <div class='which_provide_before'>
+                    <div onclick="location.href='consult.html'" class="provide BGImage" style="background-image: url('asset/img/home/consult.png'); max-height: 800px; overflow: hidden;">
+                        <div class="provide_text">
+                            <div class="left_text" style="font-size: 130%;">個人諮詢</div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="location.href='consult.html'" class='which_provide_after'>
+                    <div style="font-size: 3vw;">個人諮詢</div>
+                    <div style="font-size: 1.8vw;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</div>
                 </div>
             </div>
         </div>
@@ -84,7 +100,7 @@
         <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp您認為自己目前處在何種階段？&nbsp&nbsp</span></div> 
         <div class="step" style="height: 25%;">
             <div class="step_text">
-                <div class="step_before_text">尋找目標科系</div>
+                <div class="step_before_text" style="font-weight: 900;">尋找目標科系</div>
                 <div class="title step_after_text">
                     <div class="step_after_title_text" style="color: #f88411;">尋找目標科系</div>
                     <div class="left_text" style="color: #ab875e; margin-top: 0%;">我們能提供您――――</div>
@@ -136,8 +152,45 @@
 </html>
 
 <style>
+    
+.container_which_provide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 60%;
+}
 
-* {
+/* .which_provide_be{
+    padding-top: 3%;
+    font-size: 2vw;
+} */
+
+.which_provide_before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 800px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.which_provide_after {
+    position: absolute;
+    width: 92%;
+    height: 100%;
+    max-width: inherit;
+    font-size: 0.5vw;
+    margin: 0% -4% 0% 4%;
+    padding: 10%;
+    background-color: #284b75;
+} 
+
+.which_provide_after div {
+    padding: 2%;
+    color: #fff;
+}
+
+*{
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
 }
 
@@ -156,7 +209,7 @@
     height: 100%;
     color: #dadddd;
     background-color: #284b75;
-    font-size: 4vw;
+    font-size: 3.2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,6 +221,7 @@
     width: 100%;
     height: 100%;
     font-size: 1vw;
+    padding: 2% 5%;
     background-color: #FFF;
 } 
 
@@ -398,22 +452,23 @@ img{
 }
 
 .underline {
-    border-bottom: 2px solid#f88411;
-    border-bottom-width:thick;
+    border-bottom: 4px solid#f88411;
+    /* border-bottom-width:thick; */
 }
 
 /*=======翻轉字卡=======*/
 #card_container{
     width: 100%;
-    height: 74%;
+    height: 77%;
     /* background-image: url('asset/img/home/card_background.jpg'); */
     background-color: #ffbd59;
 }
 
 .card_container{
-    width: 6%;
-    height: 24%;
+    width: 4.5%;
+    height: 18%;
     background-color: white;
+    top: 15%;
     position: relative;
     /* perspective: 20px; */
 }
@@ -428,7 +483,7 @@ img{
     backface-visibility: hidden;
     transition: transform 1s ease-in-out;
     color: #284b75;
-    font-size: 80px;
+    font-size: 3.3vw;
     font-weight: 900;
     /* font-family: 'e'; */
 }
@@ -446,22 +501,3 @@ img{
 /*=====================*/
 
 </style>   
-
-<script>
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>

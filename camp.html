@@ -5,41 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camp in air</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
 
 </head>
 <body style="background-color:#ffbd59;">
     <script src="nav.js"></script>
     <div id='recent_camp_container' style=" height: 60%; background-color: #fff;">
         <div class="title big_text" style="padding: 3% 0%; color: #284b75;"><span class="underline">&nbsp&nbsp近期營隊&nbsp&nbsp</span></div>
-        <div class='recent_camp_container'>
-            <div class="box">
-                <div id="left"></div>
-                <div id="img">
-                    <ul class="aa">
-                        <!-- <li><img src="asset/img/1.png"/></li>
-                        <li><img src="asset/img/1.png"/></li>
-                        <li><img src="asset/img/1.png"/></li>
-                        <li><img src="asset/img/1.png"/></li>
-                        <li><img src="asset/img/1.png"/></li>
-                        <li><img src="asset/img/1.png"/></li> -->
-                    </ul>
-                </div>
-                <div id="right"></div>
-            </div>
-        </div>
+        <div id='recent_camp_item'></div>
     </div>
     <div style="padding-top:3%; height: 200%;">
         <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp線上營隊特色&nbsp&nbsp</span></div> 
         <div class="step" style="height: 28%;">
             <div class="step_text">
-                <div style="font-size: 2vw; font-weight: 900; color:#f88411;">線上課程</div>
+                <div style="font-size: 2vw; font-weight: 900; color:#f88411;">【線上課程】</div>
                 <div style="font-size: 1.5vw; text-align: left; padding-top: 3%; padding-left: 4.5%;text-indent: -7.5%;"><li><span style="color: #f88411;">國內頂尖教授</span>分享科系未來趨勢及系所介紹，帶給你<span style="color: #f88411;">第一手</span>大學端資訊</li></div>
                 <div style="font-size: 1.5vw; text-align: left; padding-left: 4.5%;text-indent: -7.5%;"><li><span style="color: #f88411;">該系專業講師</span>實際講授基礎課程，讓你提早體驗大學教學內容，減少想像與現實的落差</li></div>
             </div>
@@ -48,30 +38,42 @@
         <div class="step" style="height: 28%;">
             <div class="img_step_div" style="float: left;"><img class="img_step" src="asset/img/camp/practice.png"></div>
             <div class="step_text">
-                <div style="font-size: 2vw; font-weight: 900; color:#f88411;">線上實操</div>
+                <div style="font-size: 2vw; font-weight: 900; color:#f88411;">【線上實操】</div>
                 <div style="font-size: 1.5vw; padding-top: 3%; text-align: left;padding-left: 4.5%;text-indent: -7.5%;"><li>透過實作程式專案、企畫書或電路板操作等課程內容，將知識學以致用</li></div>
                 <div style="font-size: 1.5vw; text-align: left;padding-left: 4.5%;text-indent: -7.5%;"><li>相較於紙上談兵，大學端較看重學生實作後之作品集，可提供學生置於學習歷程中​</li></div>
             </div>
         </div>
         <div class="step" style="height: 28%;">
             <div class="step_text">
-                <div style="font-size: 2vw; font-weight: 900; color:#f88411;">學長姐分享</div>
+                <div style="font-size: 2vw; font-weight: 900; color:#f88411;">【學長姐分享】</div>
                 <div style="font-size: 1.5vw; padding-top: 3%; text-align: left;padding-left: 4.5%;text-indent: -7.5%;"><li><span style="color: #f88411;">該系學長姊</span>分享心路歷程與建議，通過參考過來人經歷，減少學生試錯的成本</li></div>
                 <div style="font-size: 1.5vw; text-align: left;padding-left: 4.5%;text-indent: -7.5%;"><li>特別邀請<span style="color: #f88411;">已畢業</span>學長姊，以學校所學及職涯出路進行剖析，帶來更全方位的觀點</li></div>
             </div>
             <div class="img_step_div"><img class="img_step" src="asset/img/camp/schoolsister.png"></div>
         </div>
     </div>
-    <div style="background-color: #fff; height: 100%;">
+    <div style="background-color: #fff; height: 150%;">
         <div class="title big_text" style="padding-top: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp活動回顧&nbsp&nbsp</span></div>
         <div class="board">
+            <div class="title" style="font-size: 1.8vw; padding-top: 3%; color: #284b75;">【一日線上資工營】</div>
             <div class = "all_memo">
-                <div class="memo">我覺得很好玩</div>
-                <div class="memo" style="margin-top: 50%; height: 40%;">雖然是短短的一天，但真的非常充實也非常值得，隊輔主持人都很耐斯，辛苦各位了😻</div>
-                <div class="memo" style="margin-top: 30%; height: 80%;">線上模擬大地遊戲跑關卡，是一種特別的體驗，教授和學長的分享都有提到我們所關心的東西，python課程不會太難，只是初學語法真的很不熟，在練題時可能會遭受打擊，但有隊輔熱心教學，超讚</div>
-                <div class="memo" style="margin-top: -10%;">我覺得很好玩</div>
-                <div class="memo" style="margin-top: 40%; height: 30%;">謝謝你們辦這麼棒的營隊，非常喜歡💗💗期待能有下次哈哈</div>
+                <div class="memo" style="margin-top: 20%;">
+                    <div class="memo_text" style="background-color: #95CACA;">這個活動真的很酷🤩 非常適合零基礎的學生參與，工作人員跟隊輔們都辛苦了 以第一次辦線上營隊這樣的活動安排已經很棒了 課程也學到很多 能感受到你們努力為這次營隊的付出💗非常適合零基礎的學生參與</div>
+                </div>
+                <div class="memo" style="margin-top: 60%;">
+                    <div class="memo_text" style="background-color: #FFE153;">雖然是短短的一天，但真的非常充實也非常值得，隊輔主持人都很耐斯，辛苦各位了😻</div>
+                </div>
+                <div class="memo" style="margin-top: 10%;">
+                    <div class="memo_text" style="background-color: #B8B8DC;">線上模擬大地遊戲跑關卡，是一種特別的體驗，教授和學長的分享都有提到我們所關心的東西，python課程不會太難，只是初學語法真的很不熟，在練題時可能會遭受打擊，但有隊輔熱心教學，超讚</div>
+                </div>
+                <div class="memo" style="margin-top: 15%;">
+                    <div class="memo_text" style="background-color: #FFBB77;">這次辛苦你們了～用gather很有趣很好玩，第一次參加線上營隊，發現居然可以做到那麼細緻那麼完善，讓我很佩服，真的很開心可以有那麼棒的體驗，更開心的是這次的營隊解決了我本來的煩惱</div>
+                </div>
+                <div class="memo" style="margin-top: 70%;">
+                    <div class="memo_text" style="background-color: #B7FF4A;">謝謝你們辦這麼棒的營隊，非常喜歡💗💗期待能有下次哈哈</div>
+                </div>
             </div>
+            
         </div>
         
     </div>
@@ -130,16 +132,26 @@
             </video>
         </div>
     </div>
-    <div style="background-color: #284b75; height: 35%; width: 100%;">
-        <div style="padding-top:2%; color: #ffbd59; font-size: 130%;">聯絡我們</div>
-        <div class="center_text" style="font-size: 150%;">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-envelope"></a>
+    <div>
+        <div class="title big_text" style="padding-top: 3%; color: #284b75;">
+            <span class="underline">&nbsp&nbsp科系許願池&nbsp&nbsp</span>
         </div>
-        <div style="font-size: 100%; color: #ffbd59;">500 Terry Francois Street San Francisco, CA 94158</div>
-        <div style="padding-top:2%; font-size: 80%; color: #ffbd59;">©2021 by 【C.I.A-Company In Air】 一站式升學輔導平台</div>
+        <button onclick="document.getElementById('id01').style.display='block'; voted_page()" class = 'title big_text' style="float: right; margin: -5% 3% 0% 0;">開始投票</button>
+        <div id="id01" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div id="container_voted_page">
+                <!-- <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label> -->
+                <div class = 'title big_text' style="color: #284b75;">快幫你喜歡的營隊投票吧！我們將為您舉辦！</div>
+                <input type="text" placeholder="Enter camp you want..." name="department_name" required>
+              </div>
+            </form>
+          </div>
+        <div id='container_pool'></div>
     </div>
+  
+    <script src="footer.js"></script>
     <script src='camp.js'></script>
 </body>
 </html>
@@ -352,38 +364,213 @@ img{
     border-bottom-width:thick;
 }
 
-.memo {
-    background-color: #fff;
-    padding: 10% 5%;
-    margin: 10% 15%;
-    font-size: 1.2vw;
-    color: #f88411;
-    width: 90%;
-    height: 60%;
-    display:inline-block;
-    box-shadow:3px 3px 9px gray;
-}
-
-.all_memo{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin-left: 0%;
-    margin-right: 3%;
-    padding-top: 8%;
-}
-
 .video {
     padding-top: 1%;
     padding-bottom: 3%;
 }
 
 .board {
-    height: 70%;
+    height: 80%;
     width: 80%;
     background-color: #ffbd59;
+    background-image: url('asset/img/camp/boardBG2.png');
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
     margin: 3% auto;
-    border: 3px solid #f88411
+    /* border: 3px solid #f88411 */
 }
+
+/*==========線上營隊多張圖片輪播==========*/
+#recent_camp_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-next:before {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.slick-prev:before {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.slick-prev:before, .slick-next:before{
+  font-size: 2.5vw;
+  opacity: .75;
+  color: #ffbd59;
+
+}
+
+.slick-slide {
+    margin: 0 1vw;
+    height: inherit ;
+}
+
+.slick-track {
+    display: flex ;
+}
+
+.slick-slide img {
+   height:10.5vw;
+}
+
+/*======================================*/
+/*===============便利貼=================*/
+.memo{
+    margin: 10% 3%;
+    font-size: 1.2vw;
+    color: black;
+    /* width: 100%;
+    height: 60%; */
+    
+    
+}
+
+.memo_text {
+    padding: 10% 5%;
+    font-size: 1.2vw;
+    display:inline-block;
+    box-shadow:3px 3px 9px gray;
+    
+}
+
+.all_memo{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1.5fr 0.8fr;
+    /* grid-template-columns: repeat(3, 10) 250%; */
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 1%;
+}
+/*======================================*/
+
+/*======================================*/
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+div button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 0.3%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#container_voted_page {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/*label*/
+
+label{
+        display: inline-block;
+        width: 100px;
+        text-align: left;
+        line-height: 26px;
+    }
+    label input[type="checkbox"]{
+        display: none;
+    }
+    label input[type="checkbox"]+span{
+        box-sizing: border-box;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        border: 2px solid #ccc;
+        vertical-align: sub;
+        margin-right: 5px;
+    }
+    label input[type="checkbox"]+span>span{
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        float: left;
+        background: #33bb00;
+        opacity: 0;
+    }
+    label input[type="checkbox"]:checked+span{
+        border-color: #33bb00;
+    } 
+    label:hover input[type="checkbox"]+span>span{
+        opacity: 0.5;
+    }
+    label input[type="checkbox"]:checked+span>span{
+        opacity: 1;
+    }
+
+
+/*======================================*/
+
 </style>
 
 <script>

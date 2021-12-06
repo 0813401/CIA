@@ -53,7 +53,9 @@ var array_card_text = [['C','O','M','P','A','N','Y','I','N','A','I','R'],
                        ['C',' ', 'A',' ', 'M',' ', 'P','I','N','A','I','R'], 
                        ['C','O','N','S','U','L','T','I','N','A','I','R']];
 create_card_div();
-var card_rotate_interval = window.setInterval(card_rotate, 2000);
+the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
+the_card_container.style.backgroundSize = '100%';
+var card_rotate_interval = window.setInterval(card_rotate, 5000);
 
 function create_card_div(){
   for(let i = 0; i<array_card_text[0].length; i++){
@@ -62,7 +64,7 @@ function create_card_div(){
     div.setAttribute('class', 'card_container'); 
     div.style.display = 'inline-block';
     div.style.borderRadius = '10%';
-    div.style.margin = '0.8%';
+    div.style.margin = '0.4%';
     div.style.marginTop = '5%';
     the_card_container.appendChild(div);
     var div_cover = document.createElement('div');
@@ -75,7 +77,7 @@ function create_card_div(){
     div_back.style.borderRadius = '10%';
     if(i == 7 || i == 9 || i == 0){
       if(i == 7 || i == 9)  
-        div.style.marginLeft = '3%';
+        div.style.marginLeft = '5%';
       div_cover.style.color = '#f88411';
       div_back.style.color = '#f88411';
     }
@@ -88,49 +90,6 @@ function create_card_div(){
   var div_container_text = document.createElement('div');
   div_container_text.style.marginBottom = '4%';
   the_card_container.appendChild(div_container_text);
-  var div; 
-  div = document.createElement('div');
-  div.setAttribute('class', 'white_text');
-  div.innerText = '我們相信，透過';
-  div.style.display = 'inline';
-  div.style.fontSize = '3.5vw';
-  div.style.fontWeight = '900';
-  the_card_container.appendChild(div);
-  div = document.createElement('div');
-  div.style.color = '#284b75'
-  div.style.display = 'inline';
-  div.style.fontSize = '3.5vw';
-  div.style.fontWeight = '900';
-  div.innerText = '創新';
-  the_card_container.appendChild(div);
-  div = document.createElement('div');
-  div.setAttribute('class', 'white_text');
-  div.innerText = '與';
-  div.style.display = 'inline';
-  div.style.fontSize = '3.5vw';
-  div.style.fontWeight = '900';
-  the_card_container.appendChild(div);
-  div = document.createElement('div');
-  div.style.color = '#284b75'
-  div.style.display = 'inline';
-  div.innerText = '個人化';
-  div.style.fontSize = '3.5vw';
-  div.style.fontWeight = '900';
-  the_card_container.appendChild(div);
-  div = document.createElement('div');
-  div.setAttribute('class', 'white_text');
-  div.innerText = '的平台方法';
-  div.style.display = 'inline';
-  div.style.fontSize = '3.5vw';
-  div.style.fontWeight = '900';
-  the_card_container.appendChild(div);
-  div = document.createElement('div');
-  div.setAttribute('class', 'white_text');
-  div.innerText = '每位高中生都能有效「找尋」並「進入」到理想校系';
-  div.style.fontSize = '3.5vw';
-  div.style.fontWeight = '900';
-  the_card_container.appendChild(div);
-
 }
 
 function card_rotate(){
@@ -165,7 +124,13 @@ function card_rotate(){
 
 $(".step_text").hover(function(){
   $(this).find(".step_before_text").stop().fadeOut(1000);
-  $(this).stop().css("background-color", "#FFF");
 }, function(){
   $(this).find(".step_before_text").stop().fadeIn(1000);
+});
+
+
+$(".container_which_provide").hover(function(){
+  $(this).find(".which_provide_before").stop().fadeOut(1000);
+}, function(){
+  $(this).find(".which_provide_before").stop().fadeIn(1000);
 });
