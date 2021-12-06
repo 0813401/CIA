@@ -100,6 +100,8 @@ function card_rotate(){
     var div = document.getElementById('card_div'+i.toString());
     var div_cover = div.getElementsByClassName('card_cover')[0];
     var div_back = div.getElementsByClassName('card_back')[0];
+    if(i == 0 || i == 7 || i == 9)
+      continue;
     if(flag_for_cover){
       div_cover.style.transform = 'rotateX(0deg)';
       div_back.style.transform = 'rotateX(-180deg)';
