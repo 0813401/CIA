@@ -10,12 +10,9 @@
 </head>
 <body style="background-color:#ffbd59;">
     <script src="nav.js"></script>
-    <div class="title experienceBG">
-        <div style="margin-top: 30%;padding-left: 68%; padding-bottom: 5%;">
-            <div style="color:#f88411; font-weight: 900; font-size: 2vw; text-align: left;">1. 為你打造最方便的客製化教學</div>
-            <div style="color:#f88411; font-weight: 900; font-size: 2vw; text-align: left;">2. 隨時隨地都能找到適合你的老師</div>
-            <div style="color:#f88411; font-weight: 900; font-size: 2vw; text-align: left;">3. 全台第一家科系探索諮詢平台</div>
-            <button class="experienceButton" style="font-weight: 900; font-size: 2vw;">按此前往媒合平台</button>
+    <div class="title experienceBG" style="height: 100%">
+        <div style="margin-top: 39%;padding-left: 70%; padding-bottom: 5%;">
+            <button class="experienceButton" style="font-weight: 900; font-size: 3vw;">馬上體驗 <span style="color: #f88411;">>>></span></button>
         </div>
     </div>
     
@@ -268,26 +265,28 @@ div .title{
 }
 
 .experienceBG {
-    background-image: url('asset/img/consult/experience.png');
+    background-image: url('asset/img/consult/experience4.png');
     overflow: hidden;
-    background-position: center;
-    background-size: cover;
+    background-position: center ;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .experienceButton {
-
-    border:2px #284b75 solid;
-    background-color:#fff;
-    color:#284b75;
+    border:0px #284b75 solid;
+    background-color:#000;
+    color:#fff;
     border-radius:10px;
     cursor:pointer;
 }
 
 .experienceButton:hover {
-    color:#fff;
-    background-color:#f88411;
+    color:#f88411;
+    background-color:#fff;
     border:2px #fff solid;
+    /* opacity: 0.8; */
 }
+
 
 /* .procedure .img_procedure{
     width: 100%;
