@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Company In Air</title>
+    <link rel="stylesheet" href="asset/css/common.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="nav.js"></script>
+    <script src="asset/js/nav.js"></script>
     <div id='card_container'></div>
-    <div class = 'carousel_slide_container' style="background-color: #ffbd59; z-index: 1;">
+    <div class = 'carousel_slide_container' style="background-color: #FFF; z-index: 1;">
         <hr class="hr-edge-weak" style="margin-top: 0;">
         <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp近期活動&nbsp&nbsp</span></div>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -24,32 +25,7 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="asset/img/home/recent_1.jpg" class="d-block w-100">
-                    <div class="carousel-caption d-none d-md-block">
-                        <div style="font-size: 130%;"> 8/1 一日數學營</div>
-                        <div style="font-size: 130%;"> 線上課程 x 線上實操 x 學長姐分享</div>
-                        <button onclick="window.location='camp.html';" class="step_button" style="font-size: 80%;">了解更多</button>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="asset/img/home/recent_2.jpg" class="d-block w-100">
-                    <div class="carousel-caption d-none d-md-block">
-                        <div style="font-size: 130%;"> 8/8 一日資工營</div>
-                        <div style="font-size: 130%;"> 線上課程 x 線上實操 x 學長姐分享</div>
-                        <button onclick="window.location='camp.html';" class="step_button" style="font-size: 80%;">了解更多</button>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="asset/img/home/recent_3.jpg" class="d-block w-100">
-                    <div class="carousel-caption d-none d-md-block">  
-                        <div style="font-size: 130%;"> 線上科系博覽會</div>
-                        <div style="font-size: 130%;"> 針對「學群」的系統式介紹</div>
-                        <button onclick="window.location='consult.html';" class="step_button" style="font-size: 80%;">了解更多</button>
-                    </div>
-                </div>
-            </div>
+            <div id ="carousel_inner" class="carousel-inner"></div> <!-- in js -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -60,13 +36,14 @@
             </button>
           </div>
     </div>
-    <div class="container_whole_which_provide" style="background-color:#fff; padding-bottom: 2%;">
-        <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp在這裡您能獲得甚麼?&nbsp&nbsp</span></div>
-        <div>
-            <video width="1065" height="600" controls>
-                <source src="asset/img/home/video.mp4" type="video/mp4">
-            </video>
+    <div style="width: 100%; height: 105%; background-color: #ffbd59">
+        <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp形象影片&nbsp&nbsp</span></div>
+        <div class='video_box'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xcanwdpHvVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+    </div>
+    <div class="container_whole_which_provide" style="background-color:#FFF; padding-bottom: 2%;">
+        <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp在這裡您能獲得甚麼?&nbsp&nbsp</span></div>
         <div class="which-provide">
             <div class='container_which_provide'>
                 <div class='which_provide_before'>
@@ -90,12 +67,14 @@
                     </div>
                 </div>
                 <div onclick="location.href='consult.html'" class='which_provide_after'>
-                    <div style="font-size: 3vw;">個人諮詢</div>
-                    <div style="font-size: 1.8vw;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</div>
+                    <div style="font-size: 3vw; font-weight: 900; text-align: left;"><span class="underline">個人諮詢</span></div>
+                    <div style="font-size: 1.8vw; text-align: left; font-weight: 900;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</div>
                 </div>
             </div>
         </div>
+
     </div>
+
     <div style="padding: 3%; height: 250%;">
         <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp您認為自己目前處在何種階段？&nbsp&nbsp</span></div> 
         <div class="step" style="height: 25%;">
@@ -103,13 +82,13 @@
                 <div class="step_before_text" style="font-weight: 900;">尋找目標科系</div>
                 <div class="title step_after_text">
                     <div class="step_after_title_text" style="color: #f88411;">尋找目標科系</div>
-                    <div class="left_text" style="color: #ab875e; margin-top: 0%;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
                     <div class="left_text" style="color: #284b75; ">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
-                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='camp.html';">了解更多</button></div>
                     <div class="left_text" style="color: #284b75;">2. 個人諮詢</div>
                     <div class="left_text" style="color: #284b75; ">通過客製化的學長姐諮詢服務，解決科系探索中遇到的各種問題</div>
-                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='consult.html';">了解更多</button></div>
                 </div>
             </div>
             <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
@@ -117,16 +96,16 @@
         <div style="height: 5%" ><img src="asset/img/home/arrow.png" style="object-fit:contain" ></div>
         <div class="step" style="height: 25%;">
             <div class="step_text">
-                <div class="step_before_text">為達目標科系標準</div>
+                <div class="step_before_text"  style="font-weight: 900;">為達目標科系標準</div>
                 <div class="title step_after_text">
                     <div class="step_after_title_text" style="color: #f88411;">為達目標校系標準</div>
-                    <div class="left_text" style="color: #ab875e; margin-top: 0%;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
                     <div class="left_text" style="color: #284b75; ">通過體驗實作活動，對科系有更深入的了解，踏出實踐理想的第一步</div>
-                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='camp.html';">了解更多</button></div>
                     <div class="left_text" style="color: #284b75;">2. 個人諮詢</div>
                     <div class="left_text" style="color: #284b75; ">通過學長姐的諮詢輔導服務，協助準備競賽，包括小論文、檢定、各類競賽指導等</div>
-                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='consult.html';">了解更多</button></div>
                 </div>
             </div>
             <div class="img_step_div"><img class="img_step" src="asset/img/home/hope.png"></div>
@@ -134,20 +113,20 @@
         <div style="height: 5%" ><img src="asset/img/home/arrow.png" style="object-fit:contain" ></div>
         <div class="step" style="height: 25%;">
             <div class="step_text">
-                <div class="step_before_text">尋找目標科系</div>
+                <div class="step_before_text"  style="font-weight: 900;">錄取目標科系</div>
                 <div class="title step_after_text">
-                    <div class="step_after_title_text" style="color: #f88411;">錄取目標科系</div>
-                    <div class="left_text" style="color: #ab875e; margin-top: 0%;">我們能提供您――――</div>
+                    <div class="step_after_title_text" style="color: #f88411; margin-top: 10%;">錄取目標科系</div>
+                    <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 個人諮詢</div>
                     <div class="left_text" style="color: #284b75;">通過客製化的「學科輔導」和「備審指導」服務，解決升學及備審中遇到的各種問題</div>
-                    <div class="left_text" style="padding: 1%;"><button class="step_button">了解更多</button></div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='consult.html';">了解更多</button></div>
                 </div>
             </div>
             <div class="img_step_div"><img class="img_step" src="asset/img/home/achieve.png"></div>
         </div>
     </div>
-    <script type = "text/javascript" src="footer.js"></script>
-    <script type = "text/javascript" src="index.js"></script>
+    <script src="asset/js/footer.js"></script>
+    <script src="asset/js/index.js"></script>
 </body>
 </html>
 
@@ -160,10 +139,6 @@
     margin-bottom: 60%;
 }
 
-/* .which_provide_be{
-    padding-top: 3%;
-    font-size: 2vw;
-} */
 
 .which_provide_before {
     position: absolute;
@@ -194,65 +169,19 @@
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
 }
 
-.step_text {
-    position: relative;
-}
-
-.step_after_title_text{
-    padding-top: 3%;
-    font-size: 2vw;
-}
-
-.step_before_text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: #dadddd;
-    background-color: #284b75;
-    font-size: 3.2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.step_after_text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    font-size: 1vw;
-    padding: 2% 5%;
-    background-color: #FFF;
-} 
-
-@font-face {
-    font-family: 'e';
-    src: url('asset/fonts/IndieFlower-Regular.woff')format('woff'),
-        url('asset/fonts/IndieFlower-Regular.ttf')format('truetype'),
-        url('asset/fonts/IndieFlower-Regular.eot')format('embedded-opentype');
-}
-@font-face {
-    font-family: 'c';
-    src: url('asset/fonts/cwTeXYen-zhonly.woff')format('woff'),
-        url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
-        url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
-}
-
 body, html{
     width: 100%;
     height: 100%;
 }
-nav{
-    background-color: #284b75;
-    text-align: center;
-    font-size: 1.3vw;
-    height: 8%;
-    font-weight: 900;
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 div{
     text-align: center;
-    font-size: 20px;
 }
 div .title{
     font-weight: 900;
@@ -260,31 +189,102 @@ div .title{
 
 .left_text{
     text-align: left;
-    font-size: 120%;
+    font-size: 1.2vw;
     margin: 2% 10%;
 }
 
-.step {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 2% 10%;
-    height: 10%;
-    width: 80%;
-    background-color: #fff;
-}
-.step_text {
-    /* padding: 10% 3%; */
-    vertical-align: center;
+/* .underline {
+    border-bottom: 2px solid#f88411;
+    border-bottom-width:thick;
+} */
+.underline {
+    border-bottom: 4px solid#f88411;
 }
 
-.img_step {
-    float: right;
-    object-fit:cover;
+img{
+   width: 100%;
+   height: 100%; 
 }
 
-.img_step_div {
-    overflow: hidden;
+.BGImage{
+    background-repeat: no-repeat;
+    /* 透明度 0.6 的黑色半透明遮罩 */
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* 設置背景混和模式為相乘模式 */
+    background-position:center;
+    background-size:cover;
 }
+
+.white_text {
+    color: #FFFFFF;
+}
+
+.big_text {
+    font-size:3vw;
+    font-weight: 900;
+}
+
+.video_box {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video_box iframe {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+}
+
+.hr-edge-weak {
+    border: 0;
+    border-bottom: 100px ;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+}
+
+/*=======翻轉字卡=======*/
+#card_container{
+    width: 100%;
+    height: 77%;
+    background-color: #ffbd59;
+}
+
+.card_container{
+    width: 4.5%;
+    height: 18%;
+    background-color: white;
+    top: 15%;
+    position: relative;
+}
+
+.card_cover, .card_back{
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 1s ease-in-out;
+    color: #284b75;
+    font-size: 3.3vw;
+    font-weight: 900;
+}
+
+.card_cover{
+    background-color: white;
+    transform: rotateX(180deg);
+}
+
+.card_back{
+    background-color: white;
+    transform: rotateX(0deg);
+}
+/*=====================*/
 
 /*==========圖片跑馬燈==========*/
 .carousel-inner, .carousel-item, .carousel-item img{
@@ -316,7 +316,7 @@ div .title{
     /* width: 50%; */
     height: 300%;
     margin-top: 2%;
-    padding: 1% 1%;
+    padding: 0.8% 0.8%;
     border:0;
     background-color:#ffbd59;
     color:#284b75;
@@ -333,46 +333,47 @@ div .title{
 }
 /*==============================*/
 
-img{
-   width: 100%;
-   height: 100%; 
+/*=========三階段=========*/
+.step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2% 10%;
+    height: 10%;
+    width: 80%;
+    background-color: #fff;
 }
 
-.BGImage{
-    background-repeat: no-repeat;
-    /* 透明度 0.6 的黑色半透明遮罩 */
-    /* background-color: rgba(0, 0, 0, 0.1); */
-    /* 設置背景混和模式為相乘模式 */
-    background-position:center;
-    background-size:cover;
+.step_text {
+    position: relative;
+    vertical-align: center;
 }
 
-.white_text {
-    color: #FFFFFF;
+.step_after_title_text{
+    padding-top: 3%;
+    font-size: 2vw;
 }
 
-.big_text {
-    font-size:3vw;
-    font-weight: 900;
+.step_before_text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #dadddd;
+    background-color: #284b75;
+    font-size: 3.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
-.nav-link:hover {
-    color: #f88411;
-    /*#005AB5*/
-}
-
-
-.img_square {
-	width: 100%;
-	border-radius: 50%;
-}
-
-.hr-edge-weak {
-    border: 0;
-    border-bottom: 100px ;
-    padding-top: 1px;
-    background: linear-gradient(to right, transparent, #FFFFFF, transparent);
-}
+.step_after_text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 1vw;
+    padding: 2% 5%;
+    background-color: #FFF;
+} 
 
 .step_button {
     border:0;
@@ -384,8 +385,17 @@ img{
 
 .step_button:hover {
     color:#284b75;
-    background-color:#fff;
-    border:2px #284b75 solid;
+    background-color:#ffbd59;
+    border:2px #ffbd59 solid;
+}
+
+.img_step {
+    float: right;
+    object-fit:cover;
+}
+
+.img_step_div {
+    overflow: hidden;
 }
 
 .which-provide{
@@ -408,96 +418,6 @@ img{
     margin: 30% 38%;
     color: #fff;
 }
-
-.fa {
-    padding: 1%;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-}
-
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-facebook {
-    background: #284b75;
-    color: white;
-}
-
-.fa-instagram {
-    background: #284b75;
-    color: white;
-}
-
-.fa-envelope {
-    background: #284b75;
-    color: white;
-}
-
-.flex-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fa-user-circle-o:hover {
-    opacity: 1;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.underline {
-    border-bottom: 4px solid#f88411;
-    /* border-bottom-width:thick; */
-}
-
-/*=======翻轉字卡=======*/
-#card_container{
-    width: 100%;
-    height: 77%;
-    /* background-image: url('asset/img/home/card_background.jpg'); */
-    background-color: #ffbd59;
-}
-
-.card_container{
-    width: 4.5%;
-    height: 18%;
-    background-color: white;
-    top: 15%;
-    position: relative;
-    /* perspective: 20px; */
-}
-
-.card_cover, .card_back{
-    width: 100%;
-    height: 100%;   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    backface-visibility: hidden;
-    transition: transform 1s ease-in-out;
-    color: #284b75;
-    font-size: 3.3vw;
-    font-weight: 900;
-    /* font-family: 'e'; */
-}
-
-.card_cover{
-    background-color: white;
-    transform: rotateX(180deg);
-}
-
-.card_back{
-    background-color: white;
-    transform: rotateX(0deg);
-}
-
-/*=====================*/
+/*========================*/
 
 </style>   

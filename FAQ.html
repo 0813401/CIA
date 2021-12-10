@@ -5,46 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ</title>
+    <link rel="stylesheet" href="asset/css/common.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="nav.js"></script>
+    <script src="asset/js/nav.js"></script>
     <div>
         <div class="title big_text" style="padding-top: 2%;"><span class="underline">&nbsp&nbsp關於C.I.A&nbsp&nbsp</span></div>
         <div class="rounded_border">
             <div class="margin">
-                <div class="question">Q : C.I.A是誰?(Who are C.I.A?)</div>
-                <div class="ans highlight" style="text-align: left;padding-left: 5%;text-indent: -5%;">A : C.I.A是由一群清交大學生組成的教育新創團隊，來自不同科系不同背景，只因有共同的理念而聚在一起的一群夥伴!</div>  
+                <div class="question question_CIA underline_CIA">Who are C.I.A?</div>
+                <div class="ans highlight ans_CIA">C.I.A是由一群清交大學生組成的教育新創團隊，來自不同科系不同背景，只因有共同的理念而聚在一起的一群夥伴!</div>  
                 <br>
-                <div class="ans ans_tab highlight">共同創辦人之一，查理，是交大生科的學長，過去曾投身教育界，擔任北車百人班老師，在自身體會台灣教育制度十多年以來，看過許多學生十年寒窗考上了大學，卻又因不了解或者意識到不是自己想要的科系，而選擇重考或轉系，浪費了許多時間及金錢成本重新來過。</div>
-                <br>
-                <div class="ans ans_tab highlight">也正是因為這些現狀，查理深深體會到台灣學生缺少「以終為始」的概念，從國小國中開始就被灌輸考高分，以免輸在起跑點的觀念，但在這人生長跑上，卻未曾想過自己的對手是誰，終點，又在哪?以至於跑到了終點線，才發現這根本不是自己想選擇的賽道。</div>
-                <br>
-                <div class="ans ans_tab highlight">但是，要如何解決這些問題呢?查理苦思許久，某天他和另一位朋友在聊天時突然意識到，何不從「科系探索」下手呢?於是他找到了一群擁有相同理念，想帶給高中生更多科系探索可能性的夥伴，開始研發如何解決高中生科系探索困難的方法，於是，「線上營隊」的概念就產生了...</div>
-                <br>
-                <div class="ans ans_tab highlight">為了解決高中生在參加營隊和使用科系探索網站所遇到的問題，我們針對方便性、有效性及體驗感三者去設計了線上營隊架構，也成功做到以最低成本進行最有效的科系探索，但我們的人力有限，如何才能影響到更多高中生，讓大家都能擁有「以終為始-先探索目標，再努力實現」的概念呢?</div>
-                <br>
-                <div class="ans ans_tab highlight">為了解決互動性和普及性的問題，C.I.A提出了線上「個人諮詢」的概念，希望通過線上一對一的形式，更客製化的解決高中生在探索上遇到的煩惱，也能讓高中生在這樣的平台上，找到最適合自己的老師和課程。</div>
-                <br>
-                <div class="ans ans_tab highlight">這些，就是C.I.A的故事的起點，我們未來也會致力於提供最優質便利的科系探索服務，影響更多對未來徬徨的高中生，寫下台灣教育創新的新篇章，你，準備好一起來了嗎?</div>
+                <div class="ans highlight">共同創辦人之一，查理，是交大生科的學長，過去曾投身教育界，擔任北車百人班老師，在自身體會台灣教育制度十多年以來，看過許多學生十年寒窗考上了大學，卻又因不了解或者意識到不是自己想要的科系，而選擇重考或轉系，浪費了許多時間及金錢成本重新來過。</div>
+                <div id="ans_hidden_01">
+                    <br>
+                    <div class="ans highlight">也正是因為這些現狀，查理深深體會到台灣學生缺少「以終為始」的概念，從國小國中開始就被灌輸考高分，以免輸在起跑點的觀念，但在這人生長跑上，卻未曾想過自己的對手是誰，終點，又在哪?以至於跑到了終點線，才發現這根本不是自己想選擇的賽道。</div>
+                    <br>
+                    <div class="ans highlight">但是，要如何解決這些問題呢?查理苦思許久，某天他和另一位朋友在聊天時突然意識到，何不從「科系探索」下手呢?於是他找到了一群擁有相同理念，想帶給高中生更多科系探索可能性的夥伴，開始研發如何解決高中生科系探索困難的方法，於是，「線上營隊」的概念就產生了...</div>
+                    <br>
+                    <div class="ans highlight">為了解決高中生在參加營隊和使用科系探索網站所遇到的問題，我們針對方便性、有效性及體驗感三者去設計了線上營隊架構，也成功做到以最低成本進行最有效的科系探索，但我們的人力有限，如何才能影響到更多高中生，讓大家都能擁有「以終為始-先探索目標，再努力實現」的概念呢?</div>
+                    <br>
+                    <div class="ans highlight">為了解決互動性和普及性的問題，C.I.A提出了線上「個人諮詢」的概念，希望通過線上一對一的形式，更客製化的解決高中生在探索上遇到的煩惱，也能讓高中生在這樣的平台上，找到最適合自己的老師和課程。</div>
+                    <br>
+                    <div class="ans highlight">這些，就是C.I.A的故事的起點，我們未來也會致力於提供最優質便利的科系探索服務，影響更多對未來徬徨的高中生，寫下台灣教育創新的新篇章，你，準備好一起來了嗎?</div>
+                </div>
+                <div id="learn_more_01">(查看更多...)</div>
             </div>
         </div>
         <div class="rounded_border">
             <div class="margin">
-                <div class="question">Q : C.I.A有甚麼過往事蹟?(What have C.I.A done?)</div>  
-                <div class="ans highlight" style="text-align: left;">A : 1. 經營 IG 和 FB 粉專，在僅創辦 2 個月的時間裡，粉絲人數突破 3500 人</div>   
-                <div class="ans ans_tab highlight" style="text-align: left; padding-left: 8.7%;text-indent: -4.1%;">2. 和新竹地區前幾志願的高中校方接洽，成功與 7 名老師、30 多名高中生進行深度訪談，並建立人脈資源，與校方有深厚合作關係</div>   
-                <div class="ans ans_tab highlight" style="text-align: left; padding-left: 8.7%;text-indent: -4.1%;">3. 與 20 多名教育界人士、業師、大學教授進行諮詢與訪談，了解教育界現況，得知教授及老師真實需求</div>  
-                <div class="ans ans_tab highlight" style="text-align: left;">4. 通過線上營隊、科系博覽會及升學講座影響超過500位學生</div> 
-                <div class="ans ans_tab highlight" style="text-align: left;">5. 時代基金會 YEF 計畫第一名</div>   
+                <div class="question question_CIA underline_CIA">What have C.I.A done?</div>
+                <div class="ans highlight ans_CIA" style="text-align: left;">1. 經營 IG 和 FB 粉專，在僅創辦 2 個月的時間裡，粉絲人數突破 3500 人</div>   
+                <div class="ans highlight" style="text-align: left;padding-left: 3.7%;text-indent: -3.8%;">2. 和新竹地區前幾志願的高中校方接洽，成功與 7 名老師、30 多名高中生進行深度訪談，並建立人脈資源，與校方有深厚合作關係</div>   
+                <div class="ans highlight" style="text-align: left;padding-left: 3.7%;text-indent: -3.8%;">3. 與 20 多名教育界人士、業師、大學教授進行諮詢與訪談，了解教育界現況，得知教授及老師真實需求</div>  
+                <div class="ans highlight" style="text-align: left;">4. 通過線上營隊、科系博覽會及升學講座影響超過500位學生</div> 
+                <div class="ans highlight" style="text-align: left;">5. 時代基金會 YEF 計畫第一名</div>   
             </div>
         </div>
         <div class="rounded_border">
             <div class="margin">
-                <div class="question">Q : C.I.A的初衷是?(Why C.I.A do?)</div>
-                <div class="ans highlight" style="text-align: left;padding-left: 5%;text-indent: -5%;">A : 為了解決學生高中三年從「探索目標科系」到「達成目標科系標準」時，所遇到的各種困難，提供一站式升學輔導服務，提供在意高中升學探索的家長與學生，創新與個人化的解決方案，陪伴高中生找尋與進入理想校系。</div>  
+                <div class="question question_CIA underline_CIA ">Why C.I.A do?</div>
+                <div class="ans highlight ans_CIA" style="text-align: left;">為了解決學生高中三年從「探索目標科系」到「達成目標科系標準」時，所遇到的各種困難，提供一站式升學輔導服務，提供在意高中升學探索的家長與學生，創新與個人化的解決方案，陪伴高中生找尋與進入理想校系。</div>  
             </div>
         </div>
     </div>
@@ -57,15 +61,18 @@
                 <div class="ans"><span class="highlight">A : 線上營隊由三大核心活動組成，分別是</span></div>
                 <div class="ans ans_tab"><span class="highlight" style="color: #000;">1. 精實課程</span></div>   
                 <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>「國內頂尖教授」分享科系未來趨勢及系所介紹，帶給你「第一手」大學端資訊</li></div>   
-                <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>「該系專業講師」實際講授<span class="">基礎課程</span>，讓你提早體驗大學教學內容，減少想像與現實的落差</li></div>  
-                <div class="ans ans_tab"><span class="highlight" style="color: #000;">2. 線上實作</span></div>   
-                <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>透過實作程式專案、企畫書或電路板操作等該系課程內容，將課程知識學以致用</li></div>   
-                <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>該系專業講師實際講授基礎課程，讓你提早體驗大學教學內容，減少想像與現實的落差</li></div>  
-                <div class="ans ans_tab"><span class="highlight" style="color: #000;">3. 學長姐分享</span></div>   
-                <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>「該系學長姊」分享心路歷程與建議，通過參考過來人經歷，減少學生試錯的成本</li></div>   
-                <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>特別邀請「已畢業」學長姊，以學校所學及職涯出路進行剖析，帶來更全方位的觀點</li></div>  
-                <br>
-                <div class="ans ans_tab highlight">除了三大核心活動外，團隊另外針對科系特色安排競賽遊戲及團隊計分，增加營隊趣味性的同時，團隊計分讓同學們更專注其中。</div>  
+                <div id="ans_hidden_02">
+                    <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>「該系專業講師」實際講授<span class="">基礎課程</span>，讓你提早體驗大學教學內容，減少想像與現實的落差</li></div>  
+                    <div class="ans ans_tab"><span class="highlight" style="color: #000;">2. 線上實作</span></div>   
+                    <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>透過實作程式專案、企畫書或電路板操作等該系課程內容，將課程知識學以致用</li></div>   
+                    <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>該系專業講師實際講授基礎課程，讓你提早體驗大學教學內容，減少想像與現實的落差</li></div>  
+                    <div class="ans ans_tab"><span class="highlight" style="color: #000;">3. 學長姐分享</span></div>   
+                    <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>「該系學長姊」分享心路歷程與建議，通過參考過來人經歷，減少學生試錯的成本</li></div>   
+                    <div class="ans ans_tab2" style="text-align: left;padding-left: 12.7%;text-indent: -4.5%;"><li>特別邀請「已畢業」學長姊，以學校所學及職涯出路進行剖析，帶來更全方位的觀點</li></div>  
+                    <br>
+                    <div class="ans ans_tab highlight">除了三大核心活動外，團隊另外針對科系特色安排競賽遊戲及團隊計分，增加營隊趣味性的同時，團隊計分讓同學們更專注其中。</div>  
+                </div>
+                <div id="learn_more_02">(查看更多...)</div>
             </div>
         </div>
         <div class="rounded_border">
@@ -146,17 +153,7 @@
             </div>
         </div>
     </div>
-
-    <div style="background-color: #284b75; height: 35%; width: 100%;">
-        <div style="padding-top:2%; color: #ffbd59; font-size: 130%;">聯絡我們</div>
-        <div class="center_text" style="font-size: 150%;">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-envelope"></a>
-        </div>
-        <div style="font-size: 100%; color: #ffbd59;">500 Terry Francois Street San Francisco, CA 94158</div>
-        <div style="padding-top:2%; font-size: 80%; color: #ffbd59;">©2021 by 【C.I.A-Company In Air】 一站式升學輔導平台</div>
-    </div>
+    <script src="asset/js/footer.js"></script>
 </body>
 </html>
 
@@ -166,37 +163,29 @@
     font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
 }
 
-@font-face {
-    font-family: 'e';
-    src: url('asset/fonts/IndieFlower-Regular.woff')format('woff'),
-        url('asset/fonts/IndieFlower-Regular.ttf')format('truetype'),
-        url('asset/fonts/IndieFlower-Regular.eot')format('embedded-opentype');
-}
-@font-face {
-    font-family: 'c';
-    src: url('asset/fonts/cwTeXYen-zhonly.woff')format('woff'),
-        url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
-        url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
-}
 body, html{
     width: 100%;
     height: 100%;
 }
-nav{
-    background-color: #284b75;
-    text-align: center;
-    font-size: 1.3vw;
-    height: 8%;
-    font-weight: 900;
-}
+
 
 div{
     text-align: center;
-    font-size: 20px;
 }
 
 div .title{
     font-weight: 900;
+}
+
+img{
+   width: 100%;
+   height: 100%; 
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .question {
@@ -204,6 +193,17 @@ div .title{
     font-weight: 900;
     color: #284b75;
     text-align: left;
+}
+
+.question_CIA {
+    font-size: 2vw;
+    text-align: center;
+}
+
+.underline_CIA {
+    padding-bottom: 1.5%;
+    border-bottom: 2px solid#f88411;
+    border-bottom-width:thick;
 }
 
 .ans {
@@ -221,6 +221,10 @@ div .title{
     padding-left: 8%;
 }
 
+.ans_CIA {
+    padding-top: 1.5%;
+}
+
 .highlight {
     font-weight: 900;
 }
@@ -229,13 +233,16 @@ div .title{
     margin: 3% 20%;
     padding: 1%;
     border-radius: 10px;
-    font-size: 24px;
+    /* font-size: 24px; */
     background-color: #FFFFFF;
 }
 
 .underline {
-    border-bottom: 2px solid#f88411;
-    border-bottom-width:thick;
+    border-bottom: 4px solid#f88411;
+}
+
+.underline_CIA {
+    border-bottom: 4px dashed#f88411;
 }
 
 .big_text {
@@ -250,25 +257,10 @@ div .title{
 
 .left_text{
     text-align: left;
-    font-size: 20px;
+    font-size: 1.2vw;
     margin: 0% 10%;
 }
 
-.center_text {
-    text-align: center;
-    font-size: 200%;
-    font-family: 'c';
-}
-
-.nav-link:hover {
-    color: #ffbd59;
-    /*#005AB5*/
-}
-
-.img_square {
-	width: 100px;
-	border-radius: 50%;
-}
 .margin{
     margin: 2% 3%;
 }
@@ -280,61 +272,46 @@ div .title{
     background: linear-gradient(to right, transparent, #FFFFFF, transparent);
 }
 
-.fa {
-    font-size: 100%;
-    padding: 1%;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
+#ans_hidden_01, #ans_hidden_02{
+    display: none;
 }
 
-.fa:hover {
-    opacity: 0.7;
+#learn_more_01, #learn_more_02{
+    color: orange; 
+    font-weight: 900; 
+    cursor: pointer; 
+    font-size: 1.8vw;
 }
 
-.fa-facebook {
-    background: #284b75;
-    color: white;
-}
 
-.fa-instagram {
-    background: #284b75;
-    color: white;
-}
 
-.fa-envelope {
-    background: #284b75;
-    color: white;
-}
-
-.flex-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
 </style>
 
 <script>
-window.onscroll = function() {myFunction()};
+var learn_more_01 = document.getElementById('learn_more_01');
+var learn_more_02 = document.getElementById('learn_more_02');
+var ans_hidden_01 = document.getElementById('ans_hidden_01');
+var ans_hidden_02 = document.getElementById('ans_hidden_02');
+learn_more_01.addEventListener('click', function(){
+    if(learn_more_01.innerHTML == '(查看更多...)'){
+        $(ans_hidden_01).fadeIn(1000);
+        learn_more_01.innerHTML = '(收回)';
+    }
+    else{
+        $(ans_hidden_01).fadeOut(1000);
+        learn_more_01.innerHTML = '(查看更多...)';
+    }
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
+});
+learn_more_02.addEventListener('click', function(){
+    if(learn_more_02.innerHTML == '(查看更多...)'){
+        $(ans_hidden_02).fadeIn(1000);
+        learn_more_02.innerHTML = '(收回)';
+    }
+    else{
+        $(ans_hidden_02).fadeOut(1000);
+        learn_more_02.innerHTML = '(查看更多...)';
+    }
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
+});
 </script>

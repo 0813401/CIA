@@ -1,11 +1,4 @@
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+/* firestore 的初始宣告 */
 const firebaseConfig = {
   apiKey: "AIzaSyBiTTx6ZNggajmMn_R_xUQ4H1Pe73Np-s0",
   authDomain: "ciateam-6d554.firebaseapp.com",
@@ -15,36 +8,9 @@ const firebaseConfig = {
   appId: "1:892094395466:web:a9fa12d743357b910522b3",
   measurementId: "G-Z5JXQMSE3V"
 };
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig)
-// const analytics = getAnalytics(app);
-const db = firebase.firestore()
-
-// var account = "89113000"; //post 
-// var password = "00891130";
-
-// db.collection('users')
-//   .add({
-//     account: account, //欄位名稱，欄位資料
-//     password: password
-//   })
-//   .then(function(docRef) {
-//     console.log('Document written with ID: ', docRef.id)
-//   })
-//   .catch(function(error) {
-//     console.error('Error adding document: ', error)
-//   })
-
-// var ref = db.collection("users");
-// // var n = ref.size();
-// ref.get().then(querySnapshot => {
-//     querySnapshot.forEach(doc => {
-//       // console.log(doc.id, doc.data());
-//       // console.log(doc.id)
-//       // console.log(doc.data());
-//     });
-//   });
 
 const the_card_container = document.getElementById('card_container');
 var count_for_card_text = 1;
@@ -122,6 +88,62 @@ function card_rotate(){
     count_for_card_cover_and_back -= 2;
   }
 }
+
+var carousel_inner = document.getElementById('carousel_inner');
+var recent_activities = db.collection("home_recent_activities");
+var recent_activities_array = [];
+recent_activities.get().then(querySnapshot => {
+querySnapshot.forEach(doc => {
+  recent_activities_array.push([doc.data().title, doc.data().subtitle, doc.data().img, doc.data().datetime]);
+});
+recent_activities_array.sort((a, b) => a[3] - b[3]);
+for(let i = 0; i<recent_activities_array.length; i++){
+  var carousel_item = document.createElement('div');
+  var img = document.createElement('img');
+  var carousel_caption = document.createElement('div');
+  var title = document.createElement('div');
+  var subtitle = document.createElement('div');
+  var button = document.createElement('button');
+
+  if(i == 0)
+    carousel_item.setAttribute('class', 'carousel-item active');
+  else
+    carousel_item.setAttribute('class', 'carousel-item');
+  img.setAttribute('class', 'd-block w-100');
+  img.src = recent_activities_array[i][2]; 
+  carousel_caption.setAttribute('class', 'carousel-caption d-none d-md-block');
+  title.style.fontSize = '1.5vw';
+  title.innerHTML = recent_activities_array[i][1];
+  subtitle.style.fontSize = '1.5vw';
+  subtitle.innerHTML = recent_activities_array[i][0];  
+  button.setAttribute('class', 'step_button');
+  button.style.fontSize = '1vw';
+  button.innerHTML = '了解更多';
+  button.addEventListener('click', function(){
+    window.location='camp.html';
+  });
+
+  carousel_caption.appendChild(title);
+  carousel_caption.appendChild(subtitle);
+  carousel_caption.appendChild(button);
+  carousel_item.appendChild(img);
+  carousel_item.appendChild(carousel_caption);
+  carousel_inner.appendChild(carousel_item);
+}
+});
+// <div class="carousel-item" data-bs-interval="3000">
+//     <img src="asset/img/home/recent_2.jpg" class="d-block w-100">
+//     <div class="carousel-caption d-none d-md-block">
+//         <div style="font-size: 1.5vw;"> 8/8 一日資工營</div>
+//         <div style="font-size: 1.5vw;"> 線上課程 x 線上實操 x 學長姐分享</div>
+//         <button onclick="window.location='camp.html';" class="step_button" style="font-size: 1vw;">了解更多</button>
+//     </div>
+// </div>
+
+
+
+
+
 
 
 $(".step_text").hover(function(){

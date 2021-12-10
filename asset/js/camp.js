@@ -19,25 +19,41 @@ window.onclick = function(event) {
 };
 
 
-
-
-
-
-
-
-
-
-
 /* 近期線上營隊跑馬燈 */
+var info_array1 = [];
+var signup = db.collection("camp");
+signup.get().then(querySnapshot => {
+querySnapshot.forEach(doc => {
+info_array1.push([doc.data().datetime, doc.data().image, doc.data().price, doc.data().text, doc.data().info]);
+});
+
+info_array1.sort((a, b) => a[0] - b[0]);
+
 const camp_container= document.getElementById('recent_camp_item');
-const n_camp = 8;
-const text = [["8/1 一日數學營"], ["8/8 一日資工營"], ["8/15 一日電機營"], ["8/23 兩日財管營"], ["1"], ["1"], ["1"], ["1"]];
-const price = [["1,200"], ["1,200"], ["1,000"], ["2,200"], ["1"], ["1"], ["1"], ["1"]];
-const info = [["報名中"], ["報名中"], ["早鳥優惠中"], ["即將開放報名"], ["1"], ["1"], ["1"], ["1"]];
+const n_camp = info_array1.length;
+const text = [];
+const price = [];
+const info = [];
+const image = [];
+for(let i = 0; i < n_camp; i++){
+  text.push([info_array1[i][3]]);
+  price.push([info_array1[i][2]]);
+  info.push([info_array1[i][4]]);
+  image.push([info_array1[i][1]]);
+}
+
+
+const test =[[0], [1]];
+console.log(price);
+console.log(test);
+console.log(info_array1);
+
+
+
 
 var slider = document.createElement('div');
 slider.setAttribute('class', 'slider');
-slider.style.width = '50%';
+slider.style.width = '70%';
 slider.style.height = '100%';
 camp_container.appendChild(slider);
 
@@ -45,7 +61,17 @@ for(let i = 0; i<n_camp; i++){
   var container_div2 = document.createElement('div');
   container_div2.setAttribute('class', 'slider_item')
   var img_div = document.createElement('div');
+  img_div.id = i;
   img_div.style.position = 'relative';
+  img_div.style.cursor = 'pointer';
+  img_div.addEventListener('click', function(){
+    db.collection("camp_SignUp").doc("choose").update({
+      choose_id: i
+    });
+    setTimeout(function(){
+      location.href = "camp_SignUp.html";
+    }, 500);
+  });
   var info_span = document.createElement('span');
   info_span.setAttribute('class', 'info'); 
   info_span.style.color = '#ffbd59';
@@ -56,7 +82,7 @@ for(let i = 0; i<n_camp; i++){
   info_span.style.padding = '2%';
   info_span.innerHTML = info[i];
   var img = document.createElement('img');
-  img.src = 'asset/img/camp/current_camp/0'+ (i+1) +'.png';
+  img.src = image[i];
   var text_div = document.createElement('div');
   text_div.innerHTML = text[i];
   text_div.style.color = '#284b75';
@@ -71,8 +97,7 @@ for(let i = 0; i<n_camp; i++){
   slider.appendChild(container_div2);
 }
 camp_container.appendChild(slider);
-
-/* 近期線上營隊跑馬燈設定 */
+  /* 近期線上營隊跑馬燈設定 */
 $('.slider').slick({
   centerPadding: 0, 
   slidesToShow: 4,
@@ -83,37 +108,56 @@ $('.slider').slick({
   arrows: true,
 });
 
+});
 
-// /* 影片跑馬燈 */
-// var div_video = document.getElementById('video');
-// div_video.style.width = '50%';
-// div_video.style.height = '50%';
-// div_video.setAttribute('class', 'slider_video');
-// for(let i = 0; i<2; i++){
-//   var video = document.createElement('video');
-//   video.setAttribute('controls', true);
-//   video.style.width = '30%';
-//   video.style.height = '15%';
-//   var source = document.createElement('source');
-//   source.src = 'asset/video/video1';
-//   video.appendChild(source);
-//   div_video.appendChild(video);
-// }
 
-//   /* 影片跑馬燈設定 */
-//   $('.slider_video').slick({
-//     centerPadding: 0, 
-//     slidesToScroll: 1,
-//     infinite: true,
-//     arrows: true,
-// });
+
+/* 布告欄跑馬燈 */
+
+/* 布告欄跑馬燈設定 */
+
+  $('.slider_board').slick({
+    centerPadding: 0, 
+    slidesToShow: 1,
+    swipeToSlide: true,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: false,
+});
+
+
+/* 影片跑馬燈 */
+const video_container = document.getElementById('video_container');
+video_container.style.marginBottom = '3%';
+video_container.style.paddingBottom = '5%';
+var slider_video = document.createElement('div');
+slider_video.setAttribute('class', 'slider_video');
+slider_video.style.width = '72%';
+slider_video.style.height = '90%';
+video_container.appendChild(slider_video);
+
+for(let i = 0; i<2; i++){
+  var video = document.createElement('video');
+  video.setAttribute('controls', true);
+  var source = document.createElement('source');
+  source.src = 'asset/video/video' + (i+1) + '.mp4';
+  video.appendChild(source);
+  slider_video.appendChild(video);
+}
+
+  /* 影片跑馬燈設定 */
+  $('.slider_video').slick({
+    centerPadding: 0, 
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: true,
+});
 
 /* 科系許願池 */
 const container_pool = document.getElementById('container_pool');
 container_pool.style.backgroundColor = '#fff';
-container_pool.style.margin = '1%';
-container_pool.style.marginTop = '3%';
-container_pool.style.marginBottom = '3%';
+container_pool.style.margin = '3% 5%';
 container_pool.style.padding = '1.5%';
 container_pool.style.borderRadius = '15px';
 
@@ -135,7 +179,6 @@ for(let i = 0; i<3; i++){
   voted_img.src = 'asset/img/camp/prize_0' + (i+1) + '.png';
   voted_img.style.justifyContent = 'flex-start';
   voted_img.style.width = '4%';
-  // voted_img.style.display = 'inline';
   voted_img.style.marginTop = '-1.5%';
   var voted_name = document.createElement('div');
   voted_name.style.justifyContent = 'flex-start';
@@ -143,7 +186,7 @@ for(let i = 0; i<3; i++){
   voted_name.innerText = voted_array[i][1];
   var voted_bar_box = document.createElement('div');
   voted_bar_box.style.position = 'relative';
-  voted_bar_box.style.width = '74%';
+  voted_bar_box.style.width = '70%';
   var voted_bar = document.createElement('div');
   voted_bar.setAttribute('class', 'voted_bar');
   voted_bar.style.position = 'absolute';
@@ -164,6 +207,7 @@ for(let i = 0; i<3; i++){
   voted_number.setAttribute('class', 'voted_number');
   voted_number.style.display = 'inline';
   voted_number.style.justifyContent = 'flex-end';
+  voted_number.style.marginLeft = '3%';
   voted_number.style.padding = '0% 2%';
   voted_number.innerText = voted_array[i][2];
   div.appendChild(voted_img);
@@ -236,9 +280,13 @@ function voted_page(){
       });
     }
 
+    var hint = document.createElement('div');
+    hint.setAttribute('class', 'hint');
+    hint.innerText = '您輸入的資料必須為總長3個字的系所(XX系)';
+    hint.style.visibility = 'hidden';
     var checkans = document.createElement('input');
     checkans.type = 'text';
-    checkans.placeholder = 'Enter what department you wish...';
+    checkans.placeholder = 'Enter what department you wish...       Ex：應數系';
     checkans.name = 'department_checkans' ;
     var container_voted_send = document.createElement('div');
     container_voted_send.display = 'inline';
@@ -259,21 +307,27 @@ function voted_page(){
 
       var comment = checkans.value;
       if(comment != "") {
-        var pools_comment = db.collection('pools_comment');
-        pools_comment.add({
-            comment: comment
-          });
+        if(comment.includes("系", 2)){
+          var pools_comment = db.collection('pools_comment');
+          pools_comment.add({
+              comment: comment
+            });
+            modal.style.display = "none";
+            setTimeout(function(){
+              window.location.reload();
+            }, 500);
+        }
+        else
+          hint.style.visibility = 'visible';
       };
-      modal.style.display = "none";
-      setTimeout(function(){
-        window.location.reload();
-      }, 500);
     });
 
+    
 
     container_voted_send.appendChild(checkans);
     container_voted_send.appendChild(button);
     container_voted_page.appendChild(container_voted_send); 
+    container_voted_page.appendChild(hint);
   }
 flag = false;
 }
