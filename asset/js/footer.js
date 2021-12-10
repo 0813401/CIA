@@ -12,17 +12,18 @@ div1.innerHTML = '聯絡我們';
 var div2 = document.createElement('div');
 div2.setAttribute('class', 'center_text');
 div2.style.fontSize = '2.2vw'
+list_icon_a = [["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"], ["mailto:campinair2021@gmail.com"]]
 a_class_list = [["fa fa-facebook"], ["fa fa-instagram"], ["fa fa-envelope"]];
 for(let i = 0; i<3; i++){
     var a = document.createElement('a');
-    a.href = '#';
+    a.href = list_icon_a[i];
     a.setAttribute('class',a_class_list[i]);
     div2.appendChild(a);
 }
 var div3 = document.createElement('div');
 div3.style.color = '#ffbd59';
 div3.style.fontSize = '1.3vw';
-div3.innerHTML = '500 Terry Francois Street San Francisco, CA 94158';
+div3.innerHTML = '30013 新竹市光復路二段101號 國立清華大學實創中心';
 var div4 = document.createElement('div');
 div4.style.paddingTop = '2%';
 div4.style.color = '#ffbd59';

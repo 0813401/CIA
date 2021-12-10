@@ -77,6 +77,7 @@ function creator_nav(){
 
     var ul_3 = document.createElement('ul');
     ul_3.setAttribute('class', 'navbar-nav');
+    list_icon_a = [["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
     a_class_list = [["fa fa-facebook"], ["fa fa-instagram"]];
     for(let i = 0; i<2; i++){
         var a = document.createElement('a');
@@ -84,7 +85,7 @@ function creator_nav(){
         a.style.height = '3vw';
         a.style.width = '3vw';
         a.style.paddingTop = '18%';
-        a.href = '#';
+        a.href = list_icon_a[i];
         a.setAttribute('class',a_class_list[i]);
         ul_3.appendChild(a);
     }
