@@ -42,15 +42,6 @@ for(let i = 0; i < n_camp; i++){
   image.push([info_array1[i][1]]);
 }
 
-
-const test =[[0], [1]];
-console.log(price);
-console.log(test);
-console.log(info_array1);
-
-
-
-
 var slider = document.createElement('div');
 slider.setAttribute('class', 'slider');
 slider.style.width = '70%';
@@ -86,9 +77,11 @@ for(let i = 0; i<n_camp; i++){
   var text_div = document.createElement('div');
   text_div.innerHTML = text[i];
   text_div.style.color = '#284b75';
+  text_div.style.fontSize = '1.5vw';
   var price_div = document.createElement('div');
   price_div.innerHTML = "NT$"+price[i];
   price_div.style.color = '#284b75';
+  price_div.style.fontSize = '1.5vw';
   img_div.appendChild(info_span);
   img_div.appendChild(img); 
   container_div2.appendChild(img_div);
@@ -122,7 +115,7 @@ $('.slider').slick({
     swipeToSlide: true,
     slidesToScroll: 1,
     infinite: true,
-    arrows: false,
+    arrows: true,
 });
 
 
@@ -136,13 +129,25 @@ slider_video.style.width = '72%';
 slider_video.style.height = '90%';
 video_container.appendChild(slider_video);
 
+
+
+viedo_link = [
+  ["https://www.youtube.com/embed/xcanwdpHvVs"],
+  ["https://www.youtube.com/embed/xcanwdpHvVs"],
+];
 for(let i = 0; i<2; i++){
-  var video = document.createElement('video');
-  video.setAttribute('controls', true);
-  var source = document.createElement('source');
-  source.src = 'asset/video/video' + (i+1) + '.mp4';
-  video.appendChild(source);
-  slider_video.appendChild(video);
+  var div = document.createElement('div');
+  div.setAttribute('class', 'video_box');
+  var iframe = document.createElement('iframe');
+  iframe.style.width = '560';
+  iframe.style.height = '315';
+  iframe.title = 'YouTube video player';
+  iframe.frameborder = "0";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true; 
+  iframe.src = viedo_link[i];
+  div.appendChild(iframe);
+  slider_video.appendChild(div);
 }
 
   /* 影片跑馬燈設定 */
@@ -346,10 +351,9 @@ $(window).scroll(function(){
 
   try{
     var voted_bar = document.getElementsByClassName('voted_bar');
-    var voted_number = document.getElementsByClassName('voted_number');
     var container_pool_offsetTop = container_pool.offsetTop;
     for(let i = 0; i<3; i++){
-      if (window.pageYOffset >= container_pool_offsetTop - 600)
+      if (window.pageYOffset >= container_pool_offsetTop - 850)
         voted_bar[i].style.animationPlayState = 'running';
       else
         voted_bar[i].style.animationPlayState = 'paused';

@@ -6,6 +6,7 @@ nav{
     font-weight: 900;
 }
 
+
 .nav-link:hover {
     color: #f88411;
 }
@@ -30,6 +31,7 @@ nav{
 
 .fa:hover {
     opacity: 0.7;
+    color: #f88411;
 }
 
 .fa-facebook {
