@@ -24,7 +24,7 @@ var info_array = [];
 var signup = db.collection("camp_SignUp");
 signup.get().then(querySnapshot => {
 querySnapshot.forEach(doc => {
-info_array.push([doc.id, doc.data().name, doc.data().feature1, doc.data().feature2, doc.data().feature3, doc.data().teacher1, doc.data().teacher2, doc.data().teacher3, doc.data().date, doc.data().people, doc.data().money_one, doc.data().money_two, doc.data().deadline, doc.data().step3, doc.data().image_title, doc.data().image_schedule1, doc.data().image_schedule2, doc.data().image_teacher1, doc.data().image_teacher2, doc.data().image_teacher3, doc.data().datetime]);
+info_array.push([doc.id,doc.data().name, doc.data().feature1, doc.data().feature2, doc.data().feature3, doc.data().teacher1, doc.data().teacher2, doc.data().teacher3, doc.data().date, doc.data().people, doc.data().money_one, doc.data().money_two, doc.data().deadline, doc.data().step3, doc.data().image_title, doc.data().image_schedule1, doc.data().image_schedule2, doc.data().image_teacher1, doc.data().image_teacher2, doc.data().image_teacher3, doc.data().datetime]);
 });
 
 var id = -1; //這裡是代表是哪個營隊(DB中的第幾個)
@@ -35,8 +35,6 @@ info_array.sort((a, b) => a[20] - b[20]);
 
 
 
-
-const Name = document.getElementById('name');
 const Feature1 = document.getElementById('feature1');
 const Feature2 = document.getElementById('feature2');
 const Feature3 = document.getElementById('feature3');
@@ -55,7 +53,6 @@ const Img_schedule2 = document.getElementById('img_schedule2');
 const Img_teacher1 = document.getElementById('img_teacher1');
 const Img_teacher2 = document.getElementById('img_teacher2');
 const Img_teacher3 = document.getElementById('img_teacher3');
-Name.innerHTML = info_array[id][1];
 Feature1.innerHTML = info_array[id][2];
 Feature2.innerHTML = info_array[id][3];
 Feature3.innerHTML = info_array[id][4];
