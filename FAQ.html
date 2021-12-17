@@ -32,7 +32,8 @@
                     <br>
                     <div class="ans highlight">這些，就是C.I.A的故事的起點，我們未來也會致力於提供最優質便利的科系探索服務，影響更多對未來徬徨的高中生，寫下台灣教育創新的新篇章，你，準備好一起來了嗎?</div>
                 </div>
-                <div id="learn_more_01">(查看更多...)</div>
+                <div id="learn_more_01" class="fa fa-angle-down"></div>
+                
             </div>
         </div>
         <div class="rounded_border">
@@ -72,7 +73,7 @@
                     <br>
                     <div class="ans ans_tab highlight">除了三大核心活動外，團隊另外針對科系特色安排競賽遊戲及團隊計分，增加營隊趣味性的同時，團隊計分讓同學們更專注其中。</div>  
                 </div>
-                <div id="learn_more_02">(查看更多...)</div>
+                <div id="learn_more_02" class="fa fa-angle-down"></div>
             </div>
         </div>
         <div class="rounded_border">
@@ -285,10 +286,9 @@ img{
     color: 	#6C6C6C; 
     font-weight: 900; 
     cursor: pointer; 
-    font-size: 1.4vw;
+    margin-top: 3%;
+    font-size: 2vw;
 }
-
-
 
 </style>
 
@@ -298,24 +298,28 @@ var learn_more_02 = document.getElementById('learn_more_02');
 var ans_hidden_01 = document.getElementById('ans_hidden_01');
 var ans_hidden_02 = document.getElementById('ans_hidden_02');
 learn_more_01.addEventListener('click', function(){
-    if(learn_more_01.innerHTML == '(查看更多...)'){
+    if(learn_more_01.classList[1] == 'fa-angle-down'){
         $(ans_hidden_01).fadeIn(1000);
-        learn_more_01.innerHTML = '(收回)';
+        learn_more_01.classList.remove('fa-angle-down');
+        learn_more_01.setAttribute('class', 'fa fa-angle-up');
     }
     else{
         $(ans_hidden_01).fadeOut(1000);
-        learn_more_01.innerHTML = '(查看更多...)';
+        learn_more_01.classList.remove('fa-angle-up');
+        learn_more_01.setAttribute('class', 'fa fa-angle-down');
     }
 
 });
 learn_more_02.addEventListener('click', function(){
-    if(learn_more_02.innerHTML == '(查看更多...)'){
+    if(learn_more_02.classList[1] == 'fa-angle-down'){
         $(ans_hidden_02).fadeIn(1000);
-        learn_more_02.innerHTML = '(收回)';
+        learn_more_02.classList.remove('fa-angle-down');
+        learn_more_02.setAttribute('class', 'fa fa-angle-up');
     }
     else{
         $(ans_hidden_02).fadeOut(1000);
-        learn_more_02.innerHTML = '(查看更多...)';
+        learn_more_02.classList.remove('fa-angle-up');
+        learn_more_02.setAttribute('class', 'fa fa-angle-down');
     }
 
 });

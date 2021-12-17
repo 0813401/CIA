@@ -1,8 +1,9 @@
 const body = document.body;
 const container_div = document.createElement('div');
 container_div.style.backgroundColor = "#284b75";
-container_div.style.height = "35%";
+container_div.style.maxheight = "35%";
 container_div.style.width = "100%";
+container_div.style.paddingBottom = "3%";
 
 var div1 = document.createElement('div');
 div1.style.paddingTop = '2%';

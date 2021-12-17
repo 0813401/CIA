@@ -71,6 +71,7 @@ for(let i = 0; i<n_camp; i++){
   info_span.style.opacity = '0.95';
   info_span.style.left = 0;
   info_span.style.padding = '2%';
+  info_span.style.fontSize = '1.3vw';
   info_span.innerHTML = info[i];
   var img = document.createElement('img');
   img.src = image[i];
@@ -132,8 +133,8 @@ video_container.appendChild(slider_video);
 
 
 viedo_link = [
-  ["https://www.youtube.com/embed/xcanwdpHvVs"],
-  ["https://www.youtube.com/embed/xcanwdpHvVs"],
+  ["https://www.youtube.com/embed/O1XBJXBOVyc"],
+  ["https://www.youtube.com/embed/23U_q7FNtVs"],
 ];
 for(let i = 0; i<2; i++){
   var div = document.createElement('div');

@@ -11,13 +11,13 @@
 </head>
 <body style="background-color:#ffbd59;">
     <script src="asset/js/nav.js"></script>
-    <div class="title experienceBG" style="height: 100%">
+    <div class="title experienceBG" style="max-height: 100%">
         <div style="margin-top: 40%;padding-left: 70%; padding-bottom: 5%;">
             <button class="experienceButton" style="font-weight: 900; font-size: 3vw;">馬上體驗 <span style="color: #f88411;">>>></span></button>
         </div>
     </div>
     
-    <div>
+    <div style="max-height: 100%">
         <div class="big_text title" style="padding-top: 3%;"><span class="underline">&nbsp&nbsp個人諮詢特色&nbsp&nbsp</span></div>
         <div class = "which-step">
             <div class = "step">
@@ -43,10 +43,10 @@
             </div>
         </div>
     </div>
-    <div style="background-color: #fff; height: 300%;">
+    <div style="background-color: #fff; max-height: 300%; padding-bottom: 3%;">
         <div class="big_text title" style="color: #284b75; padding-top: 3%;"><span class="underline">&nbsp&nbsp個人諮詢流程&nbsp&nbsp</span></div>
         <div class="procedure" style="height: 17%;">
-            <div class="img_procedure_div"><img class="img_procedure" src="asset/img/consult/procedure1.jpg"></div>
+            <div class="img_procedure_div" ><img class="img_procedure" src="asset/img/consult/procedure1.jpg"></div>
             <div class="procedure_text">
                 <div class="title left_text" style="color: #284b75; font-size: 2vw; font-weight: 900;">Step 1 : 依照需求自選老師</div>
                 <div class="left_text" style="color: #000; font-weight: 900;font-size: 1.5vw;">1. 參考老師履歷及介紹影片</div>
@@ -204,8 +204,6 @@ div .title{
     overflow: hidden;
     background-position: center;
     background-size: cover;
-    max-width: 100%;
-    height: auto;
 }
 
 .experienceButton {
@@ -246,6 +244,7 @@ div .title{
 
 .img_procedure_div {
     overflow: hidden;
+    height: 100%;
 }
 
 .procedure_text {
