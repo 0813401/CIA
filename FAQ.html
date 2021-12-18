@@ -32,6 +32,7 @@
                     <br>
                     <div class="ans highlight">這些，就是C.I.A的故事的起點，我們未來也會致力於提供最優質便利的科系探索服務，影響更多對未來徬徨的高中生，寫下台灣教育創新的新篇章，你，準備好一起來了嗎?</div>
                 </div>
+                <div class='text_gradient'></div>
                 <div id="learn_more_01" class="fa fa-angle-down"></div>
                 
             </div>
@@ -73,6 +74,7 @@
                     <br>
                     <div class="ans ans_tab highlight">除了三大核心活動外，團隊另外針對科系特色安排競賽遊戲及團隊計分，增加營隊趣味性的同時，團隊計分讓同學們更專注其中。</div>  
                 </div>
+                <div class='text_gradient'></div>
                 <div id="learn_more_02" class="fa fa-angle-down"></div>
             </div>
         </div>
@@ -290,6 +292,47 @@ img{
     font-size: 2vw;
 }
 
+.text_gradient{
+    z-index: 2;
+    position: relative;
+    margin-top: -5%;
+    height: 3vw;
+    background: -moz-linear-gradient(
+        bottom, 
+        rgb(255, 255, 255) 15%,
+ 
+        rgba(255, 255, 255, 0) 100%
+    ); 
+    background: -webkit-gradient(
+         linear,
+        bottom,
+        top,
+        color-stop(15%, rgb(255, 255, 255)),
+        color-stop(100%, rgba(255, 255, 255, 0))
+    );
+    background: -webkit-linear-gradient(
+         bottom,
+        rgb(255,255,255) 15%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: -o-linear-gradient(
+        bottom,
+        rgb(255,255,255) 15%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background: -ms-linear-gradient(
+        bottom,
+        rgb(255,255,255) 15%,
+        rgba(255, 255, 255, 0) 100%
+    );
+ 
+    background: linear-gradient(
+         bottom,
+        rgb(255, 255, 255) 15%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
 </style>
 
 <script>
@@ -299,12 +342,14 @@ var ans_hidden_01 = document.getElementById('ans_hidden_01');
 var ans_hidden_02 = document.getElementById('ans_hidden_02');
 learn_more_01.addEventListener('click', function(){
     if(learn_more_01.classList[1] == 'fa-angle-down'){
-        $(ans_hidden_01).fadeIn(1000);
+        $(learn_more_01).parent().find('.text_gradient').hide();
+        $(ans_hidden_01).fadeIn(500);
         learn_more_01.classList.remove('fa-angle-down');
         learn_more_01.setAttribute('class', 'fa fa-angle-up');
     }
     else{
-        $(ans_hidden_01).fadeOut(1000);
+        $(learn_more_01).parent().find('.text_gradient').show();
+        $(ans_hidden_01).fadeOut(500);
         learn_more_01.classList.remove('fa-angle-up');
         learn_more_01.setAttribute('class', 'fa fa-angle-down');
     }
@@ -312,11 +357,13 @@ learn_more_01.addEventListener('click', function(){
 });
 learn_more_02.addEventListener('click', function(){
     if(learn_more_02.classList[1] == 'fa-angle-down'){
+        $(learn_more_02).parent().find('.text_gradient').hide();
         $(ans_hidden_02).fadeIn(1000);
         learn_more_02.classList.remove('fa-angle-down');
         learn_more_02.setAttribute('class', 'fa fa-angle-up');
     }
     else{
+        $(learn_more_02).parent().find('.text_gradient').show();
         $(ans_hidden_02).fadeOut(1000);
         learn_more_02.classList.remove('fa-angle-up');
         learn_more_02.setAttribute('class', 'fa fa-angle-down');

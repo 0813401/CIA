@@ -16,7 +16,7 @@ function creator_nav(){
     nav_1.style.backgroundColor = '#284b75';
     nav_1.style.height = '15%';
     nav_1.style.paddingTop = '1%';
-    nav_1.style.zIndex = '3';
+    nav_1.style.zIndex = '10';
     var a = document.createElement('a');
     a.setAttribute("class","navbar-brand");
     a.style.display = "block";
@@ -32,7 +32,7 @@ function creator_nav(){
     nav_2.id = 'navbar';
     nav_2.setAttribute('class', 'navbar navbar-expand-sm flex-nav');
     nav_2.style.backgroundColor = '#284b75';
-    nav_2.style.zIndex = '2';
+    nav_2.style.zIndex = '9';
     var ul = document.createElement('ul');
     ul.setAttribute('class', 'navbar-nav');
     ul.style.margin = 'auto';

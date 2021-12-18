@@ -21,31 +21,34 @@
 </head>
 <body style="background-color:#ffbd59;">
     <script src="asset/js/nav.js"></script>
-    <div style="overflow: hidden; padding: 3%; height: 80%; width: 100%; margin: 0 auto;"><img id="img_title" style="max-width: 60%; height:auto; object-fit: cover;" ></div>
-    <div style="height: 110%; width: 100%;">
-        <div style="float: left; margin-left: 13%; margin-top: 3%;height: 90%; width: 35%;">
-            <div class="rounded_border" style="height: 100%;">
+    <div style="overflow: hidden; padding: 3%; max-height: 80%; width: 100%; margin: 0 auto;"><img id="img_title" style="max-width: 60%; height:auto; object-fit: cover;" ></div>
+    <div style="height: auto; width: auto; display: inline-block;">
+        <div style="float: left; margin-left: 13%;max-height: 100%; width: 35%;">
+            <div class="rounded_border" style="height: auto; width: auto; display: inline-block;">
                 <div class="title" style="font-size: 2vw;"><span class="underline2">&nbsp&nbsp營隊特色&nbsp&nbsp</span></div>
+                <div class="teacher_text"><li>教授演講</li></div>
                 <div id = "feature1" class="feature_text"></div>
+                <div class="teacher_text"><li>線上實操</li></div>
                 <div id = "feature2" class="feature_text"></div>
+                <div class="teacher_text"><li>學長姐分享</li></div>
                 <div id = "feature3" class="feature_text"></div>
-                <div style="overflow: hidden; margin: 2% 0% 2% 5%; height: 27%; width: 40%;float: left;"><img id="img_schedule1" style="height:auto; max-width: 90%; object-fit: cover;"></div>
-                <div style="overflow: hidden; margin: 2% 5% 2% 0%; height: 27%; width: 40%;float: right;"><img id="img_schedule2" style="height:auto; max-width: 90%; object-fit: cover; "></div>
+                <div style="overflow: hidden; margin: 2% 0% 2% 5%; height: 25%; width: 40%;float: left;"><img id="img_schedule1" style="height:auto; max-width: 90%; object-fit: cover;"></div>
+                <div style="overflow: hidden; margin: 2% 5% 2% 0%; height: 25%; width: 40%;float: right;"><img id="img_schedule2" style="height:auto; max-width: 90%; object-fit: cover; "></div>
             </div>
         </div>
-        <div style="float: right; margin-right: 13%; margin-top: 3%;height: 90%; width: 35%;">
-            <div class="rounded_border" style="height: 100%; ">
+        <div style="float: right; margin-right: 13%;max-height: 100%; width: 35%;">
+            <div class="rounded_border" style="max-height: 100%;">
                 <div class="title" style="font-size: 2vw;"><span class="underline2">&nbsp&nbsp堅強師資&nbsp&nbsp</span></div>
                 <div class="teacher_text"><li id = "teacher1"></li></div>
-                <div style="overflow: hidden; padding: 2%; height: 23%; width: 100%;"><img id="img_teacher1" style="height:auto; max-width: 30%; object-fit: cover; "></div>
+                <div style="overflow: hidden; padding: 3%; height: 30%; width: 100%;"><img id="img_teacher1" style="height:auto; max-width: 33%; object-fit: cover; "></div>
                 <div class="teacher_text"><li id = "teacher2"></li></div>
-                <div style="overflow: hidden; padding: 2%; height: 23%; width: 100%;"><img id="img_teacher2" style="height:auto; max-width: 30%; object-fit: cover; "></div>
+                <div id = "img_teacher2_div" style="overflow: hidden; padding: 3%; height: 30%; width: 100%;"><img id="img_teacher2" style="height:auto; max-width: 33%; object-fit: cover; "></div>
                 <div class="teacher_text"><li id = "teacher3"></li></div>
-                <div style="overflow: hidden; padding: 2%; height: 23%; width: 100%;"><img id="img_teacher3" style="height:auto; max-width: 30%; object-fit: cover; "></div>
+                <div id = "img_teacher3_div" style="overflow: hidden; padding: 3%; height: 30%; width: 100%;"><img id="img_teacher3" style="height:auto; max-width: 33%; object-fit: cover; "></div>
             </div>
         </div>
     </div>
-    <div style="height: 100%; width: 100%;">
+    <div style="max-height: 100%; width: 100%; margin-top: 3%;">
         <div class="rounded_border" style="height: 100%; width: 74%; margin:0 auto; padding-top: 1%;">
             <div class="title" style="font-size: 2vw;"><span class="underline2">&nbsp&nbsp報名資訊&nbsp&nbsp</span></div>
             <div id = "date" class="SignUp_text"><span class="title">【活動時間】</span></div>
@@ -92,13 +95,7 @@ body, html{
     width: 100%;
     height: 100%;
 }
-nav{
-    background-color: #284b75;
-    text-align: center;
-    font-size: 1.3vw;
-    height: 8%;
-    font-weight: 900;
-}
+
 
 .nav-link:hover {
     color: #ffbd59;
@@ -140,8 +137,6 @@ div .title{
 .feature_text {
     padding-top: 3%;
     text-align: left;
-    padding-left: 5%;
-    text-indent: -5%;
     font-size: 1.3vw;
 }
 
@@ -194,15 +189,6 @@ div .title{
     font-family: 'c';
 }
 
-.nav-link:hover {
-    color: #ffbd59;
-    /*#005AB5*/
-}
-
-.img_square {
-	width: 100px;
-	border-radius: 50%;
-}
 .margin{
     margin: 2% 3%;
 }
@@ -241,11 +227,6 @@ div .title{
     color: white;
 }
 
-.flex-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .sticky {
   position: fixed;

@@ -21,6 +21,7 @@ var array_card_text = [['C','O','M','P','A','N','Y','I','N','A','I','R'],
 create_card_div();
 the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
 the_card_container.style.backgroundSize = '100%';
+the_card_container.style.maxHeight = '100%';
 var card_rotate_interval = window.setInterval(card_rotate, 5000);
 
 function create_card_div(){
