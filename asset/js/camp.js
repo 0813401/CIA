@@ -308,20 +308,29 @@ function voted_page(){
           pools.doc(id).update({
             voted: voted_array[i][2] + 1,
           })
-        console.log("update succeed!");
       }
 
       var comment = checkans.value;
       if(comment != "") {
         if(comment.includes("系", 2)){
           var pools_comment = db.collection('pools_comment');
-          pools_comment.add({
-              comment: comment
+          var number = 1;
+          pools_comment.get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              if(doc.id == comment)
+                number = doc.data().num + 1;
+            });
+          });
+
+          setTimeout(function(){
+            pools_comment.doc(comment).set({
+              num: number+0
             });
             modal.style.display = "none";
             setTimeout(function(){
               window.location.reload();
             }, 500);
+          }, 500);
         }
         else
           hint.style.visibility = 'visible';
@@ -334,6 +343,7 @@ function voted_page(){
     container_voted_send.appendChild(button);
     container_voted_page.appendChild(container_voted_send); 
     container_voted_page.appendChild(hint);
+    console.log("update succeed!");
   }
 flag = false;
 }
@@ -364,5 +374,3 @@ $(window).scroll(function(){
   }
 });
 });
-
-
