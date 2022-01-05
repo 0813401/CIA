@@ -36,33 +36,35 @@
             </button>
           </div>
     </div>
-    <div style="max-height: 100%; background-color: #FFF">
-        <div class="big_text title" style="padding: 2%; color: #000;">C.I.A - Company In Air 最好的一站式升學探索平台</div>
+    <div style="display:block; overflow: hidden; background-color: #FFF; margin-bottom: -15%;">
+        <div class="big_text title" style="padding-top: 5%; padding-left: 2%; padding-right: 2%; color: #000; font-size: 2.5vw;">C.I.A - Company In Air</div>
+        <div class="big_text title" style="padding-bottom: 2%; padding-left: 2%; padding-right: 2%; color: #000; font-family: 'ch'; font-weight:lighter;">最好的一站式升學探索平台</div>
         <div class='video_box'>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/PaDSmCmXmmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- width="560" height="315" -->
+            <iframe src="https://www.youtube.com/embed/PaDSmCmXmmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-    <div style="height: 70%; background-color: #ffbd59">
+    <div style="display: block; overflow: hidden; background-color: #ffbd59; margin-bottom: -10%;">
         <div class = "which_why" style="margin: 3%;">
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why12.png"></div>
                 <div class="step_text">
                     <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">一站式升學輔導平台</div>
-                    <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 1.4vw;">C.I.A團隊將探索到升學途中的各種需求進行整合，打造由線上營隊與個人諮詢構建出的一站式線上平台，不只解決對未來科系的疑惑，也幫助同學考上自己的目標校系。</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊將探索到升學途中的各種需求進行整合，打造由線上營隊與個人諮詢構建出的一站式線上平台，不只解決對未來科系的疑惑，也幫助同學考上自己的目標校系。</div>
                 </div>
             </div>
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why22.png"></div>
                 <div class="step_text">
                     <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">實際與大學師生交流</div>
-                    <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 1.4vw;">C.I.A團隊找到來自各大名校不同科系的學長姐與教授，線上面對面直接分享大學科系的制度、實際體驗及未來出路，讓同學能在高中階段盡早確定目標，全心衝刺。</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊找到來自各大名校不同科系的學長姐與教授，線上面對面直接分享大學科系的制度、實際體驗及未來出路，讓同學能在高中階段盡早確定目標，全心衝刺。</div>
                 </div>
             </div>
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why32.png"></div>
                 <div class="step_text">
                     <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">創新式科系探索活動</div>
-                    <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 1.4vw;">融合新潮線上數位工具，C.I.A團隊設計各種科系線上實作、闖關活動和基礎課程，也不斷通過創新，研發出更有效的線上科系探索模式，讓探索途中充滿歡笑及樂趣。</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">融合新潮線上數位工具，C.I.A團隊設計各種科系線上實作、闖關活動和基礎課程，也不斷通過創新，研發出更有效的線上科系探索模式，讓探索途中充滿歡笑及樂趣。</div>
                 </div>
             </div>
         </div>
@@ -156,6 +158,11 @@
 </html>
 
 <style>
+
+@font-face {
+	font-family: "ch";
+    src: url('asset/fonts/meow.ttf')format('truetype');
+}
     
 .container_which_provide{
     width: 100%;
@@ -257,6 +264,8 @@ img{
 .video_box {
     position: relative;
     width: 100%;
+    /* display: block;
+    overflow: hidden; */
     height: 0;
     padding-bottom: 56.25%;
 }
@@ -264,9 +273,9 @@ img{
 .video_box iframe {
     position: absolute;
     top: 0;
-    left: 20%;
-    width: 60%;
-    height: 60%;
+    left: 17%;
+    width: 66%;
+    height: 66%;
 }
 
 .hr-edge-weak {
