@@ -72,12 +72,18 @@ Img_teacher1.src = info_array[id][17];
 Img_teacher2.src = info_array[id][18];
 Img_teacher3.src = info_array[id][19];
 if(info_array[id][6] == "")
-  Teacher2.style.display = "none";
+{
+  Teacher2.innerHTML = " ";
+  Teacher2.style.color= "white";
+}
 if(info_array[id][7] == "")
-  Teacher3.style.display = "none";
+{
+  Teacher3.innerHTML = " ";
+  Teacher3.style.color= "white";
+}
 if(info_array[id][18] == "")
-  Img_teacher2.style.display = "none";
+  Img_teacher2.src = "https://firebasestorage.googleapis.com/v0/b/ciateam-6d554.appspot.com/o/signup%2Fwhite.jpg?alt=media&token=64a190dd-3724-43ba-9489-36090ac7de6a";
 if(info_array[id][19] == "")
-  Img_teacher3.style.display = "none";
+  Img_teacher3.src = "https://firebasestorage.googleapis.com/v0/b/ciateam-6d554.appspot.com/o/signup%2Fwhite.jpg?alt=media&token=64a190dd-3724-43ba-9489-36090ac7de6a";
 });
 });
