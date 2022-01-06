@@ -37,15 +37,15 @@
           </div>
     </div>
     <div style="display:block; overflow: hidden; background-color: #FFF; margin-bottom: -15%;">
-        <div class="big_text title" style="padding-top: 5%; padding-left: 2%; padding-right: 2%; color: #000; font-size: 2.5vw; font-family: en; font-weight:bolder;">C.I.A - Company In Air</div>
+        <div class="big_text title" style="padding-top: 3%; padding-left: 2%; padding-right: 2%; color: #000; font-size: 2.5vw; font-family: en; font-weight:bolder;">C.I.A - Company In Air</div>
         <div class="big_text title" style="padding-bottom: 2%; padding-left: 2%; padding-right: 2%; color: #000; font-family: 'ch'; font-weight:lighter;">最好的一站式升學探索平台</div>
         <div class='video_box'>
             <!-- width="560" height="315" -->
             <iframe src="https://www.youtube.com/embed/PaDSmCmXmmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-    <div style="display: block; overflow: hidden; background-color: #ffbd59; margin-bottom: -10%;">
-        <div class = "which_why" style="margin: 3%;">
+    <div style="display: block; overflow: hidden; background-color: #ffbd59; margin-bottom: 3%;">
+        <div class = "which_why" style="margin: 3%; margin-bottom: -5%;">
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why12.png"></div>
                 <div class="step_text">
@@ -104,7 +104,7 @@
 
     <div style="padding: 3%;display: block; overflow: hidden;">
         <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp您認為自己目前處在何種階段？&nbsp&nbsp</span></div> 
-        <div class="step" style="height: 25%;">
+        <div class="step">
             <div class="step_text">
                 <div class="step_before_text" style="font-weight: 900;">尋找目標科系</div>
                 <div class="title step_after_text">
@@ -121,7 +121,7 @@
             <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
         </div>
         <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
-        <div class="step" style="height: 25%;">
+        <div class="step">
             <div class="step_text">
                 <div class="step_before_text"  style="font-weight: 900;">為達目標科系標準</div>
                 <div class="title step_after_text">
@@ -138,7 +138,7 @@
             <div class="img_step_div"><img class="img_step" src="asset/img/home/hope.png"></div>
         </div>
         <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
-        <div class="step" style="height: 25%;">
+        <div class="step">
             <div class="step_text">
                 <div class="step_before_text"  style="font-weight: 900;">錄取目標科系</div>
                 <div class="title step_after_text">
@@ -381,13 +381,17 @@ img{
 .which_why{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    /* grid-auto-rows: 80vh; */
     padding: 0% 8%;
 }
 
 .why {
     background-color: white;
-    /* max-height: 75%; */
-    height: 75%;
+    /* height: auto;
+    width: auto;
+    display: inline-block; */
+    display: block;
+    overflow: hidden;
     margin: 0% 4%;
     transition: 0.3s ease-in-out;
 }
@@ -396,15 +400,17 @@ img{
 .step {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* grid-auto-rows: 65vh; */
     margin: 2% 10%;
-    height: 10%;
-    width: 80%;
+    /* height: 10%;
+    width: 80%; */
     background-color: #fff;
 }
 
 .step_text {
     position: relative;
     vertical-align: center;
+    overflow: hidden;
 }
 
 .step_after_title_text{
