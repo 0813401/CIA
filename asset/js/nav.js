@@ -38,7 +38,7 @@ function creator_nav(){
     ul.setAttribute('class', 'navbar-nav');
     ul.style.margin = 'auto';
     ul.style.paddingLeft = "5%"
-    var list_a = ["index.html", "camp.html", "consult.html", "faq.html"];
+    var list_a = ["index.html", "camp.html", "consult.html", "FAQ.html"];
     var list_text = ["首頁 Company In Air &nbsp&nbsp", "線上營隊 Camp In Air &nbsp&nbsp", "個人諮詢 Consulting In Air &nbsp&nbsp", "常見問題 FAQ"];
     for(let i = 0; i<4; i++){
         var li = document.createElement('li');
