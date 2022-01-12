@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camp in air</title>
+    <link rel="shortcut icon" href="asset/img/favicon.ico"/>
     <link rel="stylesheet" href="asset/css/common.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
@@ -175,7 +176,7 @@
         </div>
     </div>
 
-    <div style="background-color: #fff; display: block; overflow: hidden; margin-top: -1%;">
+    <div style="background-color: #fff; display: block; overflow: hidden;">
         <div class="title big_text" style="padding-top: 0%; padding-bottom: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp影片回顧&nbsp&nbsp</span></div>
         <div id="video_container">
             <!-- <video width="1000" height="570" controls>
@@ -183,7 +184,7 @@
             </video> -->
         </div>
     </div>
-    <div style="display: block; overflow: hidden;">
+    <div style="max-height: 200%;">
         <div class="title big_text" style="padding-top: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp科系許願池&nbsp&nbsp</span></div>
         <br>
         <div style="font-size: 1.8vw; font-weight: bold; margin: 1%;">你是不是希望再探索更多有興趣的科系，卻苦無途徑?</div>
@@ -319,7 +320,6 @@ img{
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
-    margin-bottom: -10%;
 }
 
 .video_box iframe {
@@ -565,6 +565,25 @@ input[type=text]{
 @keyframes animatezoom {
   from {transform: scale(0)} 
   to {transform: scale(1)}
+}
+
+.voted_page_item {
+    padding: 1%;
+    width: 100%;
+    display: flex;
+}
+
+.voted_page_item_name {
+    justify-content: flex-start;
+    margin-right: 3%;
+    font-weight: bolder;
+    font-size: 2.3vw;
+}
+
+.voted_page_item_number{
+    font-weight: bolder;
+    padding-left: 5%;
+    font-size: 2.3vw;
 }
 
 /*======================================*/

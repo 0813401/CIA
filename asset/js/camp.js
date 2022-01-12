@@ -234,19 +234,12 @@ function voted_page(){
     for(let i = 0; i<voted_array.length; i++){
       var div = document.createElement('div');
       div.setAttribute('class', 'voted_page_item');
-      div.style.padding = '1%';
-      div.style.width = '100%';
-      div.style.display = 'flex';
       var voted_name = document.createElement('div')
-      voted_name.style.justifyContent = 'flex-start';
-      voted_name.style.marginRight = '3%';
-      voted_name.style.fontWeight = 'bolder';
-      voted_name.style.fontSize = '2.3vw'; 
+      voted_name.setAttribute('class', 'voted_page_item_name');
       voted_name.innerText = voted_array[i][1];
       var voted_number = document.createElement('div');
-      voted_number.style.marginLeft  = '3%';
-      voted_number.style.fontWeight = 'bolder';
-      voted_number.style.fontSize = '2.3vw'; 
+      voted_number.setAttribute('class', 'voted_page_item_number');
+      voted_number.id = 'voted_page_item_number_'+i;
       voted_number.innerText = voted_array[i][2];
       var voted_bar_box = document.createElement('div');
       voted_bar_box.style.position = 'relative';
@@ -254,6 +247,7 @@ function voted_page(){
       voted_bar_box.style.marginTop = '0.5%';
       var voted_bar = document.createElement('div');
       voted_bar.setAttribute('class', 'voted_bar');
+      voted_bar.id = 'voted_bar_'+i;
       voted_bar.style.position = 'absolute';
       voted_bar.style.width = voted_array[i][2] * 100 / max_voted_number + '%';
       voted_bar.style.height = '80%';
@@ -279,10 +273,17 @@ function voted_page(){
     var voted_like_img = document.getElementsByClassName('voted_like_img');
     for(let i = 0; i<voted_array.length; i++){
       voted_like_img[i].addEventListener('click', function(){
-        if(voted_like_img[i].style.opacity == '0.5')
+        let number = document.getElementById('voted_page_item_number_'+i);
+        let bar = document.getElementById('voted_bar_'+i);
+        if(voted_like_img[i].style.opacity == '0.5'){
+          number.innerText = parseInt(number.innerText) + 1;
           voted_like_img[i].style.opacity = '1';
-        else
+        }
+        else{
+          number.innerText = parseInt(number.innerText) - 1;
           voted_like_img[i].style.opacity = '0.5';
+        }
+        bar.style.width = parseInt(number.innerText)*100 / max_voted_number + '%';
       });
     }
 
@@ -321,7 +322,6 @@ function voted_page(){
                 number = doc.data().num + 1;
             });
           });
-
           setTimeout(function(){
             pools_comment.doc(comment).set({
               num: number+0
@@ -334,16 +334,20 @@ function voted_page(){
         }
         else
           hint.style.visibility = 'visible';
-      };
-    });
+      }
+      else{
+        setTimeout(function(){
+          window.location.reload();
+        }, 500);
+      }
 
-    
+      console.log("update succeed!");
+    });
 
     container_voted_send.appendChild(checkans);
     container_voted_send.appendChild(button);
     container_voted_page.appendChild(container_voted_send); 
     container_voted_page.appendChild(hint);
-    console.log("update succeed!");
   }
 flag = false;
 }
