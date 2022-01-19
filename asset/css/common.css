@@ -1,0 +1,60 @@
+nav{
+    background-color: #284b75;
+    text-align: center;
+    font-size: 1.3vw;
+    height: 8%;
+    font-weight: 900;
+}
+
+
+.nav-link:hover {
+    color: #f88411;
+}
+
+.img_square {
+	width: 6vw;
+	border-radius: 50%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+.fa {
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    color: #f88411;
+}
+
+.fa-facebook {
+    background: #284b75;
+    color: white;
+}
+
+.fa-instagram {
+    background: #284b75;
+    color: white;
+}
+
+.fa-envelope {
+    background: #284b75;
+    color: white;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-user-circle-o:hover {
+    opacity: 1;
+}

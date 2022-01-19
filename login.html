@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body style="background-color:#ffbd59;">
+    <script src="nav.js"></script>
+    
+    <div class="rounded_border">
+        <form action="action_page.php" method="post"></form>
+        <div class="container">
+            <div class="user" style="padding-bottom: 3%;"><input type="text" placeholder="Enter Username" name="uname" required></div>
+            <div style="padding-bottom: 3%;"><input type="password" placeholder="Enter Password" name="psw" required></div>
+            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 5%;">
+                <div style="float: left;"><label style="font-size: 1.2vw;"><input type="checkbox" checked="checked" name="remember"> Remember me</label></div>
+                <div style="float: right;"><span class="psw"><a href="#">Forgot password?</a></span></div>
+                
+            </div>
+            <div style="padding: 3% 0%;"><button type="submit">Login In</button></div>
+            <div><span class="reg">Don't have an account? <a href="register.html"> Register</a></span></div>
+
+            <div class="order">
+                <span class="line"></span>
+                <span class="txt">or</span>
+                <span class="line"></span>
+            </div>
+
+            <div style="padding-top: 5%;">
+                <a href="#" class="fb btn">
+                  <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                </a>
+                <a href="#" class="google btn">
+                  <i class="fa fa-google fa-fw"></i> Login with Google+
+                </a>
+            </div>
+            
+        
+            
+            
+        </div>
+        
+            <!-- <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+            </div> -->
+        </form>
+    </div>
+        
+    
+
+
+    <div style="background-color: #284b75; height: 35%; width: 100%;">
+        <div style="padding-top:2%; color: #ffbd59; font-size: 130%;">聯絡我們</div>
+        <div class="center_text" style="font-size: 150%;">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-envelope"></a>
+        </div>
+        <div style="font-size: 100%; color: #ffbd59;">500 Terry Francois Street San Francisco, CA 94158</div>
+        <div style="padding-top:2%; font-size: 80%; color: #ffbd59;">©2021 by 【C.I.A-Company In Air】 一站式升學輔導平台</div>
+    </div>
+</body>
+</html>
+
+<style>
+
+* {
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
+}
+
+@font-face {
+    font-family: 'e';
+    src: url('asset/fonts/IndieFlower-Regular.woff')format('woff'),
+        url('asset/fonts/IndieFlower-Regular.ttf')format('truetype'),
+        url('asset/fonts/IndieFlower-Regular.eot')format('embedded-opentype');
+}
+@font-face {
+    font-family: 'c';
+    src: url('asset/fonts/cwTeXYen-zhonly.woff')format('woff'),
+        url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
+        url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+}
+nav{
+    background-color: #284b75;
+    text-align: center;
+    font-size: 1.3vw;
+    height: 8%;
+    font-weight: 900;
+}
+
+div{
+    text-align: center;
+    font-size: 20px;
+}
+
+div .title{
+    font-weight: 900;
+}
+
+.question {
+    font-size: 1.5vw;
+    font-weight: 900;
+    color: #284b75;
+    text-align: left;
+}
+
+.ans {
+    font-size: 1.5vw;
+    font-weight: 400;
+    color: black;
+    text-align: left;
+}
+
+.ans_tab {
+    padding-left: 5%;
+}
+
+.ans_tab2 {
+    padding-left: 8%;
+}
+
+.highlight {
+    font-weight: 900;
+}
+
+.rounded_border{
+    margin: 6% auto;
+    padding: 3%;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    width: 50%;
+}
+
+.underline {
+    border-bottom: 2px solid#f88411;
+    border-bottom-width:thick;
+}
+
+.big_text {
+    font-size:3vw;
+    font-weight: 900;
+    color: #284b75;
+}
+
+.white_text {
+    color: #FFFFFF;
+}
+
+.left_text{
+    text-align: left;
+    font-size: 20px;
+    margin: 0% 10%;
+}
+
+.center_text {
+    text-align: center;
+    font-size: 200%;
+    font-family: 'c';
+}
+
+.nav-link:hover {
+    color: #ffbd59;
+    /*#005AB5*/
+}
+
+.img_square {
+	width: 100px;
+	border-radius: 50%;
+}
+.margin{
+    margin: 2% 3%;
+}
+
+.hr-edge-weak {
+    border: 0;
+    border-bottom: 100px ;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+}
+
+.fa {
+    font-size: 100%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    /* background: #284b75; */
+    color: white;
+}
+
+.fa-instagram {
+    background: #284b75;
+    color: white;
+}
+
+.fa-envelope {
+    background: #284b75;
+    color: white;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.fb {
+    background-color: #3B5998;
+    color: white;
+    font-size: 1vw;
+    width: 45%;
+}
+
+.google {
+    background-color: #dd4b39;
+    color: white;
+    font-size: 1vw;
+    width: 45%;
+}
+
+.order {
+    height: 50%;
+    line-height: 50%;
+    text-align: center;
+    padding-top: 4%;
+}
+.order .line {
+    display: inline-block;
+    width: 40%;
+    border-top: 2px solid #ccc;
+}
+.order .txt {
+    color: black;
+    vertical-align: middle;
+    font-size: 1.2vw;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 2%;
+    margin: 2%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1.3vw;
+}
+
+
+/* Set a style for all buttons */
+button {
+    background-color: #284b75;
+    color: white;
+    padding:2%;
+    margin:2%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 25%;
+    font-size: 1.3vw;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+    width: 70%;
+    padding: auto;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    padding-top: 2%;
+    font-size: 1.2vw;
+}
+
+span.reg {
+    padding-top: 2%;
+    font-size: 1.2vw;
+}
+
+/* .user {
+    position: relative;
+}
+.user:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f007";
+    font-size: 2vw;
+    position: absolute;
+    left: 5%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+.user input {
+    text-indent: 10%;
+} */
+</style>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>

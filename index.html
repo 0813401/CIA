@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company In Air</title>
+    <link rel="shortcut icon" href="asset/img/favicon.ico"/>
+    <link rel="stylesheet" href="asset/css/common.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+</head>
+<body style="background-color:#ffbd59;">
+    <script src="asset/js/nav.js"></script>
+    <div id='card_container'></div>
+    <div class='carousel_slide_container' style="background-color: #FFF; z-index: 1;">
+        <hr class="hr-edge-weak" style="margin-top: 0;">
+        <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp近期活動&nbsp&nbsp</span></div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div id ="carousel_inner" class="carousel-inner"></div> <!-- in js -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    <div style="display:block; overflow: hidden; background-color: #FFF; margin-bottom: -15%;">
+        <div class="big_text title" style="padding-top: 3%; padding-left: 2%; padding-right: 2%; color: #000; font-size: 3.5vw; font-family: en; font-weight:bolder;">C.I.A - Company In Air</div>
+        <div class="big_text title" style="padding-bottom: 2%; padding-left: 2%; padding-right: 2%; color: #000; font-family: 'ch'; font-weight:lighter;">最好的一站式升學探索平台</div>
+        <div class='video_box'>
+            <!-- width="560" height="315" -->
+            <iframe src="https://www.youtube.com/embed/PaDSmCmXmmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div style="display: block; overflow: hidden; background-color: #ffbd59; margin-bottom: 3%;">
+        <div class = "which_why" style="margin: 3%; margin-bottom: -5%;">
+            <div class = "why">
+                <div class="img_why_div"><img class="img_why" src="asset/img/home/why12.png"></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">一站式升學輔導平台</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊將探索到升學途中的各種需求進行整合，打造由線上營隊與個人諮詢構建出的一站式線上平台，不只解決對未來科系的疑惑，也幫助同學考上自己的目標校系。</div>
+                </div>
+            </div>
+            <div class = "why">
+                <div class="img_why_div"><img class="img_why" src="asset/img/home/why22.png"></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">實際與大學師生交流</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊找到來自各大名校不同科系的學長姐與教授，線上面對面直接分享大學科系的制度、實際體驗及未來出路，讓同學能在高中階段盡早確定目標，全心衝刺。</div>
+                </div>
+            </div>
+            <div class = "why">
+                <div class="img_why_div"><img class="img_why" src="asset/img/home/why32.png"></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">創新式科系探索活動</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">融合新潮線上數位工具，C.I.A團隊設計各種科系線上實作、闖關活動和基礎課程，也不斷通過創新，研發出更有效的線上科系探索模式，讓探索途中充滿歡笑及樂趣。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container_whole_which_provide" style="background-color:#FFF; padding-bottom: 2%;">
+        <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp在這裡您能獲得甚麼?&nbsp&nbsp</span></div>
+        <div class="which-provide">
+            <div class='container_which_provide'>
+                <div class='which_provide_before'>
+                    <div onclick="location.href='camp.html'" class="provide BGImage" style="background-image: url('asset/img/home/camp.png'); max-height: 800px;overflow: hidden; ">
+                        <div class="provide_text">
+                            <div class="left_text" style="font-size: 130%;">線上營隊</div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="location.href='camp.html'" class='which_provide_after'>
+                    <div style="font-size: 3vw; font-weight: 900; text-align: left;"><span class="underline">線上營隊</span></div>
+                    <div style="font-size: 1.8vw; text-align: left; font-weight: 900;">以創新的線上模式，降低科系探索成本，使其變得更容易且有效</div>
+                </div>
+            </div>
+            <div class='container_which_provide'>
+                <div class='which_provide_before'>
+                    <div onclick="location.href='consult.html'" class="provide BGImage" style="background-image: url('asset/img/home/consult.png'); max-height: 800px; overflow: hidden;">
+                        <div class="provide_text">
+                            <div class="left_text" style="font-size: 130%;">個人諮詢</div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="location.href='consult.html'" class='which_provide_after'>
+                    <div style="font-size: 3vw; font-weight: 900; text-align: left;"><span class="underline">個人諮詢</span></div>
+                    <div style="font-size: 1.8vw; text-align: left; font-weight: 900;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="padding: 3%;display: block; overflow: hidden;">
+        <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp您認為自己目前處在何種階段？&nbsp&nbsp</span></div> 
+        <div class="step">
+            <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
+            <div class="step_text">
+                <div class="step_before_text" style="font-weight: 900;">尋找目標科系</div>
+                <div class="title step_after_text">
+                    <div class="step_after_title_text" style="color: #f88411;">尋找目標科系</div>
+                    <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
+                    <div class="left_text" style="color: #284b75; ">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='camp.html';">了解更多</button></div>
+                    <div class="left_text" style="color: #284b75;">2. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75; ">通過客製化的學長姐諮詢服務，解決科系探索中遇到的各種問題</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='consult.html';">了解更多</button></div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
+        <div class="step">
+            <div class="img_step_div"><img class="img_step" src="asset/img/home/hope.png"></div>
+            <div class="step_text">
+                <div class="step_before_text"  style="font-weight: 900;">為達目標科系標準</div>
+                <div class="title step_after_text">
+                    <div class="step_after_title_text" style="color: #f88411;">為達目標校系標準</div>
+                    <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
+                    <div class="left_text" style="color: #284b75; ">通過體驗實作活動，對科系有更深入的了解，踏出實踐理想的第一步</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='camp.html';">了解更多</button></div>
+                    <div class="left_text" style="color: #284b75;">2. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75; ">通過學長姐的諮詢輔導服務，協助準備競賽，包括小論文、檢定、各類競賽指導等</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='consult.html';">了解更多</button></div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
+        <div class="step">
+            <div class="img_step_div"><img class="img_step" src="asset/img/home/achieve.png"></div>
+            <div class="step_text">
+                <div class="step_before_text"  style="font-weight: 900;">錄取目標科系</div>
+                <div class="title step_after_text">
+                    <div class="step_after_title_text" style="color: #f88411; margin-top: 10%;">錄取目標科系</div>
+                    <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
+                    <div class="left_text" style="color: #284b75;">1. 個人諮詢</div>
+                    <div class="left_text" style="color: #284b75;">通過客製化的「學科輔導」和「備審指導」服務，解決升學及備審中遇到的各種問題</div>
+                    <div class="left_text" style="padding: 1%;"><button class="step_button" onclick="window.location='consult.html';">了解更多</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="asset/js/footer.js"></script>
+    <script src="asset/js/index.js"></script>
+</body>
+</html>
+
+<style>
+
+@font-face {
+	font-family: "ch";
+    src: url('asset/fonts/meow.ttf')format('truetype');
+}
+
+@font-face {
+ font-family: "en";
+    src: url('asset/fonts/bradley_hand_itc_tt_bold.ttf')format('truetype');
+}
+    
+.container_which_provide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 60%;
+}
+
+
+.which_provide_before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 800px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.which_provide_after {
+    position: absolute;
+    width: 92%;
+    height: 100%;
+    max-width: inherit;
+    font-size: 0.5vw;
+    margin: 0% -4% 0% 4%;
+    padding: 10%;
+    background-color: #284b75;
+} 
+
+.which_provide_after div {
+    padding: 2%;
+    color: #fff;
+}
+
+*{
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-link:hover {
+    color: #ffbd59;
+    /*#005AB5*/
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+div{
+    text-align: center;
+}
+div .title{
+    font-weight: 900;
+}
+
+.left_text{
+    text-align: left;
+    font-size: 1.2vw;
+    margin: 2% 10%;
+}
+
+/* .underline {
+    border-bottom: 2px solid#f88411;
+    border-bottom-width:thick;
+} */
+.underline {
+    border-bottom: 4px solid#f88411;
+}
+
+img{
+   width: 100%;
+   height: 100%; 
+}
+
+.BGImage{
+    background-repeat: no-repeat;
+    /* 透明度 0.6 的黑色半透明遮罩 */
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* 設置背景混和模式為相乘模式 */
+    background-position:center;
+    background-size:cover;
+}
+
+.white_text {
+    color: #FFFFFF;
+}
+
+.big_text {
+    font-size:3vw;
+    font-weight: 900;
+}
+
+.video_box {
+    position: relative;
+    width: 100%;
+    /* display: block;
+    overflow: hidden; */
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.video_box iframe {
+    position: absolute;
+    top: 0;
+    left: 17%;
+    width: 66%;
+    height: 66%;
+}
+
+.hr-edge-weak {
+    border: 0;
+    border-bottom: 100px ;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+}
+
+/*=======翻轉字卡=======*/
+#card_container{
+    height: 40vw;
+    max-height: 77%;
+    background-color: #ffbd59;
+}
+
+.card_container{
+    width: 4.5%;
+    height: 6vw;
+    max-height: 6vw;
+    background-color: white;
+    top: 5.2vw;
+    position: relative;
+}
+
+.card_cover, .card_back{
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 1s ease-in-out;
+    color: #284b75;
+    font-size: 3.3vw;
+    font-weight: 900;
+}
+
+.card_cover{
+    background-color: white;
+    transform: rotateX(180deg);
+}
+
+.card_back{
+    background-color: white;
+    transform: rotateX(0deg);
+}
+/*=====================*/
+
+/*==========圖片跑馬燈==========*/
+.carousel-inner, .carousel-item, .carousel-item img{
+    max-height: 600px;
+    width: 100%;
+    height: 50%;
+} 
+
+.carousel-item img{
+    margin-bottom: 1%;
+    object-fit: cover;
+}
+
+.carousel-caption{
+    background-color: #284b75;
+    max-width: 50%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    padding: 5% 0%;
+}
+
+.carousel-caption div{
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: #ffbd59;
+}
+
+.carousel-caption .step_button {
+    /* width: 50%; */
+    height: 300%;
+    margin-top: 2%;
+    padding: 0.8% 0.8%;
+    border:0;
+    background-color:#ffbd59;
+    color:#284b75;
+    border-radius:10px;
+    cursor:pointer;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.carousel-caption .step_button:hover {
+    color:#fff;
+    background-color:#f88411;
+    border:2px #284b75 solid;
+}
+/*==============================*/
+
+.which_why{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-auto-rows: 80vh; */
+    padding: 0% 8%;
+}
+
+.why {
+    background-color: white;
+    /* height: auto;
+    width: auto;
+    display: inline-block; */
+    display: block;
+    overflow: hidden;
+    margin: 0% 8%;
+    transition: 0.3s ease-in-out;
+}
+
+/*=========三階段=========*/
+.step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-auto-rows: 65vh; */
+    margin: 2% 10%;
+    /* height: 10%;
+    width: 80%; */
+    background-color: #fff;
+}
+
+.step_text {
+    position: relative;
+    vertical-align: center;
+    overflow: hidden;
+}
+
+.step_after_title_text{
+    padding-top: 3%;
+    font-size: 2vw;
+}
+
+.step_before_text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #dadddd;
+    background-color: #284b75;
+    font-size: 3.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.step_after_text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 1vw;
+    padding: 2% 5%;
+    background-color: #FFF;
+} 
+
+.step_button {
+    border:0;
+    background-color:#284b75;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.step_button:hover {
+    color:#284b75;
+    background-color:#ffbd59;
+    border:2px #ffbd59 solid;
+}
+
+.img_why {
+    float: center;
+    max-height: 80%;  
+    max-width: 80%; 
+    width: auto;
+    height: auto;
+    object-fit:cover;
+    margin: 5%;
+}
+
+.img_why_div {
+    overflow: hidden;
+    float: center;
+    height: 30%;
+    width: 100%;
+    margin-top: 3%;
+    margin-bottom: 5%;
+
+}
+
+.img_step {
+    float: right;
+    /* object-fit:cover; */
+}
+
+.img_step_div {
+    overflow: hidden;
+}
+
+.which-provide{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2% 5%;
+}
+
+.provide{
+    background-color: white;
+    height: 100%;
+    margin: 0% 4%;
+    transition: 0.3s ease-in-out;
+}
+
+.provide_text{
+    text-align: left;
+    font-size: 1.5vw;
+    font-weight: 900;
+    margin: 30% 38%;
+    color: #fff;
+}
+/*========================*/
+
+</style>   
