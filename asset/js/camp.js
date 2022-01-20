@@ -15,6 +15,7 @@ var modal = document.getElementById('id01');
 window.onclick = function(event) {
   if (event.target == modal) {
       modal.style.display = "none";
+      window.location.reload();
   }
 };
 
@@ -188,7 +189,7 @@ for(let i = 0; i<3; i++){
   voted_img.style.marginTop = '-1.5%';
   var voted_name = document.createElement('div');
   voted_name.style.justifyContent = 'flex-start';
-  voted_name.style.padding = '0% 3%';
+  voted_name.style.padding = '0% 2%';
   voted_name.innerText = voted_array[i][1];
   var voted_bar_box = document.createElement('div');
   voted_bar_box.style.position = 'relative';
@@ -213,7 +214,7 @@ for(let i = 0; i<3; i++){
   voted_number.setAttribute('class', 'voted_number');
   voted_number.style.display = 'inline';
   voted_number.style.justifyContent = 'flex-end';
-  voted_number.style.marginLeft = '3%';
+  voted_number.style.marginLeft = '2%';
   voted_number.style.padding = '0% 2%';
   voted_number.innerText = voted_array[i][2];
   div.appendChild(voted_img);
@@ -258,8 +259,8 @@ function voted_page(){
       voted_like_img.id = voted_array[i][0];
       voted_like_img.src = 'asset/img/camp/like.png';
       voted_like_img.style.cursor = 'pointer';
-      voted_like_img.style.marginLeft = '3%';
-      voted_like_img.style.marginTop = '-0.5%';
+      voted_like_img.style.position = 'absolute';
+      voted_like_img.style.right = '5%';
       voted_like_img.style.height = '5%';
       voted_like_img.style.width = '5%';
       voted_like_img.style.opacity = '0.5';
@@ -275,13 +276,25 @@ function voted_page(){
       voted_like_img[i].addEventListener('click', function(){
         let number = document.getElementById('voted_page_item_number_'+i);
         let bar = document.getElementById('voted_bar_'+i);
+        var id = voted_like_img[i].id;
+
         if(voted_like_img[i].style.opacity == '0.5'){
           number.innerText = parseInt(number.innerText) + 1;
           voted_like_img[i].style.opacity = '1';
+
+          pools.doc(id).update({
+            voted: voted_array[i][2] + 1,
+          })
+          console.log('Liked! Added 1 voted.');
         }
         else{
           number.innerText = parseInt(number.innerText) - 1;
           voted_like_img[i].style.opacity = '0.5';
+
+          pools.doc(id).update({
+            voted: voted_array[i][2],
+          })
+          console.log('Canceled liked! Removed 1 voted.');
         }
         bar.style.width = parseInt(number.innerText)*100 / max_voted_number + '%';
       });
@@ -292,25 +305,19 @@ function voted_page(){
     hint.innerText = '您輸入的資料必須為總長3個字的系所(XX系)';
     hint.style.visibility = 'hidden';
     var checkans = document.createElement('input');
+    checkans.style.textAlign = 'left';
     checkans.type = 'text';
     checkans.placeholder = 'Enter what department you wish...       Ex：應數系';
     checkans.name = 'department_checkans' ;
     var container_voted_send = document.createElement('div');
     container_voted_send.display = 'inline';
     var button = document.createElement('button');
-    button.style.width = '12%';
+    button.style.width = '10%';
     button.style.float = 'right';
-    button.style.marginTop = '-5%';
+    button.style.marginTop = '-5.5%';
+    button.style.marginRight = '2%';
     button.innerHTML = '送出';
     button.addEventListener('click', function(){
-      for(let i = 0; i<voted_array.length; i++){
-        var id = voted_like_img[i].id;
-        if(voted_like_img[i].style.opacity == '1')
-          pools.doc(id).update({
-            voted: voted_array[i][2] + 1,
-          })
-      }
-
       var comment = checkans.value;
       if(comment != "") {
         if(comment.includes("系", 2)){
