@@ -192,8 +192,8 @@ for(let i = 0; i<3; i++){
   voted_name.style.padding = '0% 2%';
   voted_name.innerText = voted_array[i][1];
   var voted_bar_box = document.createElement('div');
+  voted_bar_box.setAttribute('class','department_bar_box');
   voted_bar_box.style.position = 'relative';
-  voted_bar_box.style.width = '70%';
   var voted_bar = document.createElement('div');
   voted_bar.setAttribute('class', 'voted_bar');
   voted_bar.style.position = 'absolute';
@@ -243,8 +243,8 @@ function voted_page(){
       voted_number.id = 'voted_page_item_number_'+i;
       voted_number.innerText = voted_array[i][2];
       var voted_bar_box = document.createElement('div');
+      voted_bar_box.setAttribute('class','voted_bar_box');
       voted_bar_box.style.position = 'relative';
-      voted_bar_box.style.width = '70%';
       voted_bar_box.style.marginTop = '0.5%';
       var voted_bar = document.createElement('div');
       voted_bar.setAttribute('class', 'voted_bar');
@@ -307,15 +307,22 @@ function voted_page(){
     var checkans = document.createElement('input');
     checkans.style.textAlign = 'left';
     checkans.type = 'text';
-    checkans.placeholder = 'Enter what department you wish...       Ex：應數系';
+    checkans.placeholder = '輸入你想許願的科系！        Ex：應數系';
     checkans.name = 'department_checkans' ;
     var container_voted_send = document.createElement('div');
     container_voted_send.display = 'inline';
     var button = document.createElement('button');
-    button.style.width = '10%';
     button.style.float = 'right';
-    button.style.marginTop = '-5.5%';
-    button.style.marginRight = '2%';
+    if (/mobile/i.test(navigator.userAgent)) {
+      button.style.width = '15%';
+      button.style.marginTop = '-10%';
+      button.style.marginRight = '1%';
+    }
+    else{
+      button.style.width = '10%';
+      button.style.marginTop = '-5.5%';
+      button.style.marginRight = '2%';
+    }
     button.innerHTML = '送出';
     button.addEventListener('click', function(){
       var comment = checkans.value;
@@ -364,12 +371,6 @@ flag = false;
 // var container_pool = document.getElementById('container_pool');
 $(function(){
 $(window).scroll(function(){
-  var navbar = document.getElementById("navbar");
-  var sticky = navbar.offsetTop;
-  if (window.pageYOffset >= sticky) 
-    navbar.classList.add("sticky")
-  else
-    navbar.classList.remove("sticky");
 
   try{
     var voted_bar = document.getElementsByClassName('voted_bar');

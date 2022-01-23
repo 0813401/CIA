@@ -11,6 +11,7 @@ window.onscroll = function() {
 };
 
 function creator_nav(){
+
     var nav_1 = document.createElement('nav'); 
     nav_1.setAttribute('class', 'navbar');
     nav_1.style.backgroundColor = '#284b75';
