@@ -30,21 +30,21 @@
         <div class = "which_why" style="margin: 3%; margin-bottom: -5%;">
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why12.png"></div>
-                <div class="step_text">
+                <div class="step_text_func">
                     <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">一站式升學輔導平台</div>
                     <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊將探索到升學途中的各種需求進行整合，打造由線上營隊與個人諮詢構建出的一站式線上平台，不只解決對未來科系的疑惑，也幫助同學考上自己的目標校系。</div>
                 </div>
             </div>
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why22.png"></div>
-                <div class="step_text">
+                <div class="step_text_func">
                     <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">實際與大學師生交流</div>
                     <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊找到來自各大名校不同科系的學長姐與教授，線上面對面直接分享大學科系的制度、實際體驗及未來出路，讓同學能在高中階段盡早確定目標，全心衝刺。</div>
                 </div>
             </div>
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why32.png"></div>
-                <div class="step_text">
+                <div class="step_text_func">
                     <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">創新式科系探索活動</div>
                     <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">融合新潮線上數位工具，C.I.A團隊設計各種科系線上實作、闖關活動和基礎課程，也不斷通過創新，研發出更有效的線上科系探索模式，讓探索途中充滿歡笑及樂趣。</div>
                 </div>
@@ -57,8 +57,7 @@
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
             <div class="step_text">
-                <div class="step_before_text" style="font-weight: 900;">尋找目標科系</div>
-                <div class="title step_after_text">
+                <div class="title">
                     <div class="step_after_title_text" style="color: #f88411;">尋找目標科系</div>
                     <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
@@ -74,8 +73,7 @@
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/home/hope.png"></div>
             <div class="step_text">
-                <div class="step_before_text"  style="font-weight: 900;">為達目標科系標準</div>
-                <div class="title step_after_text">
+                <div class="title">
                     <div class="step_after_title_text" style="color: #f88411;">為達目標校系標準</div>
                     <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
@@ -91,8 +89,7 @@
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/home/achieve.png"></div>
             <div class="step_text">
-                <div class="step_before_text"  style="font-weight: 900;">錄取目標科系</div>
-                <div class="title step_after_text">
+                <div class="title">
                     <div class="step_after_title_text" style="color: #f88411; margin-top: 10%;">錄取目標科系</div>
                     <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 個人諮詢</div>
@@ -351,46 +348,25 @@ img{
 /*=========三階段=========*/
 .step {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.8fr;
     /* grid-auto-rows: 65vh; */
     margin: 2% 10%;
     /* height: 10%;
     width: 80%; */
-    background-color: #fff;
+    background-color: #ffbd59;
 }
 
 .step_text {
     position: relative;
     vertical-align: center;
     overflow: hidden;
+    margin-top: -25%;
 }
 
 .step_after_title_text{
-    padding-top: 3%;
-    font-size: 2vw;
+    font-size: 4vw;
 }
 
-.step_before_text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: #dadddd;
-    background-color: #284b75;
-    font-size: 3.2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.step_after_text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    font-size: 1vw;
-    padding: 2% 5%;
-    background-color: #FFF;
-} 
 
 .step_button {
     border:0;
@@ -427,8 +403,10 @@ img{
 }
 
 .img_step {
-    float: right;
-    /* object-fit:cover; */
+    height: 67%;
+    width: 100%;
+    /* overflow: hidden; */
+    object-fit:cover;
 }
 
 .img_step_div {
@@ -455,6 +433,13 @@ img{
     margin: 30% 38%;
     color: #fff;
 }
+
+.step_text_func {
+    position: relative;
+    vertical-align: center;
+    overflow: hidden;
+}
+
 /*========================*/
 
 </style>   
