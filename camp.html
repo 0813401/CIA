@@ -21,7 +21,8 @@
 
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="asset/js/nav.js"></script>
+    <script src='asset/js/utilities.js'></script>
+    <script src='asset/js/nav.js'></script>
     <div id='recent_camp_container' style=" display: block; overflow: hidden; background-color: #fff; padding-bottom: 11%;">
         <div class="title big_text" style="padding: 3% 0%; color: #284b75;"><span class="underline">&nbsp&nbsp近期營隊&nbsp&nbsp</span></div>
         <div id='recent_camp_item'></div>
@@ -202,7 +203,7 @@
           </div>
         <div id='container_pool' style="width: 90%; height: 100%;"></div>
     </div>
-  
+
     <script src="asset/js/footer.js"></script>
     <script src='asset/js/camp.js'></script>
 </body>
@@ -590,11 +591,15 @@ input[type=text]{
     font-size: 2.3vw;
 }
 
+.voted_bar_box{
+    width: 70%;
+}
+
+.department_bar_box{
+    width: 70%;
+}
+
 /*======================================*/
 </style>
 
-<script>
-if (/mobile/i.test(navigator.userAgent)) {
-    window.location = 'camp_mobile.html'
-}
-</script>
+

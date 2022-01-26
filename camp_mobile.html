@@ -21,7 +21,7 @@
 
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="asset/js/nav.js"></script>
+    <script src="asset/js/sidebar.js"></script> 
     <div id='recent_camp_container' style=" display: block; overflow: hidden; background-color: #fff; padding-bottom: 11%;">
         <div class="title big_text" style="padding: 3% 0%; color: #284b75;"><span class="underline">&nbsp&nbsp近期營隊&nbsp&nbsp</span></div>
         <div id='recent_camp_item'></div>
@@ -158,7 +158,7 @@
         <div id="id01" class="modal">
             <div class="modal-content animate">
               <div id="container_voted_page">
-                <div class = 'title big_text' style="color: #284b75; margin: 1% 0%;">快幫你喜歡的營隊投票吧！我們將為您舉辦！</div>
+                <div class = 'title big_text' style="color: #284b75; margin: 1% 0%; font-size: 3vw;">快幫你喜歡的營隊投票吧！我們將為您舉辦！</div>
               </div>
             </div>
           </div>
@@ -471,6 +471,7 @@ input[type=text]{
     align-items: center;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: 0.1rem;
 }
 
 #container_voted_page {
@@ -524,6 +525,7 @@ input[type=text]{
 
 .voted_page_item_name {
     justify-content: flex-start;
+    width: 15%;
     margin-right: 2%;
     font-weight: bolder;
     font-size: 2.3vw;
@@ -533,6 +535,14 @@ input[type=text]{
     font-weight: bolder;
     padding-left: 2%;
     font-size: 2.3vw;
+}
+
+.voted_bar_box{
+    width: 63%;
+}
+
+.department_bar_box{
+    width: 65%;
 }
 
 /*======================================*/

@@ -4,49 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
     <link rel="shortcut icon" href="asset/img/favicon.ico"/>
     <link rel="stylesheet" href="asset/css/common.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="asset/js/nav.js"></script>
-    <script src="asset/js/utilities.js"></script>
+    <script src="asset/js/sidebar.js"></script> 
     
     <div class="rounded_border">
         <form action="action_page.php" method="post"></form>
         <div class="container">
-            <div class="user" style="padding-bottom: 3%;"><input type="text" placeholder="Enter Username" name="uname" required></div>
-            <div style="padding-bottom: 3%;"><input type="password" placeholder="Enter Password" name="psw" required></div>
-            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 5%;">
-                <div style="float: left;"><label style="font-size: 1.2vw;"><input type="checkbox" checked="checked" name="remember"> Remember me</label></div>
-                <div style="float: right;"><span class="psw"><a href="#">Forgot password?</a></span></div>
-                
-            </div>
-            <div style="padding: 3% 0%;"><button type="submit">Login In</button></div>
-            <div><span class="reg">Don't have an account? <a href="register.html"> Register</a></span></div>
-
-            <div class="order">
-                <span class="line"></span>
-                <span class="txt">or</span>
-                <span class="line"></span>
-            </div>
-
-            <div style="padding-top: 5%;">
-                <a href="#" class="fb btn">
-                  <i class="fa fa-facebook-f hov"></i> Login with Facebook
-                </a>
-                <a href="#" class="google btn">
-                  <i class="fa fa-google hov"></i> Login with Google+
-                </a>
-            </div>
-            
-        
-            
-            
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="姓名" name="fullname" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="學校" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="年級" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="Email" name="email" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="聯絡電話" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="緊急聯絡人姓名" name="fullname" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="與緊急聯絡人之關係" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="緊急聯絡人電話" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="帳號" name="uname" required></div>
+            <div style="padding-bottom: 3%;"><input type="password" placeholder="密碼" name="psw" required></div>
+            <div style="padding-bottom: 3%;"><input type="password" placeholder="確認密碼" name="psw" required></div>
+            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 3%;"><label style="font-size: 1.2vw;"><input type="checkbox" name="remember"> I read and agree to C.I.A</label></div>
+            <div style="padding-bottom: 2%;"><button type="submit">Create Account</button></div>
+            <div><span class="reg">Already have an account? <a href="login.html"> Log In</a></span></div> 
         </div>
         
             <!-- <div class="container" style="background-color:#f1f1f1">
@@ -78,14 +65,10 @@
         url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
 }
 
+
 body, html{
     width: 100%;
     height: 100%;
-}
-
-.nav-link:hover {
-    color: #ffbd59;
-    /*#005AB5*/
 }
 nav{
     background-color: #284b75;
@@ -135,7 +118,7 @@ div .title{
     padding: 3%;
     border-radius: 20px;
     background-color: #FFFFFF;
-    width: 50%;
+    width: 80%;
 }
 
 .underline {
@@ -165,6 +148,11 @@ div .title{
     font-family: 'c';
 }
 
+.nav-link:hover {
+    color: #ffbd59;
+    /*#005AB5*/
+}
+
 .img_square {
 	width: 100px;
 	border-radius: 50%;
@@ -180,6 +168,32 @@ div .title{
     background: linear-gradient(to right, transparent, #FFFFFF, transparent);
 }
 
+.fa {
+    font-size: 100%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #284b75;
+    color: white;
+}
+
+.fa-instagram {
+    background: #284b75;
+    color: white;
+}
+
+.fa-envelope {
+    background: #284b75;
+    color: white;
+}
 
 .flex-nav {
     display: flex;
@@ -191,25 +205,6 @@ div .title{
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-.hov:hover{
-    color: black;
-}
-
-.fb {
-    background-color: #284b75;
-    color: white;
-    font-size: 1vw;
-    width: 45%;
-}
-
-
-.google {
-    background-color: #dd4b39;
-    color: white;
-    font-size: 1vw;
-    width: 45%;
 }
 
 .order {
@@ -250,7 +245,7 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    width: 25%;
+    width: 60%;
     font-size: 1.3vw;
 }
 
@@ -276,4 +271,44 @@ span.reg {
     font-size: 1.2vw;
 }
 
+/* .user {
+    position: relative;
+}
+.user:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f007";
+    font-size: 2vw;
+    position: absolute;
+    left: 5%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+.user input {
+    text-indent: 10%;
+}
+
+.email {
+    position: relative;
+}
+.email:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f0e0";
+    font-size: 2vw;
+    position: absolute;
+    left: 5%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+.email input {
+    text-indent: 10%;
+} */
+
 </style>
+
+<script>
+    if (!/mobile/i.test(navigator.userAgent)) {
+        window.location = 'register.html'
+    }
+</script>

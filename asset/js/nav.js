@@ -11,6 +11,7 @@ window.onscroll = function() {
 };
 
 function creator_nav(){
+
     var nav_1 = document.createElement('nav'); 
     nav_1.setAttribute('class', 'navbar');
     nav_1.style.backgroundColor = '#284b75';
@@ -54,27 +55,27 @@ function creator_nav(){
 
     // login
 
-    // var ul_1 = document.createElement('ul');
-    // ul_1.setAttribute('class', 'navbar-nav');
-    // ul_1.style.marginRight = '1%';
-    // var li_1 = document.createElement('li');
-    // li_1.setAttribute('class', "nav-item")
-    // li_1.style.paddingTop = '10%';
-    // var i = document.createElement('i');
-    // i.setAttribute("class", "fa fa-user-circle-o")
-    // i.style.fontSize = '1.5vw';
-    // i.style.color = "#fff";
-    // li_1.appendChild(i);
-    // var li_2 = document.createElement('li');
-    // li_2.setAttribute('class', "nav-item")
-    // var a_2 = document.createElement('a');
-    // a_2.setAttribute('class', 'nav-link white_text');
-    // a_2.href = "login.html";
-    // a_2.innerHTML = "Log In";
-    // li_2.appendChild(a_2);
-    // ul_1.appendChild(li_1);
-    // ul_1.append(li_2);
-    // nav_2.appendChild(ul_1);
+    var ul_1 = document.createElement('ul');
+    ul_1.setAttribute('class', 'navbar-nav');
+    ul_1.style.marginRight = '1%';
+    var li_1 = document.createElement('li');
+    li_1.setAttribute('class', "nav-item")
+    li_1.style.paddingTop = '10%';
+    var i = document.createElement('i');
+    i.setAttribute("class", "fa fa-user-circle-o")
+    i.style.fontSize = '1.5vw';
+    i.style.color = "#fff";
+    li_1.appendChild(i);
+    var li_2 = document.createElement('li');
+    li_2.setAttribute('class', "nav-item")
+    var a_2 = document.createElement('a');
+    a_2.setAttribute('class', 'nav-link white_text');
+    a_2.href = "login.html";
+    a_2.innerHTML = "Log In";
+    li_2.appendChild(a_2);
+    ul_1.appendChild(li_1);
+    ul_1.append(li_2);
+    nav_2.appendChild(ul_1);
 
     var ul_3 = document.createElement('ul');
     ul_3.setAttribute('class', 'navbar-nav');
