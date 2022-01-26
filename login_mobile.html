@@ -11,10 +11,12 @@
     <link rel="shortcut icon" href="asset/img/favicon.ico"/>
     <link rel="stylesheet" href="asset/css/common.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="asset/js/nav.js"></script>
-    <script src="asset/js/utilities.js"></script>
+    <script src="asset/js/sidebar.js"></script> 
     
     <div class="rounded_border">
         <form action="action_page.php" method="post"></form>
@@ -37,14 +39,15 @@
 
             <div style="padding-top: 5%;">
                 <a href="#" class="fb btn">
-                  <i class="fa fa-facebook-f hov"></i> Login with Facebook
-                </a>
-                <a href="#" class="google btn">
-                  <i class="fa fa-google hov"></i> Login with Google+
+                  <i class="fa fa-facebook-f"></i>&nbsp&nbspLogin with Facebook
                 </a>
             </div>
+            <div style="padding-top: 5%;">
+                <a href="#" class="google btn">
+                    <i class="fa fa-google"></i>&nbsp&nbspLogin with Google+
+                  </a>
+            </div>
             
-        
             
             
         </div>
@@ -132,10 +135,10 @@ div .title{
 
 .rounded_border{
     margin: 6% auto;
-    padding: 3%;
+    padding: 5%;
     border-radius: 20px;
     background-color: #FFFFFF;
-    width: 50%;
+    width: 80%;
 }
 
 .underline {
@@ -180,7 +183,6 @@ div .title{
     background: linear-gradient(to right, transparent, #FFFFFF, transparent);
 }
 
-
 .flex-nav {
     display: flex;
     justify-content: center;
@@ -193,23 +195,18 @@ div .title{
     width: 100%;
 }
 
-.hov:hover{
-    color: black;
-}
-
 .fb {
     background-color: #284b75;
     color: white;
     font-size: 1vw;
-    width: 45%;
+    width: 70%;
 }
-
 
 .google {
     background-color: #dd4b39;
     color: white;
     font-size: 1vw;
-    width: 45%;
+    width: 70%;
 }
 
 .order {
@@ -250,7 +247,7 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    width: 25%;
+    width: 30%;
     font-size: 1.3vw;
 }
 
@@ -261,7 +258,7 @@ button:hover {
 
 /* Add padding to containers */
 .container {
-    width: 70%;
+    width: 90%;
     padding: auto;
 }
 
@@ -277,3 +274,9 @@ span.reg {
 }
 
 </style>
+
+<script>
+    if (!/mobile/i.test(navigator.userAgent)) {
+        window.location = 'login.html'
+    }
+</script>

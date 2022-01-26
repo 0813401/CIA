@@ -13,15 +13,23 @@
 </head>
 <body style="background-color:#ffbd59;">
     <script src="asset/js/nav.js"></script>
+    <script src="asset/js/utilities.js"></script>
     
     <div class="rounded_border">
         <form action="action_page.php" method="post"></form>
         <div class="container">
-            <div class="email" style="padding-bottom: 3%;"><input type="text" placeholder="Email" name="email" required></div>
-            <div class="user" style="padding-bottom: 3%;"><input type="text" placeholder="Enter Username" name="uname" required></div>
-            <div style="padding-bottom: 3%;"><input type="password" placeholder="Enter Password" name="psw" required></div>
-            <div style="padding-bottom: 3%;"><input type="password" placeholder="Comfirm Password" name="psw" required></div>
-            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 3%;"><label style="font-size: 1.2vw;"><input type="checkbox" checked="checked" name="remember"> I read and agree to C.I.A</label></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="姓名" name="fullname" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="學校" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="年級" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="Email" name="email" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="聯絡電話" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="緊急聯絡人姓名" name="fullname" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="與緊急聯絡人之關係" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="緊急聯絡人電話" required></div>
+            <div style="padding-bottom: 3%;"><input type="text" placeholder="帳號" name="uname" required></div>
+            <div style="padding-bottom: 3%;"><input type="password" placeholder="密碼" name="psw" required></div>
+            <div style="padding-bottom: 3%;"><input type="password" placeholder="確認密碼" name="psw" required></div>
+            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 3%;"><label style="font-size: 1.2vw;"><input type="checkbox" name="remember"> I read and agree to C.I.A</label></div>
             <div style="padding-bottom: 2%;"><button type="submit">Create Account</button></div>
             <div><span class="reg">Already have an account? <a href="login.html"> Log In</a></span></div> 
         </div>
@@ -297,21 +305,3 @@ span.reg {
 
 </style>
 
-<script>
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
