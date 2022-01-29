@@ -88,28 +88,29 @@ function create_nav(){
     // var a_2 = document.createElement('a');
     // a_2.setAttribute('class', 'nav-link white_text');
     // a_2.href = "login.html";
-    // a_2.innerHTML = "Log In";
+    // // a_2.innerHTML = "Log In";
     // li_2.appendChild(a_2);
     // ul_1.appendChild(li_1);
     // ul_1.append(li_2);
-    // nav_2.appendChild(ul_1);
+    // // nav_2.appendChild(ul_1);
 
     var top_menu = document.createElement('ul');
     top_menu.style.padding = '0';
     top_menu.style.margin = '0';
-    list_icon_a = [["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
-    a_class_list = [["fa fa-facebook"], ["fa fa-instagram"]];
-    for(let i = 0; i<2; i++){
+    list_icon_a = [["login.html"],["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
+    a_class_list = [["fa fa-user-circle-o"],["fa fa-facebook"], ["fa fa-instagram"]];
+    for(let i = 0; i<3; i++){
         var a = document.createElement('a');
         a.setAttribute('class', 'nav-item');
         a.style.height = '2vw';
         a.style.width = '2vw';
-        a.style.padding = '5% 10% 0% 10%';
+        a.style.padding = '8% 10% 0% 10%';
         a.href = list_icon_a[i];
+        a.style.color = '#FFF';
         a.setAttribute('class',a_class_list[i]);
         top_menu.appendChild(a);
     }
-    // nav_2.append(top_menu);
+    nav_2.append(top_menu);
 
     var div = document.createElement('div');
 
