@@ -4,7 +4,7 @@ container_div.style.backgroundColor = "#284b75";
 container_div.style.maxheight = "35%";
 container_div.style.width = "100%";
 container_div.style.paddingBottom = "3%";
-// container_div.setAttribute('class', 'fixed-bottom')
+container_div.setAttribute('class', 'fixed-bottom')
 
 
 var div1 = document.createElement('div');

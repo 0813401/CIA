@@ -226,7 +226,7 @@ const firebaseConfig = {
   }
   });
   
-  /* 科系許願池投票畫面 */
+  /* 科系許願池投票畫面 */ 
   var flag = true;
   function voted_page(){
     var container_voted_page = document.getElementById('container_voted_page');

@@ -13,11 +13,11 @@ function create_sidebar(){
     logo_div.append(logo);
 
     sidebar.attr('id', 'sidebar');
-    sidebar.css({"top": "0%", 'left': '-50%', 'width': '50%', 'max-height':'50%', 'backgroubd-color': '#284b75', 'position': 'fixed', 'z-index': '9999'});  
+    sidebar.css({"top": "0%", 'left': '-83%', 'width': '83%', 'max-height':'80%', 'backgroubd-color': '#284b75', 'position': 'fixed', 'z-index': '9999'});  
     sidetab.attr('id', 'side_tab');
-    sidetab.css({"position": "absolute", 'top':'10%', 'right':'-20%', 'width':'20%', 'height':'auto','background': '#284b75', 'text-align':'center','padding':'9px 0', 'border-top-right-radius': '10px', 'border-bottom-right-radius': '10px','opacity':'0.8'});
+    sidetab.css({"position": "absolute", 'top':'10%', 'right':'-20%', 'width':'20%', 'height':'auto','background': '#284b75','color':'#f88411','text-align':'center','padding':'9px 0', 'border-top-right-radius': '10px', 'border-bottom-right-radius': '10px','opacity':'0.8'});
     sidecontent.attr('id', 'side_content')
-    sidecontent.css({'background':'#284b75', 'text-align':'center','opacity':'0.8'});
+    sidecontent.css({'background':'#284b75', 'text-align':'center','opacity':'0.8','font-size':'8vw'}); // font-size是改icon大小
 
     create_nav();
     $(document.body).append(logo_div);
@@ -62,7 +62,7 @@ function create_nav(){
         li.setAttribute('class', 'nav-item');
         var a = document.createElement('a');
         a.setAttribute('class', 'nav-link white_text');
-        a.style.fontSize = '1.8vw'
+        a.style.fontSize = '5.3vw'
         a.href = list_a[i];
         a.innerHTML = list_text[i];
         li.appendChild(a);
@@ -102,8 +102,8 @@ function create_nav(){
     for(let i = 0; i<3; i++){
         var a = document.createElement('a');
         a.setAttribute('class', 'nav-item');
-        a.style.height = '2vw';
-        a.style.width = '2vw';
+        a.style.height = '3vw';
+        a.style.width = '3vw';
         a.style.padding = '8% 10% 0% 10%';
         a.href = list_icon_a[i];
         a.style.color = '#FFF';

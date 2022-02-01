@@ -15,31 +15,12 @@
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="asset/js/utilities.js"></script>
-    <script src="asset/js/nav.js"></script>
+    <script src="asset/js/sidebar.js"></script>
+    <script src='asset/js/utilities.js'></script>
     <div id='card_container'></div>
-    <div class='carousel_slide_container' style="background-color: #FFF; z-index: 1;">
-        <hr class="hr-edge-weak" style="margin-top: 0;">
-        <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp近期活動&nbsp&nbsp</span></div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div id ="carousel_inner" class="carousel-inner"></div> <!-- in js -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-    </div>
+  
     <div style="display:block; overflow: hidden; background-color: #FFF; margin-bottom: -15%;">
-        <div class="big_text title" style="padding-top: 3%; padding-left: 2%; padding-right: 2%; color: #000; font-size: 3.5vw; font-family: en; font-weight:bolder;">C.I.A - Company In Air</div>
+        <div class="big_text title" style="padding-top: 3%; padding-left: 2%; padding-right: 2%; color: #000; font-size: 8vw; font-family: en; font-weight:bolder;">C.I.A - Company In Air</div>
         <div class="big_text title" style="padding-bottom: 2%; padding-left: 2%; padding-right: 2%; color: #000; font-family: 'ch'; font-weight:lighter;">最好的一站式升學探索平台</div>
         <div class='video_box'>
             <!-- width="560" height="315" -->
@@ -50,68 +31,35 @@
         <div class = "which_why" style="margin: 3%; margin-bottom: -5%;">
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why12.png"></div>
-                <div class="step_text">
-                    <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">一站式升學輔導平台</div>
-                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊將探索到升學途中的各種需求進行整合，打造由線上營隊與個人諮詢構建出的一站式線上平台，不只解決對未來科系的疑惑，也幫助同學考上自己的目標校系。</div>
+                <div class="step_text_func">
+                    <div style="color: #f88411; font-size: 6vw; font-weight: 900;">一站式升學輔導平台</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 5vw;">C.I.A團隊將探索到升學途中的各種需求進行整合，打造由線上營隊與個人諮詢構建出的一站式線上平台，不只解決對未來科系的疑惑，也幫助同學考上自己的目標校系。</div>
                 </div>
             </div>
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why22.png"></div>
-                <div class="step_text">
-                    <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">實際與大學師生交流</div>
-                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">C.I.A團隊找到來自各大名校不同科系的學長姐與教授，線上面對面直接分享大學科系的制度、實際體驗及未來出路，讓同學能在高中階段盡早確定目標，全心衝刺。</div>
+                <div class="step_text_func">
+                    <div style="color: #f88411; font-size: 6vw; font-weight: 900;">實際與大學師生交流</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 5vw;">C.I.A團隊找到來自各大名校不同科系的學長姐與教授，線上面對面直接分享大學科系的制度、實際體驗及未來出路，讓同學能在高中階段盡早確定目標，全心衝刺。</div>
                 </div>
             </div>
             <div class = "why">
                 <div class="img_why_div"><img class="img_why" src="asset/img/home/why32.png"></div>
-                <div class="step_text">
-                    <div style="color: #f88411; font-size: 1.8vw; font-weight: 900;">創新式科系探索活動</div>
-                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 1.4vw;">融合新潮線上數位工具，C.I.A團隊設計各種科系線上實作、闖關活動和基礎課程，也不斷通過創新，研發出更有效的線上科系探索模式，讓探索途中充滿歡笑及樂趣。</div>
+                <div class="step_text_func">
+                    <div style="color: #f88411; font-size: 6vw; font-weight: 900;">創新式科系探索活動</div>
+                    <div class="left_text" style="color: #000; font-weight: 900; font-size: 5vw;">融合新潮線上數位工具，C.I.A團隊設計各種科系線上實作、闖關活動和基礎課程，也不斷通過創新，研發出更有效的線上科系探索模式，讓探索途中充滿歡笑及樂趣。</div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container_whole_which_provide" style="background-color:#FFF; padding-bottom: 2%;">
-        <div class="big_text title" style="padding: 2%; color: #284b75;"><span class="underline">&nbsp&nbsp在這裡您能獲得甚麼?&nbsp&nbsp</span></div>
-        <div class="which-provide">
-            <div class='container_which_provide'>
-                <div class='which_provide_before'>
-                    <div onclick="location.href='camp.html'" class="provide BGImage" style="background-image: url('asset/img/home/camp.png'); max-height: 800px;overflow: hidden; ">
-                        <div class="provide_text">
-                            <div class="left_text" style="font-size: 130%;">線上營隊</div>
-                        </div>
-                    </div>
-                </div>
-                <div onclick="location.href='camp.html'" class='which_provide_after'>
-                    <div style="font-size: 3vw; font-weight: 900; text-align: left;"><span class="underline">線上營隊</span></div>
-                    <div style="font-size: 1.8vw; text-align: left; font-weight: 900;">以創新的線上模式，降低科系探索成本，使其變得更容易且有效</div>
-                </div>
-            </div>
-            <div class='container_which_provide'>
-                <div class='which_provide_before'>
-                    <div onclick="location.href='consult.html'" class="provide BGImage" style="background-image: url('asset/img/home/consult.png'); max-height: 800px; overflow: hidden;">
-                        <div class="provide_text">
-                            <div class="left_text" style="font-size: 130%;">個人諮詢</div>
-                        </div>
-                    </div>
-                </div>
-                <div onclick="location.href='consult.html'" class='which_provide_after'>
-                    <div style="font-size: 3vw; font-weight: 900; text-align: left;"><span class="underline">個人諮詢</span></div>
-                    <div style="font-size: 1.8vw; text-align: left; font-weight: 900;">提供客製化個人諮詢輔導服務，解決學生升學及探索中遇到的各種問題</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div style="padding: 3%;display: block; overflow: hidden;">
-        <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp您認為自己目前處在何種階段？&nbsp&nbsp</span></div> 
+   
+    <div style="padding: 3%;display: block; overflow: hidden; background-color: #FFF;">
+        <div class = "big_text title" style="color: #284b75; font-size:6vw;"><span class="underline">&nbsp&nbsp您認為自己目前處在何種階段？&nbsp&nbsp</span></div> 
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
             <div class="step_text">
-                <div class="step_before_text" style="font-weight: 900;">尋找目標科系</div>
-                <div class="title step_after_text">
-                    <div class="step_after_title_text" style="color: #f88411;">尋找目標科系</div>
+                <div class="title">
+                    <div class="step_after_title_text" style="color: #000;">尋找目標科系</div>
                     <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
                     <div class="left_text" style="color: #284b75; ">通過迅速有效的方式讓您了解科系內容、未來出路，以及學長姐經驗分享三大面向</div>
@@ -126,9 +74,8 @@
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/home/hope.png"></div>
             <div class="step_text">
-                <div class="step_before_text"  style="font-weight: 900;">為達目標科系標準</div>
-                <div class="title step_after_text">
-                    <div class="step_after_title_text" style="color: #f88411;">為達目標校系標準</div>
+                <div class="title">
+                    <div class="step_after_title_text" style="color: #000;">為達目標校系標準</div>
                     <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 線上營隊</div>
                     <div class="left_text" style="color: #284b75; ">通過體驗實作活動，對科系有更深入的了解，踏出實踐理想的第一步</div>
@@ -143,9 +90,8 @@
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/home/achieve.png"></div>
             <div class="step_text">
-                <div class="step_before_text"  style="font-weight: 900;">錄取目標科系</div>
-                <div class="title step_after_text">
-                    <div class="step_after_title_text" style="color: #f88411; margin-top: 10%;">錄取目標科系</div>
+                <div class="title">
+                    <div class="step_after_title_text" style="color: #000; margin-top: 10%;">錄取目標科系</div>
                     <div class="left_text" style="color: #ab875e;">我們能提供您――――</div>
                     <div class="left_text" style="color: #284b75;">1. 個人諮詢</div>
                     <div class="left_text" style="color: #284b75;">通過客製化的「學科輔導」和「備審指導」服務，解決升學及備審中遇到的各種問題</div>
@@ -154,7 +100,7 @@
             </div>
         </div>
     </div>
-    <script src="asset/js/footer.js"></script>
+    <script src="asset/js/footer_mobile.js"></script>
     <script src="asset/js/index.js"></script>
 </body>
 </html>
@@ -233,7 +179,7 @@ div .title{
 
 .left_text{
     text-align: left;
-    font-size: 1.2vw;
+    font-size: 5vw;
     margin: 2% 10%;
 }
 
@@ -264,7 +210,7 @@ img{
 }
 
 .big_text {
-    font-size:3vw;
+    font-size:7vw;
     font-weight: 900;
 }
 
@@ -381,10 +327,10 @@ img{
 /*==============================*/
 
 .which_why{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
     /* grid-auto-rows: 80vh; */
-    padding: 0% 8%;
+    padding: 0% 2%;
 }
 
 .why {
@@ -394,53 +340,33 @@ img{
     display: inline-block; */
     display: block;
     overflow: hidden;
-    margin: 0% 8%;
+    padding-bottom: 5%;
+    margin-bottom: 10%;
     transition: 0.3s ease-in-out;
 }
 
 /*=========三階段=========*/
 .step {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.15fr;
     /* grid-auto-rows: 65vh; */
-    margin: 2% 10%;
+    margin: 2% 2%;
     /* height: 10%;
     width: 80%; */
-    background-color: #fff;
+    background-color: #ffbd59;
 }
 
 .step_text {
     position: relative;
     vertical-align: center;
     overflow: hidden;
+    margin-top: -25%;
 }
 
 .step_after_title_text{
-    padding-top: 3%;
-    font-size: 2vw;
+    font-size: 6vw;
 }
 
-.step_before_text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: #dadddd;
-    background-color: #284b75;
-    font-size: 3.2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-}
-
-.step_after_text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    font-size: 1vw;
-    padding: 2% 5%;
-    background-color: #FFF;
-} 
 
 .step_button {
     border:0;
@@ -458,8 +384,8 @@ img{
 
 .img_why {
     float: center;
-    max-height: 80%;  
-    max-width: 80%; 
+    max-height: 30%;  
+    max-width: 30%; 
     width: auto;
     height: auto;
     object-fit:cover;
@@ -477,8 +403,10 @@ img{
 }
 
 .img_step {
-    float: right;
-    /* object-fit:cover; */
+    height: 67%;
+    width: 100%;
+    /* overflow: hidden; */
+    object-fit:cover;
 }
 
 .img_step_div {
@@ -505,6 +433,13 @@ img{
     margin: 30% 38%;
     color: #fff;
 }
+
+.step_text_func {
+    position: relative;
+    vertical-align: center;
+    overflow: hidden;
+}
+
 /*========================*/
 
 </style>   
