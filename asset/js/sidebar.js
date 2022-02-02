@@ -94,28 +94,57 @@ function create_nav(){
     // ul_1.append(li_2);
     // // nav_2.appendChild(ul_1);
 
-    var top_menu = document.createElement('ul');
-    top_menu.style.padding = '0';
-    top_menu.style.margin = '0';
-    list_icon_a = [["login.html"],["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
-    a_class_list = [["fa fa-user-circle-o"],["fa fa-facebook"], ["fa fa-instagram"]];
-    for(let i = 0; i<3; i++){
-        var a = document.createElement('a');
-        a.setAttribute('class', 'nav-item');
-        a.style.height = '3vw';
-        a.style.width = '3vw';
-        a.style.padding = '8% 10% 0% 10%';
-        a.href = list_icon_a[i];
-        a.style.color = '#FFF';
-        a.setAttribute('class',a_class_list[i]);
-        top_menu.appendChild(a);
-    }
-    nav_2.append(top_menu);
+    
+    setTimeout(function(){
+        var top_menu = document.createElement('ul');
+        top_menu.style.padding = '0';
+        top_menu.style.margin = '0';
+        list_icon_a = [["login.html"],["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
 
-    var div = document.createElement('div');
+        var data = sessionStorage.getItem('status');
+        if(data != "login")
+        {
+            a_class_list = [["fa fa-user-circle-o"],["fa fa-facebook"], ["fa fa-instagram"]];
+        }else{
+            a_class_list = [["fa fa-sign-out"],["fa fa-facebook"], ["fa fa-instagram"]];
+        }
+        for(let i = 0; i<3; i++){
+                var a = document.createElement('a');
+                a.setAttribute('class', 'nav-item');
+                a.style.height = '3vw';
+                a.style.width = '3vw';
+                a.style.padding = '8% 10% 0% 10%';
+                a.href = list_icon_a[i];
+                a.style.color = '#FFF';
+                a.setAttribute('class',a_class_list[i]);
+                top_menu.appendChild(a);
+            }
+            nav_2.append(top_menu);
+            var div = document.createElement('div');
 
-    div.appendChild(nav_2)
-    sidecontent.append($(top_menu));
-    sidecontent.append($(div));
+            div.appendChild(nav_2)
+            sidecontent.append($(top_menu));
+            sidecontent.append($(div));
+    }, 300);
+
+    // a_class_list = [["fa fa-user-circle-o"],["fa fa-facebook"], ["fa fa-instagram"]];
+    // for(let i = 0; i<3; i++){
+    //     var a = document.createElement('a');
+    //     a.setAttribute('class', 'nav-item');
+    //     a.style.height = '3vw';
+    //     a.style.width = '3vw';
+    //     a.style.padding = '8% 10% 0% 10%';
+    //     a.href = list_icon_a[i];
+    //     a.style.color = '#FFF';
+    //     a.setAttribute('class',a_class_list[i]);
+    //     top_menu.appendChild(a);
+    // }
+    // nav_2.append(top_menu);
+
+    // var div = document.createElement('div');
+
+    // div.appendChild(nav_2)
+    // sidecontent.append($(top_menu));
+    // sidecontent.append($(div));
 }
 
