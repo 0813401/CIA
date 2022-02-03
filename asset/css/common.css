@@ -29,10 +29,9 @@ nav{
     border-radius: 50%;
 }
 
-/* .fa:hover {
-    opacity: 0.7;
+.fa:hover {
     color: #f88411;
-} */
+}
 
 .fa-facebook {
     background: #284b75;
