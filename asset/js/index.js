@@ -75,20 +75,20 @@ function create_card_div_mobile(){
     // div.style.marginTop = '5%';
     div.style.marginTop = '2%';
     div.style.marginRight = '1%';
-    div.style.width = '11%';
-    div.style.height = '13vw';
-    div.style.maxHeight = '13vw'
+    div.style.width = '9.5%';
+    div.style.height = '11vw';
+    div.style.maxHeight = '11vw'
     the_card_container.appendChild(div);
     var div_cover = document.createElement('div');
     div_cover.setAttribute('class', 'card_cover');
     div_cover.innerHTML = array_card_text[0][i];
     div_cover.style.borderRadius = '10%';
-    div_cover.style.fontSize = '8vw';
+    div_cover.style.fontSize = '6vw';
     var div_back = document.createElement('div');
     div_back.setAttribute('class', 'card_back');
     div_back.innerHTML = array_card_text[0][i];
     div_back.style.borderRadius = '10%';
-    div_back.style.fontSize = '8vw';
+    div_back.style.fontSize = '6vw';
     if(i == 7 || i == 9 || i == 0){
       var container = document.createElement('div');
       // container.style.textAlign = 'center';
