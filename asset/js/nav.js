@@ -53,45 +53,76 @@ function creator_nav(){
     }
     nav_2.appendChild(ul);
 
-    // login
 
-    var ul_1 = document.createElement('ul');
-    ul_1.setAttribute('class', 'navbar-nav');
-    ul_1.style.marginRight = '1%';
-    var li_1 = document.createElement('li');
-    li_1.setAttribute('class', "nav-item")
-    li_1.style.paddingTop = '10%';
-    var i = document.createElement('i');
-    i.setAttribute("class", "fa fa-user-circle-o")
-    i.style.fontSize = '1.5vw';
-    i.style.color = "#fff";
-    li_1.appendChild(i);
-    var li_2 = document.createElement('li');
-    li_2.setAttribute('class', "nav-item")
-    var a_2 = document.createElement('a');
-    a_2.setAttribute('class', 'nav-link white_text');
-    a_2.href = "login.html";
-    a_2.innerHTML = "Log In";
-    li_2.appendChild(a_2);
-    ul_1.appendChild(li_1);
-    ul_1.append(li_2);
-    nav_2.appendChild(ul_1);
+    setTimeout(function(){
+        // login
+        var data = sessionStorage.getItem('status');
+        if(data != "login")
+        {
+            var ul_1 = document.createElement('ul');
+            ul_1.setAttribute('class', 'navbar-nav');
+            ul_1.style.marginRight = '1%';
+            var li_1 = document.createElement('li');
+            li_1.setAttribute('class', "nav-item")
+            li_1.style.paddingTop = '10%';
+            var i = document.createElement('i');
+            i.setAttribute("class", "fa fa-user-circle-o")
+            i.style.fontSize = '1.5vw';
+            i.style.color = "#fff";
+            li_1.appendChild(i);
+            var li_2 = document.createElement('li');
+            li_2.setAttribute('class', "nav-item")
+            var a_2 = document.createElement('a');
+            a_2.setAttribute('class', 'nav-link white_text');
+            a_2.href = "login.html";
+            a_2.innerHTML = "Log In";
+            li_2.appendChild(a_2);
+            ul_1.appendChild(li_1);
+            ul_1.append(li_2);
+            nav_2.appendChild(ul_1);
+        }else{
+            var ul_1 = document.createElement('ul');
+            ul_1.setAttribute('class', 'navbar-nav');
+            ul_1.style.marginRight = '1%';
+            var li_1 = document.createElement('li');
+            li_1.setAttribute('class', "nav-item")
+            li_1.style.paddingTop = '10%';
+            var i = document.createElement('i');
+            i.setAttribute("class", "fa fa-sign-out")
+            i.style.fontSize = '1.5vw';
+            i.style.color = "#fff";
+            li_1.appendChild(i);
+            var li_2 = document.createElement('li');
+            li_2.setAttribute('class', "nav-item")
+            var a_2 = document.createElement('a');
+            a_2.setAttribute('class', 'nav-link white_text');
+            a_2.href = "login.html";
+            a_2.innerHTML = "Log Out";
+            li_2.appendChild(a_2);
+            ul_1.appendChild(li_1);
+            ul_1.append(li_2);
+            nav_2.appendChild(ul_1);
+        }
 
-    var ul_3 = document.createElement('ul');
-    ul_3.setAttribute('class', 'navbar-nav');
-    list_icon_a = [["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
-    a_class_list = [["fa fa-facebook"], ["fa fa-instagram"]];
-    for(let i = 0; i<2; i++){
-        var a = document.createElement('a');
-        a.setAttribute('class', 'nav-item');
-        a.style.height = '3vw';
-        a.style.width = '3vw';
-        a.style.paddingTop = '18%';
-        a.href = list_icon_a[i];
-        a.setAttribute('class',a_class_list[i]);
-        ul_3.appendChild(a);
-    }
-    nav_2.append(ul_3);
+
+        var ul_3 = document.createElement('ul');
+        ul_3.setAttribute('class', 'navbar-nav');
+        list_icon_a = [["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
+        a_class_list = [["fa fa-facebook"], ["fa fa-instagram"]];
+        for(let i = 0; i<2; i++){
+            var a = document.createElement('a');
+            a.setAttribute('class', 'nav-item');
+            a.style.height = '3vw';
+            a.style.width = '3vw';
+            a.style.paddingTop = '16%';
+            a.href = list_icon_a[i];
+            a.setAttribute('class',a_class_list[i]);
+            ul_3.appendChild(a);
+        }
+        nav_2.append(ul_3);
+
+    }, 300);
+
 
     var div = document.createElement('div');
     container.appendChild(nav_1);

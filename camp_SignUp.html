@@ -21,36 +21,38 @@
 
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="asset/js/nav.js"></script>
-    <script src="asset/js/utilities.js"></script>
-    <div style="overflow: hidden; padding: 3%; display: block; width: 100%; margin: 0 auto;"><img id="img_title" style="max-width: 60%; height:auto; object-fit: cover;" ></div>
-    <div style="display: block; overflow: hidden; padding-bottom: 2%;">
-        <div class="step">
-            <div class="rounded_border" style="height: auto; width: auto; display: inline-block;">
-                <div class="title" style="font-size: 2vw;"><span class="underline2">&nbsp&nbsp營隊特色&nbsp&nbsp</span></div>
-                <div class="teacher_text"><li>教授演講</li></div>
-                <div id = "feature1" class="feature_text"></div>
-                <div class="teacher_text"><li>線上實操</li></div>
-                <div id = "feature2" class="feature_text"></div>
-                <div class="teacher_text"><li>學長姐分享</li></div>
-                <div id = "feature3" class="feature_text"></div>
-                <div style="overflow: hidden; margin: 2% 0% 2% 5%; height: 25%; width: 40%;float: left;"><img id="img_schedule1" style="height:auto; max-width: 90%; object-fit: cover;"></div>
-                <div style="overflow: hidden; margin: 2% 5% 2% 0%; height: 25%; width: 40%;float: right;"><img id="img_schedule2" style="height:auto; max-width: 90%; object-fit: cover; "></div>
-            </div>
-            <div class="rounded_border" style="height: auto; width: auto; display: inline-block;">
-                <div class="title" style="font-size: 2vw;"><span class="underline2">&nbsp&nbsp堅強師資&nbsp&nbsp</span></div>
-                <div class="teacher_text"><li id = "teacher1"></li></div>
-                <div style="overflow: hidden; padding: 3%; height: 25%; width: 100%;"><img id="img_teacher1" style="height:auto; max-width: 33%; object-fit: cover; "></div>
-                <div class="teacher_text"><li id = "teacher2"></li></div>
-                <div style="overflow: hidden; padding: 3%; height: 25%; width: 100%;"><img id="img_teacher2" style="height:auto; max-width: 33%; object-fit: cover; "></div>
-                <div class="teacher_text"><li id = "teacher3"></li></div>
-                <div style="overflow: hidden; padding: 3%; height: 25%; width: 100%;"><img id="img_teacher3" style="height:auto; max-width: 33%; object-fit: cover; "></div>
-            </div>
+    <script src='asset/js/utilities.js'></script>
+    <script src="asset/js/sidebar.js"></script>
+    <div style="overflow: hidden; padding: 3%; display: block; width: 100%; margin: 0 auto;"><img id="img_title" style="max-width: 90%; height:auto; object-fit: cover;" ></div>
+    
+    <div style="display: block; overflow: hidden; margin-top: 2%; padding-bottom: 2%;">
+        <div class="rounded_border" style="height: auto; width: auto; display: inline-block;">
+            <div class="title big_text"><span class="underline2">&nbsp&nbsp營隊特色&nbsp&nbsp</span></div>
+            <div class="teacher_text"><li>教授演講</li></div>
+            <div id = "feature1" class="feature_text"></div>
+            <div class="teacher_text"><li>線上實操</li></div>
+            <div id = "feature2" class="feature_text"></div>
+            <div class="teacher_text"><li>學長姐分享</li></div>
+            <div id = "feature3" class="feature_text"></div>
+            <div style="overflow: hidden; margin: 2% 0% 2% 5%; height: 25%; width: 40%;float: left;"><img id="img_schedule1" style="height:auto; max-width: 90%; object-fit: cover;"></div>
+            <div style="overflow: hidden; margin: 2% 5% 2% 0%; height: 25%; width: 40%;float: right;"><img id="img_schedule2" style="height:auto; max-width: 90%; object-fit: cover; "></div>
         </div>
     </div>
     <div style="display: block; overflow: hidden; margin-top: 2%; padding-bottom: 2%;">
-        <div class="rounded_border" style="height: 100%; width: 74%; margin:0 auto; padding-top: 1%;">
-            <div class="title" style="font-size: 2vw;"><span class="underline2">&nbsp&nbsp報名資訊&nbsp&nbsp</span></div>
+        <div class="rounded_border" style="height: auto; width: auto; display: inline-block;">
+            <div class="title big_text" ><span class="underline2">&nbsp&nbsp堅強師資&nbsp&nbsp</span></div>
+            <div class="teacher_text"><li id = "teacher1"></li></div>
+            <div style="overflow: hidden; padding: 3%; height: 30%; width: 100%;"><img id="img_teacher1" style="height:auto; max-width: 33%; object-fit: cover; "></div>
+            <div class="teacher_text"><li id = "teacher2"></li></div>
+            <div id = "img_teacher2_div" style="overflow: hidden; padding: 3%; height: 30%; width: 100%;"><img id="img_teacher2" style="height:auto; max-width: 33%; object-fit: cover; "></div>
+            <div class="teacher_text"><li id = "teacher3"></li></div>
+            <div id = "img_teacher3_div" style="overflow: hidden; padding: 3%; height: 30%; width: 100%;"><img id="img_teacher3" style="height:auto; max-width: 33%; object-fit: cover; "></div>
+        </div>
+    </div>
+
+    <div style="display: block; overflow: hidden; margin-top: 2%; padding-bottom: 2%;">
+        <div class="rounded_border" style="height: auto; width: auto; display: inline-block;">
+            <div class="title big_text" ><span class="underline2">&nbsp&nbsp報名資訊&nbsp&nbsp</span></div>
             <div id = "date" class="SignUp_text"><span class="title">【活動時間】</span></div>
             <div class="SignUp_text"><span class="title">【活動場地】</span>Gather Town (線上)</div>
             <div id = "people" class="SignUp_text"><span class="title">【活動人數】</span></div>
@@ -69,7 +71,7 @@
     </div>
     <div style="padding-bottom: 2%;"><button class="title BT">馬上報名</button></div>
    
-    <script src="asset/js/footer.js"></script>
+    <script src="asset/js/footer_mobile.js"></script>
     <script src='asset/js/CampSignUp.js'></script>
 </body>
 </html>
@@ -126,12 +128,12 @@ div .title{
 }
 
 .rounded_border{
-    border-radius: 50px;
+    border-radius: 30px;
     font-size: 2vw;
     background-color: #FFFFFF;
     border: 3px solid #284b75;
     padding: 3% 5%;
-    margin: 0% 7%;
+    margin: 2% 5%;
     box-shadow: 9px 9px 9px gray;
 }
 
@@ -148,13 +150,13 @@ div .title{
 .feature_text {
     padding-top: 3%;
     text-align: left;
-    font-size: 1.3vw;
+    font-size: 5vw;
 }
 
 .teacher_text {
     padding-top: 3%;
     text-align: center;
-    font-size: 1.3vw;
+    font-size: 6vw;
     font-weight: 900;
     color: #284b75;
 }
@@ -162,16 +164,17 @@ div .title{
 .SignUp_text {
     padding-top: 1%;
     text-align: left;
-    font-size: 1.3vw;
+    font-size: 5vw;
 }
 
 .BT {
     background-color: #284b75;
     color: white;
-    padding: 0.5% 1%;
-    border-radius: 20px;
+    padding: 1%;
+    margin-bottom: 2%;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 2vw;
+    font-size: 5vw;
 }
 
 .BT:hover{
@@ -179,7 +182,7 @@ div .title{
 }
 
 .big_text {
-    font-size:3vw;
+    font-size:8vw;
     font-weight: 900;
     color: #284b75;
 }

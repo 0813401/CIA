@@ -16,10 +16,11 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body style="background-color:#ffbd59;">
-    <script src="asset/js/sidebar.js"></script> 
-    <script src='asset/js/utilities.js'></script>
+    <script src="asset/js/nav.js"></script>
+    <script src="asset/js/register.js"></script>
     
     <div class="rounded_border">
+        <!-- <form id="register" method="post" onsubmit="return setAction(this)">  -->
         <div class="container">
             <div class="enter_text"><label>請輸入姓名:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="name" type="text" name="fullname" required></div>
@@ -43,17 +44,20 @@
             <div class="enter"><input id="psw" type="password" name="psw" required></div>
             <div class="enter_text"><label>請確認密碼:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="check_psw" type="password" name="psw" required></div>
-            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 3%;"><label style="font-size: 5vw;"><input id="agree" type="checkbox" name="remember"> 我同意C.I.A相關規定</label></div>
-            <div style="padding-bottom: 2%;"><button class="button" onclick="send(); button_onclick(this)" >註冊</button></div>
+            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 3%;"><label style="font-size: 1.2vw;"><input id="agree" type="checkbox" name="remember"> 我同意C.I.A相關規定</label></div>
+            <div style="padding-bottom: 2%;"><button class="button" onclick="button_onclick(this);send();">註冊</button></div>
+            <!-- <input class="button" id="submit" type="submit" value="註冊"> -->
             <div><span class="reg">已經有帳號了嗎? <a href="login.html"> 登入</a></span></div> 
+            
         </div>
         
             <!-- <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
             </div> -->
+        <!-- </form> -->
     </div>
-    <script src="asset/js/footer_mobile.js"></script>
+    <script src="asset/js/footer.js"></script>
     <script src="asset/js/register.js"></script>
 </body>
 </html>
@@ -76,6 +80,7 @@
         url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
         url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
 }
+
 
 body, html{
     width: 100%;
@@ -113,11 +118,11 @@ div .title{
 }
 
 .rounded_border{
-    margin: 10% auto;
-    padding: 10% 0%;
+    margin: 6% auto;
+    padding: 3%;
     border-radius: 20px;
     background-color: #FFFFFF;
-    width: 90%;
+    width: 50%;
 }
 
 .underline {
@@ -220,7 +225,7 @@ div .title{
 .order .txt {
     color: black;
     vertical-align: middle;
-    font-size: 5vw;
+    font-size: 1.2vw;
 }
 
 /* Full-width inputs */
@@ -231,8 +236,9 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 5vw;
+    font-size: 1.3vw;
 }
+
 
 /* Set a style for all buttons */
 .button {
@@ -243,8 +249,8 @@ input[type=text], input[type=password] {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    width: 30%;
-    font-size: 5vw;
+    width: 20%;
+    font-size: 1.3vw;
 }
 
 /* Add a hover effect for buttons */
@@ -254,19 +260,19 @@ input[type=text], input[type=password] {
 
 /* Add padding to containers */
 .container {
-    width: 90%;
+    width: 70%;
     padding: auto;
 }
 
 /* The "Forgot password" text */
 span.psw {
     padding-top: 2%;
-    font-size: 5vw;
+    font-size: 1.2vw;
 }
 
 span.reg {
     padding-top: 2%;
-    font-size: 5vw;
+    font-size: 1.2vw;
 }
 
 /* .user {
@@ -305,8 +311,3 @@ span.reg {
 
 </style>
 
-<script>
-    if (!/mobile/i.test(navigator.userAgent)) {
-        window.location = 'register.html'
-    }
-</script>
