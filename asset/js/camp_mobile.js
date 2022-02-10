@@ -381,19 +381,35 @@ flag = false;
 
 // var container_pool = document.getElementById('container_pool');
 $(function(){
-$(window).scroll(function(){
+  $(window).scroll(function(){
 
-  try{
-    var voted_bar = document.getElementsByClassName('voted_bar');
-    var container_pool_offsetTop = container_pool.offsetTop;
-    for(let i = 0; i<3; i++){
-      if (window.pageYOffset >= container_pool_offsetTop - 850)
-        voted_bar[i].style.animationPlayState = 'running';
-      else
-        voted_bar[i].style.animationPlayState = 'paused';
+    try{
+      var voted_bar = document.getElementsByClassName('voted_bar');
+      var container_pool_offsetTop = container_pool.offsetTop;
+      for(let i = 0; i<3; i++){
+        if (window.pageYOffset >= container_pool_offsetTop - 850)
+          voted_bar[i].style.animationPlayState = 'running';
+        else
+          voted_bar[i].style.animationPlayState = 'paused';
+      }
+    } catch (error){
+      console.log(error);  
     }
-  } catch (error){
-    console.log(error);  
-  }
+  });
 });
+
+const window_top = $(window).height();
+var scroll_flag_step = [true, true, true];
+var step_list = document.getElementsByClassName('step');
+for(let i = 0;i<step_list.length; i++)
+  $(step_list[i]).css({'margin-top':'4%','opacity':'0'});
+$(window).bind('scroll resize', function(){
+  for(let i = 0; i<step_list.length; i++){
+    var step_top = $(step_list[i]).offset().top;
+    var step_bottom = $(step_list[i]).offset().top + parseInt($('.step').css('height'))
+    if((step_top <= window_top + $(document).scrollTop() && step_bottom + window_top >= window_top + $(document).scrollTop()) && scroll_flag_step[i]){
+        $(step_list[i]).animate({opacity: '1', marginTop: '2%', marginBottom: '2%'}, 1000, 'swing');
+        scroll_flag_step[i] = false;
+    }
+  }
 });
