@@ -60,14 +60,16 @@ function scrolling(){
     var procedure_list;
     if(is_PC)
         procedure_list = document.getElementsByClassName('procedure');
-    else{
+    else
         procedure_list = document.getElementsByClassName('procedure_');
-    }
     for(let i = 0; i<procedure_list.length; i++){
         var procedure_top = $(procedure_list[i]).offset().top;
         var procedure_bottom = $(procedure_list[i]).offset().top + parseInt($('.which-step').css('height'))
         if((procedure_top <= window_top + $(document).scrollTop() && procedure_bottom + window_top >= window_top + $(document).scrollTop()) &&scroll_flag_procedure[i]){
-            $(procedure_list[i]).children('.white_mask').animate({width: 'toggle', marginLeft: '100%'}, 1000, 'swing');
+            if(is_PC)
+                $(procedure_list[i]).children('.white_mask').animate({width: 'toggle', marginLeft: '100%'}, 1000, 'swing');
+            else
+                $(procedure_list[i]).animate({'opacity':1}, 1000, 'swing');
             scroll_flag_procedure[i] = false;
         }
     }
