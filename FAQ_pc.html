@@ -10,6 +10,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- dropdown 需下面這兩行 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
     <script src='asset/js/nav.js'></script>
@@ -203,12 +206,17 @@ body, html{
     height: 100%;
 }
 
+.nav-link:link {
+    color: white;
+}
+
+.nav-link:visited {
+    color: white;
+}
 
 .nav-link:hover {
     color: #ffbd59;
-    /*#005AB5*/
 }
-
 
 div{
     text-align: center;
@@ -426,3 +434,238 @@ learn_more_02.addEventListener('click', function(){
 
 });
 </script>
+
+<style>
+
+    * {
+        font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
+    }
+    
+    body, html{
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .nav-link:hover {
+        color: #ffbd59;
+        /*#005AB5*/
+    }
+    
+    
+    div{
+        text-align: center;
+    }
+    
+    div .title{
+        font-weight: 900;
+    }
+    
+    img{
+       width: 100%;
+       height: 100%; 
+    }
+    
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    .question {
+        font-size: 1.5vw;
+        font-weight: 900;
+        color: #284b75;
+        text-align: left;
+    }
+    
+    .question_CIA {
+        font-size: 2.3vw;
+        text-align: center;
+    }
+    
+    .underline_CIA {
+        padding-bottom: 1.5%;
+        border-bottom: 2px solid#f88411;
+        border-bottom-width:thick;
+    }
+    
+    .ans_A {
+        font-size: 1.5vw;
+        font-weight: 400;
+        color: black;
+        text-align: left;
+        padding-left: 1.78em;
+        text-indent: -1.78em;
+    }
+    
+    .ans_tab {
+        font-size: 1.5vw;
+        font-weight: 400;
+        color: black;
+        text-align: left;
+        padding-left: 1.78em;
+    }
+    
+    .ans_tab2 {
+        font-size: 1.5vw;
+        font-weight: 400;
+        color: black;
+        text-align: left;
+        padding-left: 3.1em;
+    }
+    
+    .ans_CIA {
+        padding-top: 1.5%;
+        font-size: 1.5vw;
+        font-weight: 400;
+        color: black;
+        text-align: left;
+    }
+    
+    .ans_ul {
+        font-size: 1.5vw;
+        font-weight: 400;
+        color: black;
+        text-align: left;
+        padding-left: 2.7em;
+    }
+    
+    .highlight {
+        font-weight: 900;
+    }
+    
+    .rounded_border{
+        margin: 3% 20%;
+        padding: 1%;
+        border-radius: 10px;
+        /* font-size: 24px; */
+        background-color: #FFFFFF;
+    }
+    
+    .underline {
+        border-bottom: 4px solid#f88411;
+    }
+    
+    .underline_CIA {
+        border-bottom: 4px dashed#f88411;
+    }
+    
+    .big_text {
+        font-size:3vw;
+        font-weight: 900;
+        color: #284b75;
+    }
+    
+    .white_text {
+        color: #FFFFFF;
+    }
+    
+    .left_text{
+        text-align: left;
+        font-size: 1.2vw;
+        margin: 0% 10%;
+    }
+    
+    .margin{
+        margin: 2% 3%;
+    }
+    
+    .hr-edge-weak {
+        border: 0;
+        border-bottom: 100px ;
+        padding-top: 1px;
+        background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+    }
+    
+    #ans_hidden_01, #ans_hidden_02{
+        display: none;
+    }
+    
+    #learn_more_01, #learn_more_02{
+        color: 	#6C6C6C; 
+        font-weight: 900; 
+        cursor: pointer; 
+        margin-top: 3%;
+        font-size: 2vw;
+    }
+    
+    .text_gradient{
+        z-index: 2;
+        position: relative;
+        margin-top: -5%;
+        height: 3vw;
+        background: -moz-linear-gradient(
+            bottom, 
+            rgb(255, 255, 255) 15%,
+     
+            rgba(255, 255, 255, 0) 100%
+        ); 
+        background: -webkit-gradient(
+             linear,
+            bottom,
+            top,
+            color-stop(15%, rgb(255, 255, 255)),
+            color-stop(100%, rgba(255, 255, 255, 0))
+        );
+        background: -webkit-linear-gradient(
+             bottom,
+            rgb(255,255,255) 15%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        background: -o-linear-gradient(
+            bottom,
+            rgb(255,255,255) 15%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        background: -ms-linear-gradient(
+            bottom,
+            rgb(255,255,255) 15%,
+            rgba(255, 255, 255, 0) 100%
+        );
+     
+        background: linear-gradient(
+             bottom,
+            rgb(255, 255, 255) 15%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+    
+    </style>
+    
+    <script>
+    var learn_more_01 = document.getElementById('learn_more_01');
+    var learn_more_02 = document.getElementById('learn_more_02');
+    var ans_hidden_01 = document.getElementById('ans_hidden_01');
+    var ans_hidden_02 = document.getElementById('ans_hidden_02');
+    learn_more_01.addEventListener('click', function(){
+        if(learn_more_01.classList[1] == 'fa-angle-down'){
+            $(learn_more_01).parent().find('.text_gradient').hide();
+            $(ans_hidden_01).fadeIn(500);
+            learn_more_01.classList.remove('fa-angle-down');
+            learn_more_01.setAttribute('class', 'fa fa-angle-up');
+        }
+        else{
+            $(learn_more_01).parent().find('.text_gradient').show();
+            $(ans_hidden_01).fadeOut(500);
+            learn_more_01.classList.remove('fa-angle-up');
+            learn_more_01.setAttribute('class', 'fa fa-angle-down');
+        }
+    
+    });
+    learn_more_02.addEventListener('click', function(){
+        if(learn_more_02.classList[1] == 'fa-angle-down'){
+            $(learn_more_02).parent().find('.text_gradient').hide();
+            $(ans_hidden_02).fadeIn(1000);
+            learn_more_02.classList.remove('fa-angle-down');
+            learn_more_02.setAttribute('class', 'fa fa-angle-up');
+        }
+        else{
+            $(learn_more_02).parent().find('.text_gradient').show();
+            $(ans_hidden_02).fadeOut(1000);
+            learn_more_02.classList.remove('fa-angle-up');
+            learn_more_02.setAttribute('class', 'fa fa-angle-down');
+        }
+    
+    });
+    </script>

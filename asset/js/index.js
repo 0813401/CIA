@@ -11,18 +11,19 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-
+const is_PC = window.screen.height < window.screen.width;;
+const window_top = $(window).height();
 const the_card_container = document.getElementById('card_container');
 var count_for_card_text = 1;
 var count_for_card_cover_and_back = 0;
 var array_card_text = [['C','O','M','P','A','N','Y','I','N','A','I','R'],
                        ['C',' ', 'A',' ', 'M',' ', 'P','I','N','A','I','R'], 
                        ['C','O','N','S','U','L','T','I','N','A','I','R']];
-if (/mobile/i.test(navigator.userAgent)){
-  create_card_div_mobile();
+if ((window.screen.height < window.screen.width)){
+  create_card_div();
 }
 else{
-  create_card_div();
+  create_card_div_mobile();
 }
 the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
 the_card_container.style.backgroundSize = '100%';
@@ -71,21 +72,29 @@ function create_card_div_mobile(){
     div.setAttribute('class', 'card_container'); 
     div.style.display = 'inline-block';
     div.style.borderRadius = '10%';
-    div.style.margin = '0.4%';
+    div.style.margin = '2%';
+    // div.style.marginTop = '5%';
     div.style.marginTop = '2%';
+    div.style.marginRight = '1%';
+    div.style.width = '9.5%';
+    div.style.height = '11vw';
+    div.style.maxHeight = '11vw'
     the_card_container.appendChild(div);
     var div_cover = document.createElement('div');
     div_cover.setAttribute('class', 'card_cover');
     div_cover.innerHTML = array_card_text[0][i];
     div_cover.style.borderRadius = '10%';
+    div_cover.style.fontSize = '6vw';
     var div_back = document.createElement('div');
     div_back.setAttribute('class', 'card_back');
     div_back.innerHTML = array_card_text[0][i];
     div_back.style.borderRadius = '10%';
+    div_back.style.fontSize = '6vw';
     if(i == 7 || i == 9 || i == 0){
       var container = document.createElement('div');
+      // container.style.textAlign = 'center';
       container.style.textAlign = 'left';
-      container.style.marginLeft = '10%';
+      container.style.marginLeft = '2%';
       div_cover.style.color = '#f88411';
       div_back.style.color = '#f88411';
     }
@@ -95,6 +104,31 @@ function create_card_div_mobile(){
     if(i == 6 || i == 8 || i == 10){
       the_card_container.appendChild(container);
     }
+
+    // if(i == 7 || i == 0){
+    //   var container = document.createElement('div');
+    //   container.style.display = 'inline';
+    //   container.style.textAlign = 'center';
+    //   div_cover.style.color = '#f88411';
+    //   div_back.style.color = '#f88411';
+      
+    // }
+    // if(i == 9){
+    //   var container = document.createElement('div');
+    //   container.style.display = 'inline';
+    //   container.style.marginLeft = '5%';
+    //   div_cover.style.color = '#f88411';
+    //   div_back.style.color = '#f88411';
+    // }
+
+    // container.appendChild(div);
+    // div.appendChild(div_cover);
+    // div.appendChild(div_back);
+    // if(i == 6 || i == 8 || i == 10){
+    //   the_card_container.appendChild(container);
+    // }
+
+
   }
   // // 下面的字
   // var br = document.createElement('br');
@@ -186,16 +220,81 @@ for(let i = 0; i<recent_activities_array.length; i++){
 //     </div>
 // </div>
 
+if(is_PC){
+  $(".step_text").hover(function(){
+    $(this).find(".step_before_text").stop().fadeOut(1000);
+    var obj = $(this).find(".step_before_text").parent().find('button');
+    obj.css({'margin-top':"5%","margin-bottom":'0%','opacity':'0'});
+    window.setTimeout(function(){
+      obj.animate({
+        marginTop: '0%',
+        marginBottom: '5%',
+        opacity: '1',
+      }, 1000, 'swing', obj);
+    }, 200);
+  }, function(){
+    $(this).find(".step_before_text").stop().fadeIn(1000);
+  });
+}
+else{
+  // flow control ( undo :( )
+  $(window).bind('scroll resize', function(){
+    var obj = $(".step_after_title_text").parent().find('button');
+    var obj_center = (obj.offset().top * 2 + parseInt(obj.css('height')))/2;
+    if(obj_center <= $(window).height() + $(document).scrollTop() ){
+      obj.css({'margin-top':"5%","margin-bottom":'0%','opacity':'0'});
+      window.setTimeout(function(){
+        obj.animate({
+          marginTop: '0%',
+          marginBottom: '5%',
+          opacity: '1',
+        }, 1000, 'swing', obj);
+      }, 200);
+    }
+  });
+}
 
-$(".step_text").hover(function(){
-  $(this).find(".step_before_text").stop().fadeOut(1000);
-}, function(){
-  $(this).find(".step_before_text").stop().fadeIn(1000);
-});
 
 
 $(".container_which_provide").hover(function(){
   $(this).find(".which_provide_before").stop().fadeOut(1000);
 }, function(){
   $(this).find(".which_provide_before").stop().fadeIn(1000);
+});
+
+// var scrolling_event = $(window).bind('scroll resize', function(){
+//   scrolling_for_img_why();
+// });
+
+// function scrolling_for_img_why(){
+//   var obj = $('.why').find('.img_why');
+//   console.log(obj);
+// };
+
+$('.why').hover(function(){
+  $(this).find('.img_why').css({"transform":"rotate(-45deg)", "transition":"1s" });
+}, function(){
+  $(this).find('.img_why').css({"transform":"rotate(0deg)", "transition":"1s" });
+});
+
+var scroll_flag_why = [true, true, true];
+var why_list = document.getElementsByClassName('why');
+for(let i = 0;i<why_list.length; i++){
+  if(is_PC)  
+    $(why_list[i]).css({'margin-bottom':'-8%','opacity':'0'});
+  else
+    $(why_list[i]).css({'margin-top':'-5%','opacity':'0'});
+}
+$(window).bind('scroll resize', function(){
+  for(let i = 0; i<why_list.length; i++){
+    var why_top = $(why_list[i]).offset().top;
+    var why_bottom = $(why_list[i]).offset().top + parseInt($('.step').css('height'))
+    if((why_top <= window_top + $(document).scrollTop() && why_bottom + window_top >= window_top + $(document).scrollTop()) && scroll_flag_why[i]){
+      if(is_PC)  
+        $(why_list[i]).animate({opacity: '1', marginTop: '-4%', marginBottom: '-4%'}, 1000);
+      else
+        $(why_list[i]).animate({opacity: '1', marginTop: '0%', marginBottom: '10%'}, 1000);
+      scroll_flag_why[i] = false;
+    }
+  }
 });

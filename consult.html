@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- dropdown 需下面這兩行 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
     <script src="asset/js/sidebar.js"></script>
@@ -22,35 +25,36 @@
     
     <div style="display: block; overflow: hidden;">
         <div class="big_text title" style="padding-top: 3%;"><span class="underline">&nbsp&nbsp個人諮詢特色&nbsp&nbsp</span></div>
-        <div class = "step">
-            <div><img class="img_step" src="asset/img/consult/feature1.jpg"></div>
-            <div class="step_text">
-                <div style="color: #f88411; font-size: 6vw; font-weight: 900;">服務連貫，各種需求一應俱全</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 5vw; padding-top: 2%;">提供學科家教和科系諮詢兩大線上一對一諮詢服務，一站式滿足從探索科系到逐夢踏實的各種需求。</div>
-            </div>
+        <div class = "which-step">
+            <div class = "step">
+                <div><img class="img_step" src="asset/img/consult/feature1.jpg"></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 6vw; font-weight: 900;">服務連貫，各種需求一應俱全</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 5vw; padding-top: 2%;">提供學科家教和科系諮詢兩大線上一對一諮詢服務，一站式滿足從探索科系到逐夢踏實的各種需求。</div>
+                </div>
 
-        </div>
-        <div class = "step">
-            <div><img class="img_step" src="asset/img/consult/feature2.jpg"></div>
-            <div class="step_text">
-                <div style="color: #f88411; font-size: 6vw; font-weight: 900;">安全方便，不受時間空間限制</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 5vw; padding-top: 2%;">只要準備一副耳麥與視訊鏡頭，隨時隨地都能上課不受任何地區限制，打開電腦即可開始全新課程。</div>
             </div>
+            <div class = "step">
+                <div><img class="img_step" src="asset/img/consult/feature2.jpg"></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 6vw; font-weight: 900;">安全方便，不受時間空間限制</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 5vw; padding-top: 2%;">只要準備一副耳麥與視訊鏡頭，隨時隨地都能上課不受任何地區限制，打開電腦即可開始全新課程。</div>
+                </div>
 
-        </div>
-        <div class = "step" style="margin-bottom: 5%;">
-            <div><img class="img_step" src="asset/img/consult/feature3.jpg"></div>
-            <div class="step_text">
-                <div style="color: #f88411; font-size: 6vw; font-weight: 900;">評價公開，找尋老師透明快速</div>
-                <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 5vw; padding-top: 2%;">公開透明的評價系統，找尋老師時更有保障，在龐大的教師群中也能找到優質且符合你需求的老師。</div>
             </div>
+            <div class = "step" style="margin-bottom: 5%;">
+                <div><img class="img_step" src="asset/img/consult/feature3.jpg"></div>
+                <div class="step_text">
+                    <div style="color: #f88411; font-size: 6vw; font-weight: 900;">評價公開，找尋老師透明快速</div>
+                    <div class="left_text" style="color: #284b75; font-weight: 900; font-size: 5vw; padding-top: 2%;">公開透明的評價系統，找尋老師時更有保障，在龐大的教師群中也能找到優質且符合你需求的老師。</div>
+                </div>
 
+            </div>
         </div>
-      
     </div>
     <div style="background-color: #fff;display: block; overflow: hidden; padding-bottom: 3%;">
         <div class="big_text title" style="color: #284b75; padding-top: 3%;"><span class="underline">&nbsp&nbsp個人諮詢流程&nbsp&nbsp</span></div>
-        <div class="step" style="background-color: #ffbd59;">
+        <div class="step procedure_" style="background-color: #ffbd59;">
             <!-- <div class='white_mask'></div> -->
             <div class="img_procedure_div" ><img class="img_procedure" src="asset/img/consult/procedure1.jpg"></div>
             <div class="procedure_text">
@@ -66,7 +70,7 @@
             
         </div>
         <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
-        <div class="step" style="background-color: #ffbd59;">
+        <div class="step procedure_" style="background-color: #ffbd59;">
             <!-- <div class='white_mask'></div> -->
             <div class="img_procedure_div"><img class="img_procedure" src="asset/img/consult/procedure2.png"></div>
             <div class="procedure_text">
@@ -81,7 +85,7 @@
            
         </div>
         <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
-        <div class="step" style="background-color: #ffbd59;">
+        <div class="step procedure_" style="background-color: #ffbd59;">
             <!-- <div class='white_mask'></div> -->
             <div class="img_procedure_div"><img class="img_procedure" src="asset/img/consult/procedure3.jpg"></div>
             <div class="procedure_text">
@@ -95,7 +99,7 @@
             </div>
         </div>
         <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
-        <div class="step" style="background-color: #ffbd59;">
+        <div class="step procedure_" style="background-color: #ffbd59;">
             <!-- <div class='white_mask'></div> -->
             <div class="img_procedure_div"><img class="img_procedure" src="asset/img/consult/procedure4.png"></div>
             <div class="procedure_text">
@@ -110,7 +114,7 @@
            
         </div>
         <div style="height: 5%; width: 5%; margin: 0 auto;" ><img src="asset/img/home/arrow.png" style="object-fit:cover" ></div>
-        <div class="step" style="background-color: #ffbd59;">
+        <div class="step procedure_" style="background-color: #ffbd59;">
             <!-- <div class='white_mask'></div> -->
             <div class="img_procedure_div"><img class="img_procedure" src="asset/img/consult/procedure5.jpg"></div>
             <div class="procedure_text">
@@ -215,7 +219,7 @@ div .title{
 }
 
 .big_text {
-    font-size:8vw;
+    font-size:6.4vw;
     font-weight: 900;
     color: #284b75;
 }
@@ -244,8 +248,8 @@ div .title{
     /* background-color: white;
     width: auto;
     height: 100%;
-    margin: 0% 4%;
-    opacity: 0; */
+    margin: 0% 4%; */
+    opacity: 0;
     margin: 3% auto;
     width: 90%;
     background-color: #fff;
