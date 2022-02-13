@@ -169,7 +169,7 @@ function create_nav(){
             var li_in = document.createElement('li');
             var a_in_1 = document.createElement('a');
             a_in_1.setAttribute('class', 'dropdown-item');
-            a_in_1.href = "#";
+            a_in_1.href = "update.html";
             a_in_1.innerHTML = "基本資料";
             var a_in_2 = document.createElement('a');
             a_in_2.setAttribute('class', 'dropdown-item');

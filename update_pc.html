@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="asset/img/favicon.ico"/>
+    <link rel="stylesheet" href="asset/css/common.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- dropdown 需下面這兩行 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="background-color:#ffbd59;">
+    <script src="asset/js/nav.js"></script>
+    
+    <div class="rounded_border">
+        <!-- <form id="register" method="post" onsubmit="return setAction(this)">  -->
+        <div class="container">
+            <div class="enter_text"><label>姓名:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="name" type="text" name="fullname" required></div>
+            <div class="enter_text"><label>學校:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="school" type="text" required></div>
+            <div class="enter_text"><label>年級:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="grade" type="text" required></div>
+            <div class="enter_text"><label>信箱:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="email" type="text" name="email" required></div>
+            <div class="enter_text"><label>聯絡電話:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="phone" type="text" required></div>
+            <div class="enter_text"><label>緊急聯絡人姓名:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="parent" type="text" name="fullname" required></div>
+            <div class="enter_text"><label>與緊急聯絡人之關係:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="relation" type="text" required></div>
+            <div class="enter_text"><label>緊急聯絡人電話:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="parent_phone" type="text" required></div>
+            <!-- <div class="enter_text"><label>帳號:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="uname" type="text" name="username" required></div>
+            <div class="enter_text"><label>密碼:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="psw" type="password" name="psw" required></div>
+            <div class="enter_text"><label>確認密碼:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="check_psw" type="password" name="psw" required></div> -->
+            <div style="padding-bottom: 2%;"><button class="button" onclick="button_onclick(this);send();">確認</button></div>
+            
+        </div>
+        
+            <!-- <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+            </div> -->
+        <!-- </form> -->
+    </div>
+    <script src="asset/js/footer.js"></script>
+    <script src="asset/js/update.js"></script>
+</body>
+</html>
+
+<style>
+
+* {
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif;
+}
+
+@font-face {
+    font-family: 'e';
+    src: url('asset/fonts/IndieFlower-Regular.woff')format('woff'),
+        url('asset/fonts/IndieFlower-Regular.ttf')format('truetype'),
+        url('asset/fonts/IndieFlower-Regular.eot')format('embedded-opentype');
+}
+@font-face {
+    font-family: 'c';
+    src: url('asset/fonts/cwTeXYen-zhonly.woff')format('woff'),
+        url('asset/fonts/cwTeXYen-zhonly.ttf')format('truetype'),
+        url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
+}
+
+
+body, html{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-link:link {
+    color: white;
+}
+
+.nav-link:visited {
+    color: white;
+}
+
+nav{
+    background-color: #284b75;
+    text-align: center;
+    font-size: 1.3vw;
+    height: 8%;
+    font-weight: 900;
+}
+
+div{
+    text-align: center;
+    font-size: 20px;
+}
+
+div .title{
+    font-weight: 900;
+}
+
+.enter_text {
+    padding-bottom: 3%;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.enter {
+    padding-bottom: 3%;
+}
+
+.highlight {
+    font-weight: 900;
+}
+
+.rounded_border{
+    margin: 6% auto;
+    padding: 3%;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    width: 50%;
+}
+
+.underline {
+    border-bottom: 2px solid#f88411;
+    border-bottom-width:thick;
+}
+
+.big_text {
+    font-size:3vw;
+    font-weight: 900;
+    color: #284b75;
+}
+
+.white_text {
+    color: #FFFFFF;
+}
+
+.left_text{
+    text-align: left;
+    font-size: 20px;
+    margin: 0% 10%;
+}
+
+.center_text {
+    text-align: center;
+    font-size: 200%;
+    font-family: 'c';
+}
+
+.nav-link:hover {
+    color: #ffbd59;
+    /*#005AB5*/
+}
+
+.img_square {
+	width: 100px;
+	border-radius: 50%;
+}
+.margin{
+    margin: 2% 3%;
+}
+
+.hr-edge-weak {
+    border: 0;
+    border-bottom: 100px ;
+    padding-top: 1px;
+    background: linear-gradient(to right, transparent, #FFFFFF, transparent);
+}
+
+.fa {
+    font-size: 100%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #284b75;
+    color: white;
+}
+
+.fa-instagram {
+    background: #284b75;
+    color: white;
+}
+
+.fa-envelope {
+    background: #284b75;
+    color: white;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.order {
+    height: 50%;
+    line-height: 50%;
+    text-align: center;
+    padding-top: 4%;
+}
+.order .line {
+    display: inline-block;
+    width: 40%;
+    border-top: 2px solid #ccc;
+}
+.order .txt {
+    color: black;
+    vertical-align: middle;
+    font-size: 1.2vw;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 2%;
+    margin: 2%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1.3vw;
+}
+
+
+/* Set a style for all buttons */
+.button {
+    background-color: #284b75;
+    color: white;
+    padding:2%;
+    margin:2%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 20%;
+    font-size: 1.3vw;
+}
+
+/* Add a hover effect for buttons */
+.button:hover {
+    opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+    width: 70%;
+    padding: auto;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    padding-top: 2%;
+    font-size: 1.2vw;
+}
+
+span.reg {
+    padding-top: 2%;
+    font-size: 1.2vw;
+}
+
+/* .user {
+    position: relative;
+}
+.user:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f007";
+    font-size: 2vw;
+    position: absolute;
+    left: 5%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+.user input {
+    text-indent: 10%;
+}
+
+.email {
+    position: relative;
+}
+.email:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f0e0";
+    font-size: 2vw;
+    position: absolute;
+    left: 5%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+.email input {
+    text-indent: 10%;
+} */
+
+</style>
+

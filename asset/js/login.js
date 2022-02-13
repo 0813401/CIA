@@ -22,19 +22,21 @@ function send(){
   const checkbox = document.getElementById("checkbox");
 
   var userDB = db.collection('user');
-  var name = "";
+  var ID = "";
+  var Name = "";
 
   userDB.get().then(querySnapshot => {
       querySnapshot.forEach(doc => {
         if(doc.data().username == Vuname && doc.data().password == Vpsw)
         {
-          name = doc.data().name;
+          ID = doc.id;
+          Name = doc.data().name;
         }
       });
     });
 
-  setTimeout(function(){
-      if(name == "")
+    setTimeout(function(){
+      if(ID == "")
         {
             Swal.fire({
             icon: 'warning',
@@ -45,7 +47,8 @@ function send(){
             })
         }else{
             sessionStorage.setItem('status', 'login');
-            sessionStorage.setItem('name', name);
+            sessionStorage.setItem('id', ID);
+            sessionStorage.setItem('name', Name);
             if(checkbox.checked == true){
               sessionStorage.setItem('username', Vuname);
               sessionStorage.setItem('password', Vpsw);

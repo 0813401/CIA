@@ -81,3 +81,7 @@ if(info_array[id][19] == "")
   Img_teacher3.style.display = "none";
 });
 });
+
+
+const survay_cake = document.getElementById('cake');
+survay_cake.src = "https://www.surveycake.com/s/0PnZ2";
