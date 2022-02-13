@@ -19,12 +19,40 @@ const firebaseConfig = {
   };
 
 
+var Name = "";
+var School = "";
+var Grade = "";
+var Email = "";
+var Phone = "";
+var Parent = "";
+var Relation = "";
+var Parent_phone = "";
+
+var ID = sessionStorage.getItem('id');
+
+var userDB = db.collection('user');
+userDB.get().then(querySnapshot => {
+    querySnapshot.forEach(doc => {
+        if(doc.id == ID)
+        {
+            Name = doc.data().name;
+            School = doc.data().school;
+            Grade = doc.data().grade;
+            Email = doc.data().email;
+            Phone = doc.data().phone;
+            Parent = doc.data().parent;
+            Relation = doc.data().relation;
+            Parent_phone = doc.data().parent_phone;
+        }
+    });
+});
+
 
 var info_array = [];
 var signup = db.collection("camp_SignUp");
 signup.get().then(querySnapshot => {
 querySnapshot.forEach(doc => {
-info_array.push([doc.id,doc.data().name, doc.data().feature1, doc.data().feature2, doc.data().feature3, doc.data().teacher1, doc.data().teacher2, doc.data().teacher3, doc.data().date, doc.data().people, doc.data().money_one, doc.data().money_two, doc.data().deadline, doc.data().step3, doc.data().image_title, doc.data().image_schedule1, doc.data().image_schedule2, doc.data().image_teacher1, doc.data().image_teacher2, doc.data().image_teacher3, doc.data().datetime]);
+info_array.push([doc.id,doc.data().name, doc.data().feature1, doc.data().feature2, doc.data().feature3, doc.data().teacher1, doc.data().teacher2, doc.data().teacher3, doc.data().date, doc.data().people, doc.data().money_one, doc.data().money_two, doc.data().deadline, doc.data().step3, doc.data().image_title, doc.data().image_schedule1, doc.data().image_schedule2, doc.data().image_teacher1, doc.data().image_teacher2, doc.data().image_teacher3, doc.data().datetime, doc.data().survay_cake]);
 });
 
 var id = -1; //這裡是代表是哪個營隊(DB中的第幾個)
@@ -32,7 +60,6 @@ signup.doc("choose").get().then(doc => {
 id = doc.data().choose_id;
 
 info_array.sort((a, b) => a[20] - b[20]);
-
 
 
 const Feature1 = document.getElementById('feature1');
@@ -79,9 +106,11 @@ if(info_array[id][18] == "")
   Img_teacher2.style.display = "none";
 if(info_array[id][19] == "")
   Img_teacher3.style.display = "none";
-});
-});
-
-
 const survay_cake = document.getElementById('cake');
-survay_cake.src = "https://www.surveycake.com/s/0PnZ2";
+survay_cake.src = info_array[id][21] + "?aka_name=" + Name + "&aka_school=" + School + "&aka_grade=" + Grade + "&aka_phone=" + Phone + "&aka_mail=" + Email + "&aka_parent=" + Parent + "&aka_relation=" + Relation + "&aka_parent_phone=" + Parent_phone;
+});
+});
+
+
+
+

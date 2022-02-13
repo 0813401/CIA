@@ -15,6 +15,8 @@ const db = firebase.firestore();
 
 // sessionStorage.clear();
 sessionStorage.removeItem('status');
+sessionStorage.removeItem('id');
+sessionStorage.removeItem('name');
 
 function send(){
   const Vuname = document.getElementById("uname").value;
