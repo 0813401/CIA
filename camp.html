@@ -10,7 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <!-- 要把下面這行註解不然dropdown不能用 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
@@ -18,6 +19,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <!-- dropdown 需下面這兩行 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body style="background-color:#ffbd59;">
@@ -81,10 +85,10 @@
                     </div>
                     <div style="display: block; overflow: hidden; ">
                         <div class="memoBGL" style="height: 17vh; width: 45vw; margin-left: 10%; margin-top: 3%; background-image: url(asset/img/camp/review/memo_text1.png); "></div>
-                        <div class="memoBGR" style="height: 13vh; width: 40vw; margin-right: 10%; margin-top: 15%; background-image: url(asset/img/camp/review/1_2.png); "></div>
+                        <div class="memoBGR" style="height: 13vh; width: 40vw; margin-right: 10%; margin-top: 10%; background-image: url(asset/img/camp/review/1_2.png); "></div>
                     </div>
                     <div style="display: block; overflow: hidden;">
-                        <div class="memoBGL" style="height: 30vh; width: 70vw; margin-left: 18%; margin-top: 8%; background-image: url(asset/img/camp/review/1_4.png); "></div>
+                        <div class="memoBGL" style="height: 30vh; width: 70vw; margin-left: 18%; margin-top: 5%; background-image: url(asset/img/camp/review/1_4.png); "></div>
                     </div>
                 </div>
                 <div class="board">
