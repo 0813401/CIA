@@ -633,23 +633,23 @@ learn_more_02.addEventListener('click', function(){
     
     </style>
     
-    <script>
+<script>
     var learn_more_01 = document.getElementById('learn_more_01');
     var learn_more_02 = document.getElementById('learn_more_02');
     var ans_hidden_01 = document.getElementById('ans_hidden_01');
     var ans_hidden_02 = document.getElementById('ans_hidden_02');
     learn_more_01.addEventListener('click', function(){
         if(learn_more_01.classList[1] == 'fa-angle-down'){
-            $(learn_more_01).parent().find('.text_gradient').hide();
-            $(ans_hidden_01).fadeIn(500);
-            learn_more_01.classList.remove('fa-angle-down');
-            learn_more_01.setAttribute('class', 'fa fa-angle-up');
-        }
-        else{
             $(learn_more_01).parent().find('.text_gradient').show();
-            $(ans_hidden_01).fadeOut(500);
+            $(ans_hidden_01).fadeOut(1000);
             learn_more_01.classList.remove('fa-angle-up');
             learn_more_01.setAttribute('class', 'fa fa-angle-down');
+        }
+        else{
+            $(learn_more_01).parent().find('.text_gradient').hide();
+            $(ans_hidden_01).fadeIn(1000);
+            learn_more_01.classList.remove('fa-angle-down');
+            learn_more_01.setAttribute('class', 'fa fa-angle-up');
         }
     
     });

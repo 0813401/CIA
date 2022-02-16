@@ -306,22 +306,29 @@ const firebaseConfig = {
       hint.style.visibility = 'hidden';
       var checkans = document.createElement('input');
       checkans.style.textAlign = 'left';
+      checkans.style.width = '150%';
       checkans.type = 'text';
       checkans.placeholder = '輸入你想許願的科系！        Ex：應數系';
       checkans.name = 'department_checkans' ;
       var container_voted_send = document.createElement('div');
-      container_voted_send.display = 'inline';
+      container_voted_send.style.display = 'grid';
+      container_voted_send.style.gridTemplateColumns = '1fr 1fr';
       var button = document.createElement('button');
       button.style.float = 'right';
       if (/mobile/i.test(navigator.userAgent)) {
-        button.style.width = '15%';
-        button.style.marginTop = '-10%';
-        button.style.marginRight = '1%';
+        button.style.width = '40%';
+        button.style.height = '90%';
+        button.style.marginLeft = '60%';
+        // button.style.marginTop = '-5.5%';
+        // button.style.marginRight = '2%';
       }
       else{
-        button.style.width = '10%';
-        button.style.marginTop = '-5.5%';
-        button.style.marginRight = '2%';
+        button.style.width = '40%';
+        button.style.height = '90%';
+        button.style.marginLeft = '60%';
+        // button.style.marginTop = '-3vh';
+        // button.style.marginRight = '1%';
+  
       }
       button.innerHTML = '送出';
       button.addEventListener('click', function(){

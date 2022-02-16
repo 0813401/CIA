@@ -25,7 +25,10 @@ if ((window.screen.height < window.screen.width)){
 else{
   create_card_div_mobile();
 }
-the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
+if(is_PC)
+  the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
+else  
+  the_card_container.style.backgroundImage = "url('asset/img/home/card_mobile.png')";
 the_card_container.style.backgroundSize = '100%';
 the_card_container.style.maxHeight = '100%';
 var card_rotate_interval = window.setInterval(card_rotate, 5000);

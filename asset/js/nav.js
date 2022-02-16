@@ -10,6 +10,19 @@ window.onscroll = function() {
     }
 };
 
+var Name = sessionStorage.getItem('name');
+// var Name = "";
+// var userDB = db.collection('user');
+
+// userDB.get().then(querySnapshot => {
+//     querySnapshot.forEach(doc => {
+//         if(doc.id == ID)
+//         {
+//             Name = doc.data().name;
+//         }
+//     });
+// });
+
 function creator_nav(){
 
     var nav_1 = document.createElement('nav'); 
@@ -57,7 +70,7 @@ function creator_nav(){
     setTimeout(function(){
         // login
         var data = sessionStorage.getItem('status');
-        var name = sessionStorage.getItem('name');
+        
         if(data != "login")
         {
             var ul_1 = document.createElement('ul');
@@ -98,7 +111,7 @@ function creator_nav(){
             var a_2 = document.createElement('a');
             a_2.setAttribute('class', 'nav-link white_text dropdown-toggle');
             a_2.href = "#";
-            a_2.innerHTML = "Hello , " + name + " ! ";
+            a_2.innerHTML = "Hello , " + Name + " ! ";
 
             a_2.setAttribute('role', 'button');
             a_2.setAttribute('data-bs-toggle', 'dropdown');
@@ -107,7 +120,7 @@ function creator_nav(){
             var li_in = document.createElement('li');
             var a_in_1 = document.createElement('a');
             a_in_1.setAttribute('class', 'dropdown-item');
-            a_in_1.href = "#";
+            a_in_1.href = "update.html";
             a_in_1.innerHTML = "基本資料";
             var a_in_2 = document.createElement('a');
             a_in_2.setAttribute('class', 'dropdown-item');
@@ -146,7 +159,7 @@ function creator_nav(){
         }
         nav_2.append(ul_3);
 
-    }, 300);
+    }, 1000);
 
 
     var div = document.createElement('div');
@@ -155,8 +168,6 @@ function creator_nav(){
     div.appendChild(nav_2)
     container.appendChild(div);
 }
-
-
 
 
 {/* <nav class="navbar" style="background-color: #284b75; height: 15%; padding-top: 1%; z-index: 3;">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Update</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="asset/img/favicon.ico"/>
@@ -14,39 +14,39 @@
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- dropdown 需下面這兩行 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body style="background-color:#ffbd59;">
     <script src="asset/js/nav.js"></script>
     
     <div class="rounded_border">
+        <!-- <form id="register" method="post" onsubmit="return setAction(this)">  -->
         <div class="container">
-            <div style="padding-bottom: 3%;"><input id="uname" type="text" placeholder="請輸入帳號" name="uname" required></div>
-            <div style="padding-bottom: 3%;"><input id="psw" type="password" placeholder="請輸入密碼" name="psw" required></div>
-            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 5%;">
-                <div id="che" style="float: left;"><label style="font-size: 1.2vw;"><input id="checkbox" type="checkbox" checked="checked" name="remember"> 記住我</label></div>
-                <div style="float: right;"><span class="psw"><a href="password.html">忘記密碼</a></span></div>
-                
-            </div>
-            <div style="padding: 3% 0%;"><button class="button" onclick="button_onclick(this); send();">登入</button></div>
-            <div><span class="reg">還沒有帳號嗎? <a href="register.html"> 註冊</a></span></div>
-
-            <div class="order">
-                <span class="line"></span>
-                <span class="txt">或</span>
-                <span class="line"></span>
-            </div>
-
-            <div style="padding-top: 5%;">
-                <a href="#" class="fb btn">
-                  <i class="fa fa-facebook-f hov"></i> 使用 Facebook 登入
-                </a>
-                <a href="#" class="google btn">
-                  <i class="fa fa-google hov"></i> 使用 Google+ 登入
-                </a>
-            </div>
-            
-        
-            
+            <div class="enter_text"><label>姓名:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="name" type="text" name="fullname" required></div>
+            <div class="enter_text"><label>學校:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="school" type="text" required></div>
+            <div class="enter_text"><label>年級:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="grade" type="text" required></div>
+            <div class="enter_text"><label>信箱:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="email" type="text" name="email" required></div>
+            <div class="enter_text"><label>聯絡電話:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="phone" type="text" required></div>
+            <div class="enter_text"><label>緊急聯絡人姓名:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="parent" type="text" name="fullname" required></div>
+            <div class="enter_text"><label>與緊急聯絡人之關係:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="relation" type="text" required></div>
+            <div class="enter_text"><label>緊急聯絡人電話:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="parent_phone" type="text" required></div>
+            <!-- <div class="enter_text"><label>帳號:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="uname" type="text" name="username" required></div>
+            <div class="enter_text"><label>密碼:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="psw" type="password" name="psw" required></div>
+            <div class="enter_text"><label>確認密碼:<span style="color:red"> *</span></label></div>
+            <div class="enter"><input id="check_psw" type="password" name="psw" required></div> -->
+            <div style="padding-bottom: 2%;"><button class="button" onclick="button_onclick(this);send();">確認</button></div>
             
         </div>
         
@@ -54,9 +54,10 @@
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
             </div> -->
+        <!-- </form> -->
     </div>
     <script src="asset/js/footer.js"></script>
-    <script src="asset/js/login.js"></script>
+    <script src="asset/js/update.js"></script>
 </body>
 </html>
 
@@ -79,15 +80,20 @@
         url('asset/fonts/cwTeXYen-zhonly.eot')format('embedded-opentype');
 }
 
+
 body, html{
     width: 100%;
     height: 100%;
 }
 
-.nav-link:hover {
-    color: #ffbd59;
-    /*#005AB5*/
+.nav-link:link {
+    color: white;
 }
+
+.nav-link:visited {
+    color: white;
+}
+
 nav{
     background-color: #284b75;
     text-align: center;
@@ -105,26 +111,14 @@ div .title{
     font-weight: 900;
 }
 
-.question {
-    font-size: 1.5vw;
-    font-weight: 900;
-    color: #284b75;
+.enter_text {
+    padding-bottom: 3%;
     text-align: left;
+    padding-left: 2%;
 }
 
-.ans {
-    font-size: 1.5vw;
-    font-weight: 400;
-    color: black;
-    text-align: left;
-}
-
-.ans_tab {
-    padding-left: 5%;
-}
-
-.ans_tab2 {
-    padding-left: 8%;
+.enter {
+    padding-bottom: 3%;
 }
 
 .highlight {
@@ -166,6 +160,11 @@ div .title{
     font-family: 'c';
 }
 
+.nav-link:hover {
+    color: #ffbd59;
+    /*#005AB5*/
+}
+
 .img_square {
 	width: 100px;
 	border-radius: 50%;
@@ -181,6 +180,32 @@ div .title{
     background: linear-gradient(to right, transparent, #FFFFFF, transparent);
 }
 
+.fa {
+    font-size: 100%;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #284b75;
+    color: white;
+}
+
+.fa-instagram {
+    background: #284b75;
+    color: white;
+}
+
+.fa-envelope {
+    background: #284b75;
+    color: white;
+}
 
 .flex-nav {
     display: flex;
@@ -192,25 +217,6 @@ div .title{
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-.hov:hover{
-    color: black;
-}
-
-.fb {
-    background-color: #284b75;
-    color: white;
-    font-size: 1vw;
-    width: 45%;
-}
-
-
-.google {
-    background-color: #dd4b39;
-    color: white;
-    font-size: 1vw;
-    width: 45%;
 }
 
 .order {
@@ -277,4 +283,39 @@ span.reg {
     font-size: 1.2vw;
 }
 
+/* .user {
+    position: relative;
+}
+.user:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f007";
+    font-size: 2vw;
+    position: absolute;
+    left: 5%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+.user input {
+    text-indent: 10%;
+}
+
+.email {
+    position: relative;
+}
+.email:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f0e0";
+    font-size: 2vw;
+    position: absolute;
+    left: 5%;
+    top: 42%;
+    transform: translateY(-50%);
+}
+.email input {
+    text-indent: 10%;
+} */
+
 </style>
+
