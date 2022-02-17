@@ -28,9 +28,10 @@ else{
 if(is_PC)
   the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
 else  
-  the_card_container.style.backgroundImage = "url('asset/img/home/card_mobile.png')";
+  the_card_container.style.backgroundImage = "url('asset/img/home/card_mobile2.png')";
 the_card_container.style.backgroundSize = '100%';
 the_card_container.style.maxHeight = '100%';
+the_card_container.style.position = 'relative';
 var card_rotate_interval = window.setInterval(card_rotate, 5000);
 
 function create_card_div(){
@@ -101,12 +102,26 @@ function create_card_div_mobile(){
       div_cover.style.color = '#f88411';
       div_back.style.color = '#f88411';
     }
+    var button = document.createElement('button');
+    button.setAttribute('class', 'experienceButton');
+    button.innerText = '關於我們';
+    $(button).css({'font-weight':'900','font-size':'5vw', 'position':'absolute', 'top':'75%', 'left':'60%', 'background-color': 'transparent'});
+    button.addEventListener('click', function() {
+      window.location = 'FAQ.html'
+    });
+    var span = document.createElement('span')
+    span.innerText = ' >>>';
+    $(span).css({'color': '#f88411'});
+    button.appendChild(span);
+
     container.appendChild(div);
     div.appendChild(div_cover);
     div.appendChild(div_back);
     if(i == 6 || i == 8 || i == 10){
       the_card_container.appendChild(container);
     }
+    if(i == 10)
+      the_card_container.appendChild(button);
 
     // if(i == 7 || i == 0){
     //   var container = document.createElement('div');
@@ -284,7 +299,7 @@ for(let i = 0;i<why_list.length; i++){
     if(i == 2)
       $($('.why')[i]).css({'margin-bottom':'0%', 'padding-bottom':'0%'});
     else
-      $($('.why')[i]).css({'margin-bottom':'5%', 'padding-bottom':'0%'});
+      $($('.why')[i]).css({'margin-bottom':'8%', 'padding-bottom':'0%'});
     console.log($('.why')[i]);
   }
 }
@@ -297,13 +312,15 @@ $(window).bind('scroll resize', function(){
       if(is_PC)  
         $(why_list[i]).animate({opacity: '1', marginTop: '-4%', marginBottom: '-4%'}, 1000, 'swing');
       else{
-        $(why_list[i]).children('.white_mask').animate({height: 'toggle', marginTop: '100%'}, 1000, 'swing');
+        $(why_list[i]).children('.white_mask').animate({height: 'toggle', marginTop: '80%'}, 1000, 'swing');
         // $(why_list[i]).animate({marginTop: '5%', marginBottom: '5%'}, 1000, 'swing');
-        window.setTimeout(function(){
-          $($('.why')[i]).animate({paddingBottom: '5%'}, 1000, 'swing');
-        }, 100)
       }
         scroll_flag_why[i] = false;
     }
   }
 });
+
+
+$('.down_arrow').on('click', function(){
+  document.getElementById('step').scrollIntoView();
+})

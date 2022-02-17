@@ -1,4 +1,5 @@
 const container = document.body;
+const is_PC = window.screen.height < window.screen.width;
 creator_nav();
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
@@ -66,7 +67,6 @@ function creator_nav(){
     }
     nav_2.appendChild(ul);
 
-
     setTimeout(function(){
         // login
         var data = sessionStorage.getItem('status');
@@ -95,51 +95,74 @@ function creator_nav(){
             ul_1.append(li_2);
             nav_2.appendChild(ul_1);
         }else{
-            var ul_1 = document.createElement('ul');
-            ul_1.setAttribute('class', 'navbar-nav');
-            ul_1.style.marginRight = '1%';
-            // var li_1 = document.createElement('li');
-            // li_1.setAttribute('class', "nav-item")
-            // li_1.style.paddingTop = '10%';
-            // var i = document.createElement('i');
-            // i.setAttribute("class", "fa fa-sign-out")
-            // i.style.fontSize = '1.5vw';
-            // i.style.color = "#fff";
-            // li_1.appendChild(i);
-            var li_2 = document.createElement('li');
-            li_2.setAttribute('class', "nav-item dropdown")
-            var a_2 = document.createElement('a');
-            a_2.setAttribute('class', 'nav-link white_text dropdown-toggle');
-            a_2.href = "#";
-            a_2.innerHTML = "Hello , " + Name + " ! ";
+            if(is_PC){
+                var ul_1 = document.createElement('ul');
+                ul_1.setAttribute('class', 'navbar-nav');
+                ul_1.style.marginRight = '1%';
+                // var li_1 = document.createElement('li');
+                // li_1.setAttribute('class', "nav-item")
+                // li_1.style.paddingTop = '10%';
+                // var i = document.createElement('i');
+                // i.setAttribute("class", "fa fa-sign-out")
+                // i.style.fontSize = '1.5vw';
+                // i.style.color = "#fff";
+                // li_1.appendChild(i);
+                var li_2 = document.createElement('li');
+                li_2.setAttribute('class', "nav-item dropdown")
+                var a_2 = document.createElement('a');
+                a_2.setAttribute('class', 'nav-link white_text dropdown-toggle');
+                a_2.href = "#";
+                a_2.innerHTML = "Hello , " + Name + " ! ";
 
-            a_2.setAttribute('role', 'button');
-            a_2.setAttribute('data-bs-toggle', 'dropdown');
-            var ul_in = document.createElement('ul');
-            ul_in.setAttribute('class', 'dropdown-menu');
-            var li_in = document.createElement('li');
-            var a_in_1 = document.createElement('a');
-            a_in_1.setAttribute('class', 'dropdown-item');
-            a_in_1.href = "update.html";
-            a_in_1.innerHTML = "基本資料";
-            var a_in_2 = document.createElement('a');
-            a_in_2.setAttribute('class', 'dropdown-item');
-            a_in_2.href = "#";
-            a_in_2.innerHTML = "營隊紀錄";
-            var a_in_3 = document.createElement('a');
-            a_in_3.setAttribute('class', 'dropdown-item');
-            a_in_3.href = "login.html";
-            a_in_3.innerHTML = "Log Out";
-            li_in.appendChild(a_in_1);
-            li_in.appendChild(a_in_2);
-            li_in.appendChild(a_in_3);
-            ul_in.appendChild(li_in);
+                a_2.setAttribute('role', 'button');
+                a_2.setAttribute('data-bs-toggle', 'dropdown');
+                var ul_in = document.createElement('ul');
+                ul_in.setAttribute('class', 'dropdown-menu');
+                ul_in.style.backgroundColor='#284b75';
+                ul_in.style.opacity = '0.8';
+                var li_in = document.createElement('li');
+                var a_in_1 = document.createElement('a');
+                a_in_1.setAttribute('class', 'dropdown-item');
+                a_in_1.href = "update.html";
+                a_in_1.innerHTML = "基本資料";
+                a_in_1.style.fontSize = '1.1vw';
+                a_in_1.style.fontWeight = '900';
+                a_in_1.style.color = '#FFF';
+                a_in_1.addEventListener('mouseover', function(){
+                    a_in_1.style.backgroundColor = '#f88411';
+                })
+                a_in_1.addEventListener('mouseout', function(){
+                    a_in_1.style.backgroundColor = '#284b75';
+                    
+                })
+                // var a_in_2 = document.createElement('a');
+                // a_in_2.setAttribute('class', 'dropdown-item');
+                // a_in_2.href = "#";
+                // a_in_2.innerHTML = "營隊紀錄";
+                var a_in_3 = document.createElement('a');
+                a_in_3.setAttribute('class', 'dropdown-item');
+                a_in_3.href = "login.html";
+                a_in_3.innerHTML = "Log Out";
+                a_in_3.style.fontSize = '1.1vw';
+                a_in_3.style.fontWeight = '900';
+                a_in_3.style.color = '#FFF';
+                a_in_3.addEventListener('mouseover', function(){
+                    a_in_3.style.backgroundColor = '#f88411';
+                })
+                a_in_3.addEventListener('mouseout', function(){
+                    a_in_3.style.backgroundColor = '#284b75';
+                })
+                li_in.appendChild(a_in_1);
+                // li_in.appendChild(a_in_2);
+                li_in.appendChild(a_in_3);
+                ul_in.appendChild(li_in);
 
-            li_2.appendChild(a_2);
-            li_2.append(ul_in);
-            // ul_1.appendChild(li_1);
-            ul_1.append(li_2);
-            nav_2.appendChild(ul_1);
+                li_2.appendChild(a_2);
+                li_2.append(ul_in);
+                // ul_1.appendChild(li_1);
+                ul_1.append(li_2);
+                nav_2.appendChild(ul_1);       
+            }
         }
 
 

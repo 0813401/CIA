@@ -39,6 +39,7 @@
                 <div class="step_text_func">
                     <div style="color: #f88411; font-size: 6vw; font-weight: 900;">一站式升學輔導平台</div>
                     <div class="left_text" style="color: #000; font-weight: 900; font-size: 4vw;">C.I.A團隊將探索到升學途中的各種需求進行整合，打造由線上營隊與個人諮詢構建出的一站式線上平台，不只解決對未來科系的疑惑，也幫助同學考上自己的目標校系。</div>
+                    <div class="left_text" style="color: #FFF; font-weight: 900; font-size: 1vw;">padding</div>
                 </div>
             </div>
             <div class = "why">
@@ -47,6 +48,7 @@
                 <div class="step_text_func">
                     <div style="color: #f88411; font-size: 6vw; font-weight: 900;">實際與大學師生交流</div>
                     <div class="left_text" style="color: #000; font-weight: 900; font-size: 4vw;">C.I.A團隊找到來自各大名校不同科系的學長姐與教授，線上面對面直接分享大學科系的制度、實際體驗及未來出路，讓同學能在高中階段盡早確定目標，全心衝刺。</div>
+                    <div class="left_text" style="color: #FFF; font-weight: 900; font-size: 1vw;">padding</div>
                 </div>
             </div>
             <div class = "why">
@@ -55,15 +57,22 @@
                 <div class="step_text_func">
                     <div style="color: #f88411; font-size: 6vw; font-weight: 900;">創新式科系探索活動</div>
                     <div class="left_text" style="color: #000; font-weight: 900; font-size: 4vw;">融合新潮線上數位工具，C.I.A團隊設計各種科系線上實作、闖關活動和基礎課程，也不斷通過創新，研發出更有效的線上科系探索模式，讓探索途中充滿歡笑及樂趣。</div>
+                    <div class="left_text" style="color: #FFF; font-weight: 900; font-size: 1vw;">padding</div>
                 </div>
             </div>
         </div>
     </div>
    
-    <div style="padding: 3%;display: block; overflow: hidden; background-color: #FFF;">
-        <div class = "big_text title" style="color: #284b75; font-size:6vw; padding-bottom: 5%; writing-mode:tb-rl">&nbsp&nbsp您認為自己&nbsp&nbsp</div> 
-        <div class = "big_text title" style="color: #284b75; font-size:6vw; padding-bottom: 5%; writing-mode:tb-rl">目前處在何種階段？&nbsp&nbsp</div> 
-        <div class="step">
+    <div style="padding: 3%; display: block; overflow: hidden; background-color: #FFF;">
+        <div style="display: grid; grid-template-columns: 0.1fr 0.15fr 1fr;  margin: 20% 0%; margin-left: 5%;">
+            <div class = "big_text title" style="color: #284b75; font-size:7.5vw; padding-bottom: 5%; writing-mode:tb-rl;  text-align:start; font-size: 10vw; letter-spacing: 0.15em;">&nbsp&nbsp您認為自己&nbsp&nbsp</div> 
+            <div class = "big_text title" style="color: #284b75; font-size:7.5vw; padding: 150% 0% 5% 0%; writing-mode:tb-rl; font-size: 10vw; letter-spacing: 0.15em;">目前處在何種階段？&nbsp&nbsp</div>
+            <div style="margin-top: 50%;">
+                <div class = 'down_arrow fa fa-chevron-down'></div>
+                <div class = 'down_arrow fa fa-chevron-down'></div>
+            </div>
+        </div> 
+        <div id='step' class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/home/find.png"></div>
             <div class="step_text">
                 <div class="title">
@@ -167,6 +176,24 @@ body, html{
     height: 100%;
 }
 
+.down_arrow{
+    width: 100%;
+    height: 0%;
+    font-size: 3em;
+    -webkit-animation: IconAnimation 0.8s linear infinite alternate;
+    animation: IconAnimation 0.8s linear infinite alternate;
+}
+
+@-webkit-keyframes IconAnimation{
+    from { opacity: 1; margin-top: 0%;}
+    to { opacity: 0.5; margin-top: -5%}
+}
+
+@keyframes IconAnimation{
+    from { opacity: 1; margin-top: 0%}
+    to { opacity: 0.5; margin-top: -5%}
+}
+
 .nav-link:hover {
     color: #ffbd59;
     /*#005AB5*/
@@ -213,13 +240,28 @@ img{
     background-size:cover;
 }
 
+.experienceButton {
+    border:0px #284b75 solid;
+    background-color:#000;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.experienceButton:hover {
+    color:#f88411;
+    background-color:#000;
+    border:0px #fff solid;
+    /* opacity: 0.8; */
+}
+
 .white_text {
     color: #FFFFFF;
 }
 
 .white_mask{
     width: 90%;
-    height: 60%;
+    height: 45%;
     z-index: 1;
     background :#ffbd59;
     position: absolute;
