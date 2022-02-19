@@ -1,5 +1,5 @@
 const window_top = $(window).height();
-const is_PC = window.screen.height < window.screen.width;
+// const is_PC = window.screen.height < window.screen.width;
 
 var scroll_flag_which_step_PC = true;
 var scroll_flag_which_step_phone = [true, true, true];
@@ -37,7 +37,7 @@ var scrolling_event = $(window).bind('scroll resize', function(){
 });
 
 function scrolling(){
-    if(is_PC){
+    if((window.screen.height < window.screen.width)){
         var which_step_top = $('.which-step').offset().top;
         var which_step_bottom = which_step_top + parseInt($('.which-step').css('height'));
         if((which_step_top <= window_top + $(document).scrollTop() && which_step_bottom + window_top >= window_top + $(document).scrollTop()) && scroll_flag_which_step_PC){
@@ -58,7 +58,7 @@ function scrolling(){
     }
 
     var procedure_list;
-    if(is_PC)
+    if((window.screen.height < window.screen.width))
         procedure_list = document.getElementsByClassName('procedure');
     else
         procedure_list = document.getElementsByClassName('procedure_');
@@ -66,7 +66,7 @@ function scrolling(){
         var procedure_top = $(procedure_list[i]).offset().top;
         var procedure_bottom = $(procedure_list[i]).offset().top + parseInt($('.which-step').css('height'))
         if((procedure_top <= window_top + $(document).scrollTop() && procedure_bottom + window_top >= window_top + $(document).scrollTop()) &&scroll_flag_procedure[i]){
-            if(is_PC)
+            if((window.screen.height < window.screen.width))
                 $(procedure_list[i]).children('.white_mask').animate({width: 'toggle', marginLeft: '100%'}, 1000, 'swing');
             else
                 $(procedure_list[i]).animate({'opacity':1}, 1000, 'swing');

@@ -11,7 +11,7 @@ const firebaseConfig = {
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-const is_PC = window.screen.height < window.screen.width;;
+// const is_PC = window.screen.height < window.screen.width;;
 const window_top = $(window).height();
 const the_card_container = document.getElementById('card_container');
 var count_for_card_text = 1;
@@ -25,9 +25,13 @@ if ((window.screen.height < window.screen.width)){
 else{
   create_card_div_mobile();
 }
-the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
+if((window.screen.height < window.screen.width))
+  the_card_container.style.backgroundImage = "url('asset/img/home/card.png')";
+else  
+  the_card_container.style.backgroundImage = "url('asset/img/home/card_mobile2.png')";
 the_card_container.style.backgroundSize = '100%';
 the_card_container.style.maxHeight = '100%';
+the_card_container.style.position = 'relative';
 var card_rotate_interval = window.setInterval(card_rotate, 5000);
 
 function create_card_div(){
@@ -98,12 +102,26 @@ function create_card_div_mobile(){
       div_cover.style.color = '#f88411';
       div_back.style.color = '#f88411';
     }
+    var button = document.createElement('button');
+    button.setAttribute('class', 'experienceButton');
+    button.innerText = '關於我們';
+    $(button).css({'font-weight':'900','font-size':'5vw', 'position':'absolute', 'top':'75%', 'left':'60%', 'background-color': 'transparent'});
+    button.addEventListener('click', function() {
+      window.location = 'FAQ.html'
+    });
+    var span = document.createElement('span')
+    span.innerText = ' >>>';
+    $(span).css({'color': '#f88411'});
+    button.appendChild(span);
+
     container.appendChild(div);
     div.appendChild(div_cover);
     div.appendChild(div_back);
     if(i == 6 || i == 8 || i == 10){
       the_card_container.appendChild(container);
     }
+    if(i == 10)
+      the_card_container.appendChild(button);
 
     // if(i == 7 || i == 0){
     //   var container = document.createElement('div');
@@ -220,7 +238,7 @@ for(let i = 0; i<recent_activities_array.length; i++){
 //     </div>
 // </div>
 
-if(is_PC){
+if((window.screen.height < window.screen.width)){
   $(".step_text").hover(function(){
     $(this).find(".step_before_text").stop().fadeOut(1000);
     var obj = $(this).find(".step_before_text").parent().find('button');
@@ -273,7 +291,7 @@ $('.why').hover(function(){
 var scroll_flag_why = [true, true, true];
 var why_list = document.getElementsByClassName('why');
 for(let i = 0;i<why_list.length; i++){
-  if(is_PC)  
+  if((window.screen.height < window.screen.width))  
     $(why_list[i]).css({'margin-bottom':'-8%','opacity':'0'});
   else{
     $(why_list[i]).css({'margin-bottom':'0%','margin-top':'0%'});
@@ -281,7 +299,7 @@ for(let i = 0;i<why_list.length; i++){
     if(i == 2)
       $($('.why')[i]).css({'margin-bottom':'0%', 'padding-bottom':'0%'});
     else
-      $($('.why')[i]).css({'margin-bottom':'5%', 'padding-bottom':'0%'});
+      $($('.why')[i]).css({'margin-bottom':'8%', 'padding-bottom':'0%'});
     console.log($('.why')[i]);
   }
 }
@@ -291,16 +309,18 @@ $(window).bind('scroll resize', function(){
     var why_top = $(why_list[i]).offset().top;
     var why_bottom = $(why_list[i]).offset().top + parseInt($('.step').css('height'))
     if((why_top <= window_top + $(document).scrollTop() && why_bottom + window_top >= window_top + $(document).scrollTop()) && scroll_flag_why[i]){
-      if(is_PC)  
+      if((window.screen.height < window.screen.width))  
         $(why_list[i]).animate({opacity: '1', marginTop: '-4%', marginBottom: '-4%'}, 1000, 'swing');
       else{
-        $(why_list[i]).children('.white_mask').animate({height: 'toggle', marginTop: '100%'}, 1000, 'swing');
+        $(why_list[i]).children('.white_mask').animate({height: 'toggle', marginTop: '80%'}, 1000, 'swing');
         // $(why_list[i]).animate({marginTop: '5%', marginBottom: '5%'}, 1000, 'swing');
-        window.setTimeout(function(){
-          $($('.why')[i]).animate({paddingBottom: '5%'}, 1000, 'swing');
-        }, 100)
       }
         scroll_flag_why[i] = false;
     }
   }
 });
+
+
+$('.down_arrow').on('click', function(){
+  document.getElementById('step').scrollIntoView();
+})

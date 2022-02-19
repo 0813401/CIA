@@ -68,6 +68,9 @@ function create_nav(){
         li.appendChild(a);
         ul.appendChild(li);
     }
+
+
+
     nav_2.appendChild(ul);
 
     // login
@@ -131,8 +134,78 @@ function create_nav(){
         top_menu.style.padding = '0';
         top_menu.style.margin = '0';
 
+
+        
         var data = sessionStorage.getItem('status');
         var name = sessionStorage.getItem('name');
+        if(data != 'login'){}
+        else{
+            // var list_text = ['————————————',"Hello , " + name + " ! ", '基本資料', 'Log Out'];
+            // var list_a = ["", "", "update.html", "login.html"];
+            // for(let i = 0; i<4; i++){
+            //     var li = document.createElement('li');
+            //     li.setAttribute('class', 'nav-item');
+            //     var a = document.createElement('a');
+            //     a.setAttribute('class', 'nav-link white_text');
+            //     a.style.fontSize = '5.3vw'
+            //     a.href = list_a[i];
+            //     a.innerHTML = list_text[i];
+            //     li.appendChild(a);
+            //     ul.appendChild(li);
+            // }
+
+
+
+            var li = document.createElement('li');
+            li.setAttribute('class', 'nav-item');
+            var a = document.createElement('a');
+            a.setAttribute('class', 'nav-link white_text');
+            a.style.fontSize = '5.3vw'
+            a.href = "#";
+            a.innerHTML = "————————————";
+            li.appendChild(a);
+            ul.appendChild(li);
+
+            var li = document.createElement('li');
+            li.setAttribute('class', 'nav-item dropdown');
+            var a = document.createElement('a');
+            a.setAttribute('class', 'nav-link white_text dropdown-toggle');
+            a.style.fontSize = '5.3vw'
+            a.href = "#";
+            a.innerHTML = "Hello , " + name + " ! ";
+            a.setAttribute('role', 'button');
+            a.setAttribute('data-bs-toggle', 'dropdown');
+            li.appendChild(a);
+            ul.appendChild(li);
+
+            var ul_in = document.createElement('ul');
+            ul_in.setAttribute('class', 'dropdown-menu');
+            ul_in.style.backgroundColor='#284b75';
+            ul_in.style.textAlign='center';
+            var li_in = document.createElement('li');
+            var a_in_1 = document.createElement('a');
+            a_in_1.setAttribute('class', 'dropdown-item');
+            a_in_1.href = "update.html";
+            a_in_1.innerHTML = "基本資料";
+            a_in_1.style.fontSize = '5.3vw';
+            a_in_1.style.fontWeight = '900';
+            a_in_1.style.color = '#FFF';
+            var a_in_3 = document.createElement('a');
+            a_in_3.setAttribute('class', 'dropdown-item');
+            a_in_3.href = "login.html";
+            a_in_3.innerHTML = "Log Out";
+            a_in_3.style.fontSize = '5.3vw';
+            a_in_3.style.fontWeight = '900';
+            a_in_3.style.color = '#FFF';
+            li_in.appendChild(a_in_1);
+            // li_in.appendChild(a_in_2);
+            li_in.appendChild(a_in_3);
+            ul_in.appendChild(li_in);
+
+            li.appendChild(a);
+            li.append(ul_in);
+            ul.appendChild(li);
+        }
         if(data != "login")
         {
             list_icon_a = [["login.html"],["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
@@ -149,45 +222,45 @@ function create_nav(){
                 top_menu.appendChild(a);
             }
         }else{
-            var hi_menu = document.createElement('ul');
-            hi_menu.setAttribute('class', 'navbar-nav');
-            hi_menu.style.margin = 'auto';
-            hi_menu.style.paddingLeft = "5%";
-            hi_menu.style.display = 'block';
-            var hi_li = document.createElement('li');
-            hi_li.setAttribute('class', 'nav-item dropdown');
-            var hi_a = document.createElement('a');
-            hi_a.setAttribute('class', 'nav-link white_text dropdown-toggle');
-            hi_a.style.fontSize = '5.3vw'
-            hi_a.href = "#";
-            hi_a.innerHTML = "Hello , " + name + " ! ";
+            // var hi_menu = document.createElement('ul');
+            // hi_menu.setAttribute('class', 'navbar-nav');
+            // hi_menu.style.margin = 'auto';
+            // hi_menu.style.paddingLeft = "5%";
+            // hi_menu.style.display = 'block';
+            // var hi_li = document.createElement('li');
+            // hi_li.setAttribute('class', 'nav-item dropdown');
+            // var hi_a = document.createElement('a');
+            // hi_a.setAttribute('class', 'nav-link white_text dropdown-toggle');
+            // hi_a.style.fontSize = '5.3vw'
+            // hi_a.href = "#";
+            // hi_a.innerHTML = "Hello , " + name + " ! ";
 
-            hi_a.setAttribute('role', 'button');
-            hi_a.setAttribute('data-bs-toggle', 'dropdown');
-            var ul_in = document.createElement('ul');
-            ul_in.setAttribute('class', 'dropdown-menu');
-            var li_in = document.createElement('li');
-            var a_in_1 = document.createElement('a');
-            a_in_1.setAttribute('class', 'dropdown-item');
-            a_in_1.href = "update.html";
-            a_in_1.innerHTML = "基本資料";
-            var a_in_2 = document.createElement('a');
-            a_in_2.setAttribute('class', 'dropdown-item');
-            a_in_2.href = "#";
-            a_in_2.innerHTML = "營隊紀錄";
-            var a_in_3 = document.createElement('a');
-            a_in_3.setAttribute('class', 'dropdown-item');
-            a_in_3.href = "login.html";
-            a_in_3.innerHTML = "Log Out";
-            li_in.appendChild(a_in_1);
-            li_in.appendChild(a_in_2);
-            li_in.appendChild(a_in_3);
-            ul_in.appendChild(li_in);
+            // hi_a.setAttribute('role', 'button');
+            // hi_a.setAttribute('data-bs-toggle', 'dropdown');
+            // var ul_in = document.createElement('ul');
+            // ul_in.setAttribute('class', 'dropdown-menu');
+            // var li_in = document.createElement('li');
+            // var a_in_1 = document.createElement('a');
+            // a_in_1.setAttribute('class', 'dropdown-item');
+            // a_in_1.href = "update.html";
+            // a_in_1.innerHTML = "基本資料";
+            // var a_in_2 = document.createElement('a');
+            // a_in_2.setAttribute('class', 'dropdown-item');
+            // a_in_2.href = "#";
+            // a_in_2.innerHTML = "營隊紀錄";
+            // var a_in_3 = document.createElement('a');
+            // a_in_3.setAttribute('class', 'dropdown-item');
+            // a_in_3.href = "login.html";
+            // a_in_3.innerHTML = "Log Out";
+            // li_in.appendChild(a_in_1);
+            // li_in.appendChild(a_in_2);
+            // li_in.appendChild(a_in_3);
+            // ul_in.appendChild(li_in);
 
-            hi_li.appendChild(hi_a);
-            hi_li.append(ul_in);
-            hi_menu.appendChild(hi_li);
-            nav_2.append(hi_menu);
+            // hi_li.appendChild(hi_a);
+            // hi_li.append(ul_in);
+            // hi_menu.appendChild(hi_li);
+            // nav_2.append(hi_menu);
 
             list_icon_a = [["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]
             a_class_list = [["fa fa-facebook"], ["fa fa-instagram"]];

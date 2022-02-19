@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="asset/css/common.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
+    <!-- 第三方登入可能要用到下面兩行 -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
@@ -37,12 +42,12 @@
             </div>
 
             <div style="padding-top: 5%;">
-                <a href="#" class="fb btn">
+                <button id="fb" class="fb btn">
                   <i class="fa fa-facebook-f hov"></i> 使用 Facebook 登入
-                </a>
-                <a href="#" class="google btn">
+                </button>
+                <button id="google" href="#" class="google btn">
                   <i class="fa fa-google hov"></i> 使用 Google+ 登入
-                </a>
+                </button>
             </div>
             
         
@@ -258,6 +263,11 @@ input[type=text], input[type=password] {
 /* Add a hover effect for buttons */
 .button:hover {
     opacity: 0.8;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    color: white;
 }
 
 /* Add padding to containers */

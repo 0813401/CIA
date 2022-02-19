@@ -28,19 +28,19 @@
     <script src="asset/js/sidebar.js"></script> 
     <script src='asset/js/utilities.js'></script>
     <div id='recent_camp_container' style=" display: block; overflow: hidden; background-color: #fff; padding-bottom: 11%;">
-        <div class="title big_text" style="padding: 3% 0%; color: #284b75;"><span class="underline">&nbsp&nbsp近期營隊&nbsp&nbsp</span></div>
+        <div class="title big_text" style="padding: 3% 0% 5% 0%; color: #284b75;"><span class="underline">&nbsp&nbsp近期營隊&nbsp&nbsp</span></div>
         <div id='recent_camp_item'></div>
     </div>
     <div style="padding-top:3%; display: block; overflow: hidden; padding-bottom: 3%;">
-        <div class = "big_text title" style="color: #284b75;"><span class="underline">&nbsp&nbsp線上營隊特色&nbsp&nbsp</span></div> 
-        <div class="step">
+        <div class = "big_text title" style="color: #284b75; padding-bottom: 3%;"><span class="underline">&nbsp&nbsp線上營隊特色&nbsp&nbsp</span></div> 
+        <div id = 'step' class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/camp/course.png"></div>
             <div class="step_text">
-                <div style="font-size: 6vw; font-weight: 900; color:#f88411;">【線上課程】</div>
+                <div style="font-size: 6vw; font-weight: 900; color:#284b75;">線上課程</div>
                 <div style="font-size: 5vw; text-align: left;">
                     <ul>
-                        <li style="padding: 1%;">「國內頂尖教授」分享科系<span style="color: #f88411;">未來趨勢</span>及<span style="color: #f88411;">系所介紹</span>，帶給你「第一手」大學端資訊</li>
-                        <li style="padding: 1%;">「該系專業講師」實際講授<span style="color: #f88411;">基礎課程</span>，讓你提早體驗大學教學內容，減少想像與現實的落差</li>
+                        <li style="padding: 1%; color: #000">「國內頂尖教授」分享科系<span style="color: #f88411;">未來趨勢</span>及<span style="color: #f88411;">系所介紹</span>，帶給你「第一手」大學端資訊</li>
+                        <li style="padding: 1%; color: #000">「該系專業講師」實際講授<span style="color: #f88411;">基礎課程</span>，讓你提早體驗大學教學內容，減少想像與現實的落差</li>
                     </ul>
                 </div>
             </div>
@@ -49,11 +49,11 @@
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/camp/practice.png"></div>
             <div class="step_text">
-                <div style="font-size: 6vw; font-weight: 900; color:#f88411;">【線上實操】</div>
+                <div style="font-size: 6vw; font-weight: 900; color:#284b75;">線上實操</div>
                 <div style="font-size: 5vw; text-align: left;">
                     <ul>
-                        <li style="padding: 2% 0%;">透過<span style="color: #f88411;">實作程式專案、企畫書</span>或<span style="color: #f88411;">電路板操作等課程內容</span>，將知識學以致用</li>
-                        <li style="padding: 2% 0%;">相較於紙上談兵，大學端較<span style="color: #f88411;">看重學生實作</span>後之作品集，可提供學生置於<span style="color: #f88411;">學習歷程</span>中​</li>
+                        <li style="padding: 2% 0%; color: #000">透過<span style="color: #f88411;">實作程式專案、企畫書</span>或<span style="color: #f88411;">電路板操作等課程內容</span>，將知識學以致用</li>
+                        <li style="padding: 2% 0%; color: #000">相較於紙上談兵，大學端較<span style="color: #f88411;">看重學生實作</span>後之作品集，可提供學生置於<span style="color: #f88411;">學習歷程</span>中​</li>
                     </ul>
                 </div>
             </div>
@@ -61,11 +61,11 @@
         <div class="step">
             <div class="img_step_div"><img class="img_step" src="asset/img/camp/schoolsister.png"></div>
             <div class="step_text">
-                <div style="font-size: 6vw; font-weight: 900; color:#f88411;">【學長姐分享】</div>
+                <div style="font-size: 6vw; font-weight: 900; color:#284b75;">學長姐分享</div>
                 <div style="font-size: 5vw; text-align: left;">
                     <ul>
-                        <li style="padding: 1%;">「該系學長姊」分享<span style="color: #f88411;">心路歷程與建議</span>，通過參考過來人經歷，減少學生試錯的成本</li>
-                        <li style="padding: 1%;">特別邀請「已畢業」學長姊，以<span style="color: #f88411;">學校所學</span>及<span style="color: #f88411;">職涯出路</span>進行剖析，帶來更全方位的觀點</li>
+                        <li style="padding: 1%; color: #000">「該系學長姊」分享<span style="color: #f88411;">心路歷程與建議</span>，通過參考過來人經歷，減少學生試錯的成本</li>
+                        <li style="padding: 1%; color: #000">特別邀請「已畢業」學長姊，以<span style="color: #f88411;">學校所學</span>及<span style="color: #f88411;">職涯出路</span>進行剖析，帶來更全方位的觀點</li>
                     </ul>
                 </div>
                 <i class="bi bi-trophy"></i>
@@ -133,11 +133,8 @@
     <div class='container_department' style="max-height: 200%;">
         <div class="title big_text" style="padding-top: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp科系許願池&nbsp&nbsp</span></div>
         <div class='department_statement'>
-            <div style="font-size: 3.2vw; font-weight: bold; margin: 1%; margin-top: 3%;">你是不是希望再探索更多有興趣的科系，卻苦無途徑?</div>
-            <div style="font-size: 3.2vw; font-weight: bold; margin: 1%">你是不是想知道那些科系到底在做甚麼，卻無從得知?</div>
-            <div style="font-size: 3.2vw; font-weight: bold; margin: 1%">你是不是想在C.I.A看到這些營隊的身影，卻期待落空?</div>
-            <div style="font-size: 3.2vw; margin-top: 2%; margin-left: auto; color: #284b75; font-weight: bold; ">那就快來幫我們選出下次的營隊主題吧，</div>
-            <div style="font-size: 3.2vw; margin-bottom: 2%; margin-left: auto; color: #284b75; font-weight: bold; ">我們將挑選票數最高的幾個科系實際舉辦！</div>
+            <div style="font-size: 4vw; margin-top: 4%; margin-left: auto; color: #000; font-weight: bold; ">快來幫我們選出下次的營隊主題吧，</div>
+            <div style="font-size: 4vw; margin-bottom: 2%; margin-left: auto; color: #000; font-weight: bold; ">我們將挑選票數最高的幾個科系實際舉辦！</div>
         </div>
 
         <button onclick="document.getElementById('id01').style.display='block'; voted_page()" class = 'title' style="font-size: 4vw; padding: 0.5%;">開始投票</button>
@@ -248,7 +245,7 @@ img{
 }
 
 .underline {
-    border-bottom: 4px solid#f88411;
+    border-bottom: 2px solid#f88411;
 }
 
 .video_box {
@@ -480,7 +477,7 @@ input[type=text]{
     align-items: center;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 0.1rem;
+    font-size: 1rem;
 }
 
 #container_voted_page {
@@ -551,7 +548,7 @@ input[type=text]{
 }
 
 .department_bar_box{
-    width: 65%;
+    width: 62%;
 }
 
 /*======================================*/
