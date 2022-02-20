@@ -182,6 +182,7 @@ function create_nav(){
             ul_in.setAttribute('class', 'dropdown-menu');
             ul_in.style.backgroundColor='#284b75';
             ul_in.style.textAlign='center';
+            ul_in.style.border='0px';
             var li_in = document.createElement('li');
             var a_in_1 = document.createElement('a');
             a_in_1.setAttribute('class', 'dropdown-item');
