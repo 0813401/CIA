@@ -318,7 +318,7 @@ function voted_page(){
     checkans.style.textAlign = 'left';
     checkans.style.width = '150%';
     checkans.type = 'text';
-    checkans.placeholder = '輸入你想許願的科系！        Ex：應數系';
+    checkans.placeholder = ' 輸入你想許願的科系！      Ex：應數系';
     checkans.name = 'department_checkans' ;
     var container_voted_send = document.createElement('div');
     container_voted_send.style.display = 'grid';
@@ -333,6 +333,7 @@ function voted_page(){
       // button.style.marginRight = '2%';
     }
     else{
+      checkans.style.fontSize = '0.5em';
       button.style.width = '40%';
       button.style.height = '90%';
       button.style.marginLeft = '60%';

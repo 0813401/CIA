@@ -1,7 +1,8 @@
 
 
 const filesname = window.location.pathname.split('/').at(-1).split('.')[0];
-console.log(filesname);
+// console.log(filesname);
+
 // if (/mobile/i.test(navigator.userAgent)) {
 //     window.location = filesname + "_mobile.html";
 // }
@@ -19,5 +20,7 @@ console.log(filesname);
 
 if (window.screen.height < window.screen.width)
 {
+    if(filesname == '')
+        filesname = 'index';
     window.location = filesname + "_pc.html";
 }

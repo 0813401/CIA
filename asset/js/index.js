@@ -105,7 +105,7 @@ function create_card_div_mobile(){
     var button = document.createElement('button');
     button.setAttribute('class', 'experienceButton');
     button.innerText = '關於我們';
-    $(button).css({'font-weight':'900','font-size':'5vw', 'position':'absolute', 'top':'75%', 'left':'60%', 'background-color': 'transparent'});
+    $(button).css({'font-weight':'900','font-size':'5vw', 'position':'absolute', 'top':'75%', 'left':'55%', 'background-color': 'transparent'});
     button.addEventListener('click', function() {
       window.location = 'FAQ.html'
     });
@@ -272,6 +272,10 @@ else{
       }
     }
   });
+
+  $('.down_arrow').on('click', function(){
+    $('.down_arrow').css({'color':'#000'});
+  })
 }
 
 
