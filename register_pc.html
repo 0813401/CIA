@@ -19,6 +19,7 @@
     <script src="asset/js/nav.js"></script>
     <script src="asset/js/register.js"></script>
     
+    <div class="title big_text" style="padding: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp基本資料&nbsp&nbsp</span></div>
     <div class="rounded_border">
         <!-- <form id="register" method="post" onsubmit="return setAction(this)">  -->
         <div class="container">
@@ -32,30 +33,32 @@
             <div class="enter"><input id="email" type="text" name="email" required></div>
             <div class="enter_text"><label>聯絡電話:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="phone" type="text" required></div>
+        </div>
+    </div>
+    <div class="title big_text" style="padding: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp緊急聯絡人&nbsp&nbsp</span></div>
+    <div class="rounded_border">
+        <div class="container">
             <div class="enter_text"><label>緊急聯絡人姓名:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="parent" type="text" name="fullname" required></div>
             <div class="enter_text"><label>與緊急聯絡人之關係:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="relation" type="text" required></div>
             <div class="enter_text"><label>緊急聯絡人電話:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="parent_phone" type="text" required></div>
+        </div>
+    </div>
+    <div class="title big_text" style="padding: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp帳密&nbsp&nbsp</span></div>
+    <div class="rounded_border" style="margin-bottom: 3%;">
+        <div class="container">
             <div class="enter_text"><label>帳號:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="uname" type="text" name="username" required></div>
             <div class="enter_text"><label>密碼:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="psw" type="password" name="psw" required></div>
             <div class="enter_text"><label>確認密碼:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="check_psw" type="password" name="psw" required></div>
-            <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 3%;"><label style="font-size: 1.2vw;"><input id="agree" type="checkbox" name="remember"> 我同意C.I.A相關規定</label></div>
+            <!-- <div style="padding-right: 0%; padding-left: 3%; padding-bottom: 3%;"><label style="font-size: 1.2vw;"><input id="agree" type="checkbox" name="remember"> 我同意C.I.A相關規定</label></div> -->
             <div style="padding-bottom: 2%;"><button class="button" onclick="button_onclick(this);send();">註冊</button></div>
-            <!-- <input class="button" id="submit" type="submit" value="註冊"> -->
             <div><span class="reg">已經有帳號了嗎? <a href="login.html"> 登入</a></span></div> 
-            
         </div>
-        
-            <!-- <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-            </div> -->
-        <!-- </form> -->
     </div>
     <script src="asset/js/footer.js"></script>
     <script src="asset/js/register.js"></script>
@@ -103,6 +106,10 @@ div .title{
     font-weight: 900;
 }
 
+label{
+    font-size: 1.3vw;
+}
+
 .enter_text {
     padding-bottom: 3%;
     text-align: left;
@@ -118,7 +125,7 @@ div .title{
 }
 
 .rounded_border{
-    margin: 6% auto;
+    margin: 0% auto;
     padding: 3%;
     border-radius: 20px;
     background-color: #FFFFFF;
@@ -126,8 +133,7 @@ div .title{
 }
 
 .underline {
-    border-bottom: 2px solid#f88411;
-    border-bottom-width:thick;
+    border-bottom: 4px solid#f88411;
 }
 
 .big_text {

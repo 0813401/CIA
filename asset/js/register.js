@@ -24,7 +24,7 @@ function send(){
   const Vuname = document.getElementById("uname").value;
   const Vpsw = document.getElementById("psw").value;
   const Vcheck_psw = document.getElementById("check_psw").value;
-  const checkbox = document.getElementById("agree");
+  // const checkbox = document.getElementById("agree");
 
   var userDB = db.collection('user');
   var flag = 0;
@@ -55,15 +55,17 @@ function send(){
       allowOutsideClick: false,
       showCancelButton: false,
     })
-  }else if(checkbox.checked == false){
-    Swal.fire({
-      icon: 'warning',
-      title: 'Oops...',
-      text: '須同意相關規定',
-      allowOutsideClick: false,
-      showCancelButton: false,
-    })
-  }else if(Vpsw != Vcheck_psw){
+  }
+  // else if(checkbox.checked == false){
+  //   Swal.fire({
+  //     icon: 'warning',
+  //     title: 'Oops...',
+  //     text: '須同意相關規定',
+  //     allowOutsideClick: false,
+  //     showCancelButton: false,
+  //   })
+  // }
+  else if(Vpsw != Vcheck_psw){
     Swal.fire({
       icon: 'warning',
       title: 'Oops...',

@@ -69,25 +69,8 @@ function create_nav(){
         ul.appendChild(li);
     }
 
-    var data = sessionStorage.getItem('status');
-    var name = sessionStorage.getItem('name');
-    if(data != 'login'){}
-    else{
-        var list_text = ['————————————',"Hello , " + name + " ! ", '基本資料', 'Log Out'];
-        var list_a = ["", "", "update.html", "login.html"];
-        for(let i = 0; i<4; i++){
-            var li = document.createElement('li');
-            li.setAttribute('class', 'nav-item');
-            var a = document.createElement('a');
-            a.setAttribute('class', 'nav-link white_text');
-            a.style.fontSize = '5.3vw'
-            a.href = list_a[i];
-            a.innerHTML = list_text[i];
-            li.appendChild(a);
-            ul.appendChild(li);
-        }
-    }
-    
+
+
     nav_2.appendChild(ul);
 
     // login
@@ -151,8 +134,79 @@ function create_nav(){
         top_menu.style.padding = '0';
         top_menu.style.margin = '0';
 
-        // var data = sessionStorage.getItem('status');
-        // var name = sessionStorage.getItem('name');
+
+        
+        var data = sessionStorage.getItem('status');
+        var name = sessionStorage.getItem('name');
+        if(data != 'login'){}
+        else{
+            // var list_text = ['————————————',"Hello , " + name + " ! ", '基本資料', 'Log Out'];
+            // var list_a = ["", "", "update.html", "login.html"];
+            // for(let i = 0; i<4; i++){
+            //     var li = document.createElement('li');
+            //     li.setAttribute('class', 'nav-item');
+            //     var a = document.createElement('a');
+            //     a.setAttribute('class', 'nav-link white_text');
+            //     a.style.fontSize = '5.3vw'
+            //     a.href = list_a[i];
+            //     a.innerHTML = list_text[i];
+            //     li.appendChild(a);
+            //     ul.appendChild(li);
+            // }
+
+
+
+            var li = document.createElement('li');
+            li.setAttribute('class', 'nav-item');
+            var a = document.createElement('a');
+            a.setAttribute('class', 'nav-link white_text');
+            a.style.fontSize = '5.3vw'
+            a.href = "#";
+            a.innerHTML = "————————————";
+            li.appendChild(a);
+            ul.appendChild(li);
+
+            var li = document.createElement('li');
+            li.setAttribute('class', 'nav-item dropdown');
+            var a = document.createElement('a');
+            a.setAttribute('class', 'nav-link white_text dropdown-toggle');
+            a.style.fontSize = '5.3vw'
+            a.href = "#";
+            a.innerHTML = "Hello , " + name + " ! ";
+            a.setAttribute('role', 'button');
+            a.setAttribute('data-bs-toggle', 'dropdown');
+            li.appendChild(a);
+            ul.appendChild(li);
+
+            var ul_in = document.createElement('ul');
+            ul_in.setAttribute('class', 'dropdown-menu');
+            ul_in.style.backgroundColor='#284b75';
+            ul_in.style.textAlign='center';
+            ul_in.style.border='0px';
+            var li_in = document.createElement('li');
+            var a_in_1 = document.createElement('a');
+            a_in_1.setAttribute('class', 'dropdown-item');
+            a_in_1.href = "update.html";
+            a_in_1.innerHTML = "基本資料";
+            a_in_1.style.fontSize = '5.3vw';
+            a_in_1.style.fontWeight = '900';
+            a_in_1.style.color = '#FFF';
+            var a_in_3 = document.createElement('a');
+            a_in_3.setAttribute('class', 'dropdown-item');
+            a_in_3.href = "login.html";
+            a_in_3.innerHTML = "Log Out";
+            a_in_3.style.fontSize = '5.3vw';
+            a_in_3.style.fontWeight = '900';
+            a_in_3.style.color = '#FFF';
+            li_in.appendChild(a_in_1);
+            // li_in.appendChild(a_in_2);
+            li_in.appendChild(a_in_3);
+            ul_in.appendChild(li_in);
+
+            li.appendChild(a);
+            li.append(ul_in);
+            ul.appendChild(li);
+        }
         if(data != "login")
         {
             list_icon_a = [["login.html"],["https://www.facebook.com/groups/375187427485303"], ["https://www.instagram.com/company_in_air/"]]

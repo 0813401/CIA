@@ -22,6 +22,7 @@
     <script src="asset/js/sidebar.js"></script> 
     <script src='asset/js/utilities.js'></script>
     
+    <div class="title big_text" style="padding: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp基本資料&nbsp&nbsp</span></div>
     <div class="rounded_border">
         <div class="container">
             <div class="enter_text"><label>姓名:<span style="color:red"> *</span></label></div>
@@ -34,6 +35,11 @@
             <div class="enter"><input id="email" type="text" name="email" required></div>
             <div class="enter_text"><label>聯絡電話:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="phone" type="text" required></div>
+        </div>
+    </div>
+    <div class="title big_text" style="padding: 3%; color: #284b75;"><span class="underline">&nbsp&nbsp緊急聯絡人&nbsp&nbsp</span></div>
+    <div class="rounded_border" style="margin-bottom: 5%;">
+        <div class="container">
             <div class="enter_text"><label>緊急聯絡人姓名:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="parent" type="text" name="fullname" required></div>
             <div class="enter_text"><label>與緊急聯絡人之關係:<span style="color:red"> *</span></label></div>
@@ -46,13 +52,8 @@
             <div class="enter"><input id="psw" type="password" name="psw" required></div>
             <div class="enter_text"><label>確認密碼:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="check_psw" type="password" name="psw" required></div> -->
-            <div style="padding-bottom: 2%;"><button class="button" onclick="send(); button_onclick(this)" >確認</button></div>
+            <div style="padding-bottom: 2%;"><button class="button" onclick="button_onclick(this);send();">確認</button></div>
         </div>
-        
-            <!-- <div class="container" style="background-color:#f1f1f1">
-            <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-            </div> -->
     </div>
     <script src="asset/js/footer_mobile.js"></script>
     <script src="asset/js/update.js"></script>
@@ -122,7 +123,7 @@ div .title{
 }
 
 .rounded_border{
-    margin: 10% auto;
+    margin: 0% auto;
     padding: 10% 0%;
     border-radius: 20px;
     background-color: #FFFFFF;
@@ -135,7 +136,7 @@ div .title{
 }
 
 .big_text {
-    font-size:3vw;
+    font-size:6.4vw;
     font-weight: 900;
     color: #284b75;
 }
