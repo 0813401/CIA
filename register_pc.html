@@ -28,7 +28,15 @@
             <div class="enter_text"><label>學校:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="school" type="text" required></div>
             <div class="enter_text"><label>年級:<span style="color:red"> *</span></label></div>
-            <div class="enter"><input id="grade" type="text" required></div>
+            <div class="enter">
+                <select id="grade" class="datalist">
+                    <option value="">請選擇</option>
+                    <option value="高一">高一</option>
+                    <!-- <option value="cat" selected>Cat</option> -->
+                    <option value="高二">高二</option>
+                    <option value="高三">高三</option>
+                </select>
+            </div>
             <div class="enter_text"><label>信箱:<span style="color:red"> *</span></label></div>
             <div class="enter"><input id="email" type="text" name="email" required></div>
             <div class="enter_text"><label>聯絡電話:<span style="color:red"> *</span></label></div>
@@ -236,6 +244,16 @@ label{
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
+    width: 100%;
+    padding: 2%;
+    margin: 2%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1.3vw;
+}
+
+.datalist{
     width: 100%;
     padding: 2%;
     margin: 2%;

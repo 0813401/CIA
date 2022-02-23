@@ -23,4 +23,5 @@ if (window.screen.height < window.screen.width)
     if(filesname == '')
         filesname = 'index';
     window.location = filesname + "_pc.html";
+    console.log(filesname);
 }

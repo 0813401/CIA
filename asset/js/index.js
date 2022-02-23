@@ -304,7 +304,6 @@ for(let i = 0;i<why_list.length; i++){
       $($('.why')[i]).css({'margin-bottom':'0%', 'padding-bottom':'0%'});
     else
       $($('.why')[i]).css({'margin-bottom':'8%', 'padding-bottom':'0%'});
-    console.log($('.why')[i]);
   }
 }
 

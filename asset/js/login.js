@@ -114,7 +114,81 @@ google.addEventListener('click', () => {
         emailG = user.email;
         phoneG = user.phoneNumber;
         idG = user.uid;
-        console.log('name', nameG, 'email', emailG, 'phone', phoneG, 'id', idG);
+
+        if(nameG == null)
+            nameG = "";
+        if(emailG == null)
+            emailG = "";
+        if(phoneG == null)
+            phoneG = "";
+
+        sessionStorage.setItem('name', nameG);
+        sessionStorage.setItem('status', 'login');
+        sessionStorage.setItem('id', idG);
+
+        var userDB = db.collection('user');
+        var flag = 0;
+
+        userDB.get().then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            if(doc.id == idG)
+            {
+              flag = 1;
+              if(doc.data().grade == "")
+              {
+                flag = 2;
+              }
+            }
+          });
+        });
+
+        setTimeout(function(){
+          if(flag == 0)
+          {
+            userDB.doc(idG).set({
+              name: nameG,
+              school: "",
+              grade: "",
+              email: emailG,
+              phone: phoneG,
+              parent: "",
+              relation: "",
+              parent_phone: "",
+              username: "",
+              password: ""
+            });
+            Swal.fire({
+              icon: 'success',
+              title: 'OK',
+              text: '請前往填寫基本資料',
+              allowOutsideClick: false,
+              showCancelButton: false,
+            }).then((result) => {
+              if (result.value) {
+                window.location = 'update.html';
+              }
+            })
+            
+          }else if(flag == 2)
+          {
+            Swal.fire({
+              icon: 'success',
+              title: 'OK',
+              text: '請前往填寫基本資料',
+              allowOutsideClick: false,
+              showCancelButton: false,
+            }).then((result) => {
+              if (result.value) {
+                window.location = 'update.html';
+              }
+            })
+          }else{
+            window.location = 'index.html';
+          }
+
+          
+          
+        }, 500);
       }).catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;
@@ -122,50 +196,14 @@ google.addEventListener('click', () => {
         let credential = error.credential;
       });
 
-  // if(nameG == null)
-  //     nameG = "";
-  // if(emailG == null)
-  //     emailG = "";
-  // if(phoneG == null)
-  //     phoneG = "";
-
-  // sessionStorage.setItem('name', nameG);
-
-  // var userDB = db.collection('user');
-  // var flag = 0;
-
-  // userDB.get().then(querySnapshot => {
-  //   querySnapshot.forEach(doc => {
-  //     if(doc.id == idG)
-  //     {
-  //       flag = 1;
-  //     }
-  //   });
-  // });
-
-  // setTimeout(function(){
-  //   if(flag == 0)
-  //   {
-  //     userDB.doc(idG).set({
-  //       name: nameG,
-  //       school: "",
-  //       grade: "",
-  //       email: emailG,
-  //       phone: phoneG,
-  //       parent: "",
-  //       relation: "",
-  //       parent_phone: "",
-  //       username: "",
-  //       password: ""
-  //     });
-  //   }
-  // }, 500);
+  
 
 });
 
 
 // Facebook 登入
 fb.addEventListener('click', () => {
+  
   
   firebase.auth()
       .signInWithPopup(providerFb)
@@ -177,51 +215,95 @@ fb.addEventListener('click', () => {
         emailG = user.email;
         phoneG = user.phoneNumber;
         idG = user.uid;
-        console.log('FB:name', nameG, 'email', emailG, 'phone', phoneG, 'id', idG);
+        
+        if(nameG == null)
+            nameG = "";
+        if(emailG == null)
+            emailG = "";
+        if(phoneG == null)
+            phoneG = "";
+
+        sessionStorage.setItem('name', nameG);
+        sessionStorage.setItem('status', 'login');
+        sessionStorage.setItem('id', idG);
+
+        var userDB = db.collection('user');
+        var flag = 0;
+
+        userDB.get().then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            if(doc.id == idG)
+            {
+              flag = 1;
+              if(doc.data().grade == "")
+              {
+                flag = 2;
+              }
+            }
+          });
+        });
+
+        setTimeout(function(){
+          if(flag == 0)
+          {
+            userDB.doc(idG).set({
+              name: nameG,
+              school: "",
+              grade: "",
+              email: emailG,
+              phone: phoneG,
+              parent: "",
+              relation: "",
+              parent_phone: "",
+              username: "",
+              password: ""
+            });
+            Swal.fire({
+              icon: 'success',
+              title: 'OK',
+              text: '請前往填寫基本資料',
+              allowOutsideClick: false,
+              showCancelButton: false,
+            }).then((result) => {
+              if (result.value) {
+                window.location = 'update.html';
+              }
+            })
+          }else if(flag == 2)
+          {
+            Swal.fire({
+              icon: 'success',
+              title: 'OK',
+              text: '請前往填寫基本資料',
+              allowOutsideClick: false,
+              showCancelButton: false,
+            }).then((result) => {
+              if (result.value) {
+                window.location = 'update.html';
+              }
+            })
+          }else{
+            window.location = 'index.html';
+          }
+          
+        }, 500);
       }).catch((error) => {
         let errorCode = error.code;
         let errorMessage = error.message;
         let email = error.email;
         let credential = error.credential;
+        if(errorMessage.includes("exists"))
+        {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: '此信箱已使用google登入',
+            allowOutsideClick: false,
+            showCancelButton: false,
+            })
+        }
       });
 
-  if(nameG == null)
-      nameG = "";
-  if(emailG == null)
-      emailG = "";
-  if(phoneG == null)
-      phoneG = "";
-
-  sessionStorage.setItem('name', nameG);
-
-  var userDB = db.collection('user');
-  var flag = 0;
-
-  userDB.get().then(querySnapshot => {
-    querySnapshot.forEach(doc => {
-      if(doc.id == idG)
-      {
-        flag = 1;
-      }
-    });
-  });
-
-  setTimeout(function(){
-    if(flag == 0)
-    {
-      userDB.doc(idG).set({
-        name: nameG,
-        school: "",
-        grade: "",
-        email: emailG,
-        phone: phoneG,
-        parent: "",
-        relation: "",
-        parent_phone: "",
-        username: "",
-        password: ""
-      });
-    }
-  }, 500);
+  
 
 });
